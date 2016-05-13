@@ -1,0 +1,294 @@
+﻿@model OStore.Models.SaleChannel.OrderManualViewModel
+
+<link href="../Content/Footable/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../Content/Footable/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+<script src="../Scripts/Footable/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrderId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.OrderId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OrderId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RegisterLink, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.RegisterLink, new { htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrderDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.OrderDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OrderDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+
+        @*Customer*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DisplayFor(model => model.Lastname, new { htmlAttributes = new { @class = "form-control" } })
+
+
+                <img data-toggle="modal" data-target="#myModal" src="~/Content/Images/Add.svg" />
+
+                @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Add customer</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="panel panel-default">
+                                    <input type="text" class="form-contr" /> <button type="button" class="btn btn-info" >Customer</button>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Content/Images/logo.png" width="30px;" />
+                                </div>
+                                <div class="col-md-6">Thikhumporn Pin</div>
+                                <div class="col-md-4"><button type="button" class="btn btn-info">Choose</button></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+            </div>
+        </div>
+
+
+        @*Product List*@
+        <div class="panel panel-default">
+            <table class=" table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+                <thead>
+                    <tr>
+                        <th data-hide="phone" data-toggle="true">
+                            Picture
+                        </th>
+                        <th data-hide="phone">
+                            SKU
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th data-hide="phone,tablet">
+                            Stock
+                        </th>
+                        <th data-hide="phone,tablet">
+                            Color
+                        </th>
+                        <th data-hide="phone,tablet">
+                            Size
+                        </th>
+                        <th data-hide="phone">
+                            Price
+                        </th>
+                        <th data-hide="phone,tablet">
+                            QTY
+                        </th>
+                        <th data-sort-ignore="true">
+                            Choose
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.Products)
+                    {
+                        <tr>
+                            <td>@product.Image</td>
+                            <td>@product.SKU</td>
+                            <td>@product.Name</td>
+                            <td>@product.StockQuantity</td>
+                            <td>
+                                @Html.DropDownListFor(model => product.ColorId, product.Colors, "", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => product.ColorId, "", new { @class = "text-danger" })
+                            </td>
+                            <td>
+                                @Html.DropDownListFor(model => product.SizeId, product.Sizes, "", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => product.SizeId, "", new { @class = "text-danger" })
+                            </td>
+                            <td>@product.Price</td>
+                            <td>
+                                @Html.EditorFor(model => product.OrderQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => product.OrderQuantity, "", new { @class = "text-danger" })
+                            </td>
+                            <td></td>
+                        </tr>
+                    }
+
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <div class="pagination pagination-centered"></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        @*End Product List*@
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TotalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.TotalAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DeliveryChannelId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.DeliveryChannelId, Model.DeliveryChannels, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DeliveryChannelId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DeliveryAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.DeliveryAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DeliveryAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiscountAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.DiscountAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DiscountAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GrandTotalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                    @Html.EditorFor(model => model.GrandTotalAmount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GrandTotalAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Remark, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Remark, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Remark, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10" style=" padding-top:10px;">
+                <div class="btn btn-success">
+                    @Html.ActionLink("Save", "CreateOrderManual", new { /* id=item.PrimaryKey */ })
+                </div>
+                <div class="btn btn-info">
+                    @Html.ActionLink("Cancel", "CreateOrderManual", new { /* id=item.PrimaryKey */ })
+                </div>
+                <div class="btn btn-default">
+                    @Html.ActionLink("Apply", "CreateOrderManual", new { /* id=item.PrimaryKey */ })
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script type="text/javascript">
+    $(function () {
+        $('table').footable().bind('footable_filtering', function (e) {
+            var selected = $('.filter-status').find(':selected').text();
+            if (selected && selected.length > 0) {
+                e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+                e.clear = !e.filter;
+            }
+        });
+
+        $('table').bind('footable_breakpoint', function () {
+            $('table').trigger('footable_expand_first_row');
+        });
+
+        $('.clear-filter').click(function (e) {
+            e.preventDefault();
+            $('.filter-status').val('');
+            $('table.demo').trigger('footable_clear_filter');
+        });
+
+        $('.filter-status').change(function (e) {
+            e.preventDefault();
+            $('table.demo').trigger('footable_filter', { filter: $('#filter').val() });
+        });
+
+        $('.filter-api').click(function (e) {
+            e.preventDefault();
+
+            //get the footable filter object
+            var footableFilter = $('table').data('footable-filter');
+
+            alert('about to filter table by "tech"');
+            //filter by 'tech'
+            footableFilter.filter('tech');
+
+            //clear the filter
+            if (confirm('clear filter now?')) {
+                footableFilter.clearFilter();
+            }
+        });
+
+        $('#change-page-size').change(function (e) {
+            e.preventDefault();
+            var pageSize = $(this).val();
+            $('.footable').data('page-size', pageSize);
+            $('.footable').trigger('footable_initialized');
+        });
+
+        $('#change-nav-size').change(function (e) {
+            e.preventDefault();
+            var navSize = $(this).val();
+            $('.footable').data('limit-navigation', navSize);
+            $('.footable').trigger('footable_initialized');
+        });
+    });
+</script>
+

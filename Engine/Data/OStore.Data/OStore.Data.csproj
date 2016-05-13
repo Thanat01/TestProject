@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE78EA62-14E2-4991-81A0-15A36E40DF4A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OStore.Data</RootNamespace>
+    <AssemblyName>OStore.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EF\AddressType.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AuthorizeExternalSystemUser.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AuthorizeGroup.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AuthorizeGroupMapRole.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AuthorizeRole.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AuthorizeRoleMapMenu.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AuthorizeUser.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AuthorizeUserMapGroup.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Bank.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Base\ContextBase.cs" />
+    <Compile Include="EF\Base\EntityBase.cs" />
+    <Compile Include="EF\Country.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Currency.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeliveryChannel.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeliveryChannelMapProvince.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\District.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ExternalSystem.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Menu.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\OrderStatu.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\OStoreEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OStoreEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\OStoreEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\OStoreEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OStoreEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PaymentChannel.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Person.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PersonAddress.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PersonMapType.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PersonOrder.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PersonOrderDetail.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PersonType.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PostalCode.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Product.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductCategory.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductImage.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductItem.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductItemMapVariant.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductMapCategory.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductMapProduct.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductMapVariant.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductMapVariantDetail.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductRelationType.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductReview.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductVariant.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductVariantDetail.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Promotion.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PromotionMapCategory.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PromotionMapProduct.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Province.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ReviewStatu.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SaleChannel.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Shop.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ShopMapDeliveryChannel.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ShopMapPaymentChannel.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ShopPaymentAccount.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ShoppingCart.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ShoppingCartDetail.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SubDistrict.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\TimeZone.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="EF\OStoreEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OStoreEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\OStoreEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OStoreEntity.edmx</DependentUpon>
+      <LastGenOutput>OStoreEntity.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EF\OStoreEntity.edmx.diagram">
+      <DependentUpon>OStoreEntity.edmx</DependentUpon>
+    </None>
+    <None Include="EF\OStoreEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OStoreEntity.edmx</DependentUpon>
+      <LastGenOutput>OStoreEntity.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

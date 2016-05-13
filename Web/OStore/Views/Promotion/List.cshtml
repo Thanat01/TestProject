@@ -1,0 +1,189 @@
+﻿@model IEnumerable<OStore.Models.PromotionViewModel>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="../Content/Footable/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../Content/Footable/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+<script src="../Scripts/Footable/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="demo">
+        <p>
+            Search:
+            <input id="filter" type="text" class="filter-status" />
+
+            <a href="#clear" class="clear-filter" title="clear filter">[clear]</a>
+            <a href="#api" class="filter-api" title="Filter using the Filter API">[filter API]</a>
+        </p>
+
+        Page Size:
+
+        <select id="change-page-size">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+        </select>
+
+
+        <table class="table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+            <thead>
+                <tr>
+                    <th data-toggle="true">
+                        Code
+                    </th>
+                    <th data-hide="phone">
+                        Name
+                    </th>
+                    <th>
+                        Used Quantity
+                    </th>
+                    <th data-hide="phone,tablet">
+                        Description
+                    </th>
+                    <th data-hide="phone,tablet">
+                        Discount Type
+                    </th>
+                    <th data-hide="phone,tablet">
+                        Amount
+                    </th>
+                    <th data-hide="phone,tablet">
+                        Percentage
+                    </th>
+                    <th data-hide="phone,tablet">
+                        Litmit per Code
+                    </th>
+                    <th data-hide="phone,tablet">
+                        Litmit per Customer
+                    </th>
+                    <th data-sort-ignore="true" data-hide="phone,tablet">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var m in Model)
+                {
+                <tr>
+                    <td>@m.Code</td>
+                    <td>@m.Name</td>
+                    <td>@m.UsedQuantity</td>
+                    <td>@m.Description</td>
+                    <td>@m.DiscountTypeId</td>
+                    <td>@m.Amount</td>
+                    <td>@m.Percentage</td>
+                    <td>@m.LimitTotal</td>
+                    <td>@m.LimitPerCustomer</td>
+                    <td>
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-cogs fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li>
+                                        <a href="#"><i class="fa fa-eye fa-fw"></i> View</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-edit fa-fw"></i> Update</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="" @m.Id><i class="fa fa-plus-circle fa-fw"></i> Add sub category</a>
+                                    </li>
+                                </ul>
+                                <!-- /.dropdown-user -->
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                }
+
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <div class="pagination pagination-centered"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('table').footable().bind('footable_filtering', function (e) {
+            var selected = $('.filter-status').find(':selected').text();
+            if (selected && selected.length > 0) {
+                e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+                e.clear = !e.filter;
+            }
+        });
+
+        $('table').bind('footable_breakpoint', function () {
+            $('table').trigger('footable_expand_first_row');
+        });
+
+        $('.clear-filter').click(function (e) {
+            e.preventDefault();
+            $('.filter-status').val('');
+            $('table.demo').trigger('footable_clear_filter');
+        });
+
+        $('.filter-status').change(function (e) {
+            e.preventDefault();
+            $('table.demo').trigger('footable_filter', { filter: $('#filter').val() });
+        });
+
+        $('.filter-api').click(function (e) {
+            e.preventDefault();
+
+            //get the footable filter object
+            var footableFilter = $('table').data('footable-filter');
+
+            alert('about to filter table by "tech"');
+            //filter by 'tech'
+            footableFilter.filter('tech');
+
+            //clear the filter
+            if (confirm('clear filter now?')) {
+                footableFilter.clearFilter();
+            }
+        });
+
+        $('#change-page-size').change(function (e) {
+            e.preventDefault();
+            var pageSize = $(this).val();
+            $('.footable').data('page-size', pageSize);
+            $('.footable').trigger('footable_initialized');
+        });
+
+        $('#change-nav-size').change(function (e) {
+            e.preventDefault();
+            var navSize = $(this).val();
+            $('.footable').data('limit-navigation', navSize);
+            $('.footable').trigger('footable_initialized');
+        });
+    });
+</script>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/ViewModel/Promotion/ListVM.js")
+}
+
+
+

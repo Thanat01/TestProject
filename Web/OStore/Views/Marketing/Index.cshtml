@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12">
+    <h1 class="page-header">Sales Channel</h1>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel">
+            <div class="panel-body">
+                <ul class="nav nav-tabs">
+
+                    <li>
+                        <a href="#Customer" data-toggle="tab">Customer</a>
+                    </li>
+                    <li>
+                        <a href="#Promotion" data-toggle="tab">Report promotion code</a>
+                    </li>
+                    <li>
+                        <a href="#Return" data-toggle="tab">Return & Exchange</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+
+                    <div class="tab-pane fade in active" style="margin-top:30px;" id="Manual">
+                        @*@Html.Action("CreateOrderManual", "SaleChannel")*@
+                    </div>
+                    <div class="tab-pane fade in" style="margin-top:30px;" id="Import">
+
+                        @*@Html.Action("ImportOrder", "SaleChannel")*@
+                    </div>
+                    <div class="tab-pane fade in" style="margin-top:30px;" id="Return">
+
+                        @*@Html.Partial("_ReturnExchange", null)*@
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

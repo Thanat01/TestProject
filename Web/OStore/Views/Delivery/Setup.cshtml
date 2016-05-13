@@ -1,0 +1,110 @@
+﻿@model OStore.Models.Delivery.DeliverySetupViewModel
+
+@{
+    ViewBag.Title = Resources.StringResource.Delivery_Setup_Title;
+}
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Setup", "Delivery", FormMethod.Post))
+{
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-12">
+               @Html.CheckBoxFor(c=>c.Delivery1_Enabled, new { @class = "checkbox-inline" , data_bind= "checked: d1Enable" }) <u><b>Delivery 1</b></u>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                 <span > @Resources.StringResource.Delivery_Setup_D1Name</span>  
+                </div>
+
+                <div class="col-md-6 form-inline">
+<span >@Resources.StringResource.Delivery_Setup_Cost</span>
+                    @Html.TextBoxFor(c => c.Delivery1_Cost, new { @class = "form-control", style = "margin-bottom: 12px; width: 20%;"  ,data_bind = "enable:d1Enable" }) baht
+                    <br />
+                    <span style="margin-right: 18px;">@Resources.StringResource.Delivery_Setup_ServiceDay</span>  @Html.TextBoxFor(c => c.Delivery1_Days, new { @class = "form-control", style = "margin-bottom: 12px; width:20%;", data_bind = "enable:d1Enable" }) baht
+                </div>
+            </div>
+
+            <hr />
+            <div class="col-md-12 form-group">
+                @if (@Model.ChkDelivery1Options != null)
+                {
+                    for (var ii = 0; ii < Model.ChkDelivery1Options.Count; ii++)
+                    {
+                        @Html.HiddenFor(it => it.ChkDelivery1Options[ii].Value)
+                        @Html.HiddenFor(it => it.ChkDelivery1Options[ii].Text)
+                        @Html.CheckBoxFor(it => it.ChkDelivery1Options[ii].Checked, new {@class = "checkbox-inline", data_bind = "enable:d1Enable"})
+                        <span style="margin-right: 40px !important;">@Model.ChkDelivery1Options[ii].Text</span>
+                    }
+                }
+
+
+            </div>
+            <hr />
+            <div class="col-md-12">
+                <span class="center-block text-center h3"> @Resources.StringResource.Delivery_Setup_D1_Info</span>
+            </div>
+            <img  src="~/Content/Images/alpha_service_area-01.svg" class="img-responsive center-block" alt="Responsive image"/>
+            <div class="pull-right">
+                <button type="submit" class="btn-success btn " data-bind = "enable:d1Enable"  >@Resources.StringResource.Delivery_Setup_btnSave </button>
+                <button type="submit" class="btn-default btn " data-bind = "enable:d1Enable" >@Resources.StringResource.Delivery_Setup_btnCancel </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-12">
+                @Html.CheckBoxFor(c => c.Delivery2_Enabled, new { @class = "checkbox-inline", data_bind = "checked: d2Enable" }) <u><b>Delivery 2</b></u>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Resources.StringResource.Delivery_Setup_D2Name
+                </div>
+
+                <div class="col-md-6 form-inline ">
+
+                    @Resources.StringResource.Delivery_Setup_Cost @Html.TextBoxFor(c => c.Delivery1_Cost, new { @class = "form-control", style = "margin-bottom: 12px; width: 20%;", data_bind = "enable:d2Enable" }) baht
+                    <br />
+                    <span style="margin-right: 18px;">@Resources.StringResource.Delivery_Setup_ServiceDay</span>  @Html.TextBoxFor(c => c.Delivery1_Days, new { @class = "form-control", style = "margin-bottom: 12px; width:20%;", data_bind = "enable:d2Enable" }) baht
+                </div>
+            </div>
+
+            <hr />
+            <div class="col-md-12 form-group">
+                @if (@Model.ChkDelivery1Options != null)
+                {
+                    for (var ii = 0; ii < Model.ChkDelivery2Options.Count; ii++)
+                    {
+                        @Html.HiddenFor(it => it.ChkDelivery2Options[ii].Value)
+                        @Html.HiddenFor(it => it.ChkDelivery2Options[ii].Text)
+                        @Html.CheckBoxFor(it => it.ChkDelivery2Options[ii].Checked, new { @class = "checkbox-inline", data_bind = "enable:d2Enable" })
+                        <span style="margin-right: 40px !important;">@Model.ChkDelivery2Options[ii].Text</span>
+                    }
+                }
+
+
+            </div>
+            <hr />
+            <div class="col-md-12">
+                <span class="center-block text-center h3"> @Resources.StringResource.Delivery_Setup_D2_Info</span>
+            </div>
+            <img src="~/Content/Images/thaipost_service_area-01.svg" class="img-responsive center-block" alt="Responsive image" />
+            <div class="pull-right">
+                <button type="submit" class="btn-success btn " data-bind="enable:d2Enable">@Resources.StringResource.Delivery_Setup_btnSave </button>
+                <button type="submit" class="btn-default btn " data-bind="enable:d2Enable">@Resources.StringResource.Delivery_Setup_btnCancel </button>
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    var viewModel = {
+        d1Enable: ko.observable(false),
+        d2Enable: ko.observable(false)
+    };
+
+    ko.applyBindings(viewModel);
+</script>
