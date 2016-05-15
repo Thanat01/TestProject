@@ -23,19 +23,17 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade in active" style="margin-top:30px;" id="Customer">
-
                         <div class="col-md-12">
                             @Html.Partial("_CustomerList", Model)
                         </div>
                         <div class="col-md-12">
                             @Html.Partial("_CustomerCreate", new OStore.Models.Customer.CustomerModel())
                         </div>
-
-                        @*@Html.Action("CreateOrderManual", "SaleChannel")*@
                     </div>
                     <div class="tab-pane fade in" style="margin-top:30px;" id="Promotion">
-
-                        @*@Html.Action("ImportOrder", "SaleChannel")*@
+                        <div class="col-md-12">
+                            @Html.Action("ReportPromotionCode","Marketing")
+                        </div>
                     </div>
                 </div>
             </div>

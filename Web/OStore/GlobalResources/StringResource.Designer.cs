@@ -61,6 +61,186 @@ namespace OStore.GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Marketing_Customer_Address {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to District.
+        /// </summary>
+        public static string Marketing_Customer_District {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_District", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Marketing_Customer_Email {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Facebook.
+        /// </summary>
+        public static string Marketing_Customer_Facebook {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Facebook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Marketing_Customer_Firstname {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Firstname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Instargram.
+        /// </summary>
+        public static string Marketing_Customer_Instargram {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Instargram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string Marketing_Customer_IsActive {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_IsActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name.
+        /// </summary>
+        public static string Marketing_Customer_Lastname {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Lastname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Line.
+        /// </summary>
+        public static string Marketing_Customer_Line {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Line", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mobile.
+        /// </summary>
+        public static string Marketing_Customer_Mobile {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Mobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nick name.
+        /// </summary>
+        public static string Marketing_Customer_Nickname {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Nickname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zip code.
+        /// </summary>
+        public static string Marketing_Customer_PostalCode {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_PostalCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Province.
+        /// </summary>
+        public static string Marketing_Customer_Province {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Province", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subdistrict.
+        /// </summary>
+        public static string Marketing_Customer_SubDistrict {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_SubDistrict", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer.
+        /// </summary>
+        public static string Marketing_Promotion_CustomerName {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_CustomerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No..
+        /// </summary>
+        public static string Marketing_Promotion_No {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string Marketing_Promotion_OrderDate {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_OrderDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Id.
+        /// </summary>
+        public static string Marketing_Promotion_OrderId {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_OrderId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revenue.
+        /// </summary>
+        public static string Marketing_Promotion_Revenue {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_Revenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Marketing_Promotion_Status {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Import from.
         /// </summary>
         public static string Order_Import_Source {

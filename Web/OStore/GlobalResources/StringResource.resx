@@ -192,4 +192,64 @@
   <data name="Order_Manual_TotalAmount" xml:space="preserve">
     <value>Price product</value>
   </data>
+  <data name="Marketing_Customer_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Marketing_Customer_District" xml:space="preserve">
+    <value>District</value>
+  </data>
+  <data name="Marketing_Customer_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Marketing_Customer_Facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="Marketing_Customer_Firstname" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Marketing_Customer_Instargram" xml:space="preserve">
+    <value>Instargram</value>
+  </data>
+  <data name="Marketing_Customer_IsActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Marketing_Customer_Lastname" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Marketing_Customer_Line" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="Marketing_Customer_Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="Marketing_Customer_Nickname" xml:space="preserve">
+    <value>Nick name</value>
+  </data>
+  <data name="Marketing_Customer_PostalCode" xml:space="preserve">
+    <value>Zip code</value>
+  </data>
+  <data name="Marketing_Customer_Province" xml:space="preserve">
+    <value>Province</value>
+  </data>
+  <data name="Marketing_Customer_SubDistrict" xml:space="preserve">
+    <value>Subdistrict</value>
+  </data>
+  <data name="Marketing_Promotion_CustomerName" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Marketing_Promotion_No" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="Marketing_Promotion_OrderDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Marketing_Promotion_OrderId" xml:space="preserve">
+    <value>Order Id</value>
+  </data>
+  <data name="Marketing_Promotion_Revenue" xml:space="preserve">
+    <value>Revenue</value>
+  </data>
+  <data name="Marketing_Promotion_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
 </root>
