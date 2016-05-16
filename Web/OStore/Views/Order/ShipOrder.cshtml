@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "ShipOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12">
+    <h1 class="page-header">@GlobalResources.StringResource.OrderManagement_Ship_Title</h1>
+</div>
+
+
+Ship
+<div class="col-md-12 form-inline text-right">
+    <div class="btn btn-default">
+        @Html.ActionLink("Save", "Index", "Order")
+    </div>
+    <div class="btn btn-default">
+        @Html.ActionLink("Cancel", "Index", "Order")
+    </div>
+    <div class="btn btn-default">
+        @Html.ActionLink("Apply", "Index", "Order")
+    </div>
+</div>

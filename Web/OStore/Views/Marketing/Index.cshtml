@@ -15,25 +15,51 @@
                 <ul class="nav nav-tabs">
 
                     <li class="active">
-                        <a href="#Customer" data-toggle="tab">Customer</a>
+                        <a href="#Customer" data-toggle="tab">@Resources.StringResource.Marketing_Tab_Customer</a>
                     </li>
                     <li>
-                        <a href="#Promotion" data-toggle="tab">Report promotion code</a>
+                        <a href="#Promotion" data-toggle="tab">@Resources.StringResource.Marketing_Tab_Promotion</a>
                     </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade in active" style="margin-top:30px;" id="Customer">
-                        <div class="col-md-12">
+                        <div id="customerList" class="col-md-12">
                             @Html.Partial("_CustomerList", Model)
                         </div>
-                        <div class="col-md-12">
+                        <div id="customerCreate" style="display:none;" class="col-md-12">
                             @Html.Partial("_CustomerCreate", new OStore.Models.Customer.CustomerModel())
                         </div>
                     </div>
                     <div class="tab-pane fade in" style="margin-top:30px;" id="Promotion">
+
                         <div class="col-md-12">
-                            @Html.Action("ReportPromotionCode","Marketing")
+
+                            <ul class="nav nav-tabs">
+
+                                <li class="active">
+                                    <a href="#PromotionCreate" data-toggle="tab">@Resources.StringResource.Marketing_Promotion_Tab_Create</a>
+                                </li>
+                                <li>
+                                    <a href="#PromotionReport" data-toggle="tab">@Resources.StringResource.Marketing_Promotion_Tab_Report</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" style="margin-top:30px;" id="PromotionCreate">
+                                    <div class="col-md-12">
+                                        @Html.Action("CreateNewPromotion", "Marketing")
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade in" style="margin-top:30px;" id="PromotionReport">
+                                    <div class="col-md-12">
+                                        @Html.Action("ReportPromotionCode", "Marketing")
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
+
+
                     </div>
                 </div>
             </div>

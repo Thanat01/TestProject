@@ -30,8 +30,14 @@
             </div>
         </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10  form-inline">
+                @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+            </div>
+        </div>
         <hr />
-
 
         <div class="form-group">
             @Html.LabelFor(model => model.Facebook, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -60,15 +66,6 @@
         <hr />
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10  form-inline">
-                @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="form-group">
             @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10 ">
                 @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
@@ -85,7 +82,7 @@
 
             @Html.LabelFor(model => model.DistrictId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-4 ">
-                @Html.DropDownListFor(model => model.DistrictId, Model.Districts, "",  new { @class = "form-control" } )
+                @Html.DropDownListFor(model => model.DistrictId, Model.Districts, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DistrictId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -107,12 +104,17 @@
     </div>
 
     <div class="col-md-6 form-inline">
-        @Html.ActionLink("Add more", "Create", new { controller = "Customer" }, new { @class = "form-control" })
+        @*@Html.ActionLink("Add more", "Create", new { controller = "Customer" }, new { @class = "form-control" })*@
+        <a class="btn btn-default" onclick="ShowHidePanel('customerCreate','customerList');">Add more</a>
     </div>
     <div class="col-md-6 form-inline text-right">
-        @Html.ActionLink("Save", "CreateOrderManual", new { /* id=item.PrimaryKey */ }, new { @class = "form-control" })
+        <a class="btn btn-default" onclick="ShowHidePanel('customerList', 'customerCreate');">Save</a>
+        <a class="btn btn-default" onclick="ShowHidePanel('customerList', 'customerCreate');">Cancel</a>
+        <a class="btn btn-default" onclick="ShowHidePanel('customerList', 'customerCreate');">Apply</a>
+
+        @*@Html.ActionLink("Save", "CreateOrderManual", new { /* id=item.PrimaryKey */ }, new { @class = "form-control" })
         @Html.ActionLink("Cancel", "CreateOrderManual", new { /* id=item.PrimaryKey */ }, new { @class = "form-control" })
-        @Html.ActionLink("Apply", "CreateOrderManual", new { }, new { @class = "form-control" })
+        @Html.ActionLink("Apply", "CreateOrderManual", new { }, new { @class = "form-control" })*@
 
     </div>
 }

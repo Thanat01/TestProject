@@ -80,3 +80,12 @@
     </div>
 </div>
 
+<div class="col-md-6 form-inline">
+    @Html.ActionLink("Add more", "Create", new { controller = "Customer" }, new { @class = "form-control" })
+</div>
+<div class="col-md-6 form-inline text-right">
+    @Html.ActionLink("Save", "CreateOrderManual", new { /* id=item.PrimaryKey */ }, new { @class = "form-control" })
+    @Html.ActionLink("Cancel", "CreateOrderManual", new { /* id=item.PrimaryKey */ }, new { @class = "form-control" })
+    @Html.ActionLink("Apply", "CreateOrderManual", new { }, new { @class = "form-control" })
+
+</div>

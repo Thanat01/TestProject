@@ -1,0 +1,129 @@
+﻿@model OStore.Models.PromotionViewModel
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+       
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+            </div>
+            @Html.LabelFor(model => model.DiscountTypeId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.DiscountTypeId, Model.DiscountTypes, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DiscountTypeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+            </div>
+            @Html.LabelFor(model => model.MaximumDiscount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.MaximumDiscount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MaximumDiscount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MinimumPurchase, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.MinimumPurchase, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MinimumPurchase, "", new { @class = "text-danger" })
+            </div>
+            @Html.LabelFor(model => model.MinimumItem, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.MinimumItem, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MinimumItem, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LimitPerCustomer, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline">
+                @Html.EditorFor(model => model.LimitPerCustomer, new { htmlAttributes = new { @class = "form-control" } })
+                @Resources.StringResource.Marketing_Promotion_PerUser
+                @Html.ValidationMessageFor(model => model.LimitPerCustomer, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LimitTotal, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline">
+                @Html.EditorFor(model => model.LimitTotal, new { htmlAttributes = new { @class = "form-control" } })
+                @Resources.StringResource.Marketing_Promotion_PerCode
+                @Html.ValidationMessageFor(model => model.LimitTotal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+        <span>> Date & Time</span>
+        <div class="form-group">
+            @Html.LabelFor(model => model.EffectiveDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.EffectiveDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EffectiveDate, "", new { @class = "text-danger" })
+            </div>
+
+            @Html.LabelFor(model => model.EffectiveTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.EffectiveTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EffectiveTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExpiryDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.ExpiryDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ExpiryDate, "", new { @class = "text-danger" })
+            </div>
+
+            @Html.LabelFor(model => model.ExpiryTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.ExpiryTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ExpiryTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsActive)
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="col-md-6 form-inline">
+        @Html.ActionLink("Add more", "Create", new { controller = "Customer" }, new { @class = "form-control" })
+    </div>
+    <div class="col-md-6 form-inline text-right">
+        @Html.ActionLink("Save", "CreateOrderManual", new { /* id=item.PrimaryKey */ }, new { @class = "form-control" })
+        @Html.ActionLink("Cancel", "CreateOrderManual", new { /* id=item.PrimaryKey */ }, new { @class = "form-control" })
+        @Html.ActionLink("Apply", "CreateOrderManual", new { }, new { @class = "form-control" })
+
+    </div>
+}

@@ -1,0 +1,54 @@
+﻿@model OStore.Models.Orders.SearchConditionViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12">
+    <h1 class="page-header">@GlobalResources.StringResource.OrderManagement_Title</h1>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel">
+            <div class="panel-body">
+                <ul class="nav nav-tabs">
+
+                    <li class="active">
+                        <a href="#Pay" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Tab_Title_Pay</a>
+                    </li>
+                    <li>
+                        <a href="#PickPack" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Tab_Title_PickPack</a>
+                    </li>
+                    <li>
+                        <a href="#Ship" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Tab_Title_Ship</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+
+                    <div class="tab-pane fade in active" style="margin-top:30px;" id="Pay">
+                        @Html.Partial("_SearchCondition", Model)
+                        <div class="col-md-12 form-inline text-center">
+                            @Html.ActionLink("Search", "PayOrder", "Order")
+                        </div>
+                    </div>
+                    <div class="tab-pane fade in" style="margin-top:30px;" id="PickPack">
+                        @Html.Partial("_SearchCondition", Model)
+                        <div class="col-md-12 form-inline text-center">
+                            @Html.ActionLink("Search", "PickPackOrder", "Order")
+                        </div>
+                    </div>
+                    <div class="tab-pane fade in" style="margin-top:30px;" id="Ship">
+                        @Html.Partial("_SearchCondition", Model)
+                        <div class="col-md-12 form-inline text-center">
+                            @Html.ActionLink("Search", "ShipOrder", "Order")
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

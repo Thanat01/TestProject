@@ -1,4 +1,5 @@
-﻿using OStore.Models.Promotion;
+﻿using OStore.Models;
+using OStore.Models.Promotion;
 using OStore.Providers;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,15 @@ namespace OStore.Controllers
 
 
             return PartialView("_ReportPromotionCode", models);
+        }
+
+        public ActionResult CreateNewPromotion()
+        {
+            PromotionViewModel model = new PromotionViewModel();
+
+
+
+            return PartialView("_CreatePromotion", model);
         }
     }
 }
