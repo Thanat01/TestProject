@@ -1,0 +1,169 @@
+﻿@model IEnumerable<OStore.Models.Orders.OrderInfoViewModel>
+
+
+@{
+    ViewBag.Title = "ShipOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<link href="../Content/Footable/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../Content/Footable/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+<script src="../Scripts/Footable/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.filter.js?v=2-0-1" type="text/javascript"></script>*@
+
+<div class="col-lg-12">
+    <h1 class="page-header">@GlobalResources.StringResource.OrderManagement_Ship_Title</h1>
+</div>
+
+<div class="tab-content">
+    <div class="panel" id="demo">
+
+
+        <table class="table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+            <thead>
+                <tr>
+                    <th data-toggle="true">
+                        @GlobalResources.StringResource.OrderManagement_Ship_SelectAll
+                    </th>
+                    <th>
+                        @GlobalResources.StringResource.OrderManagement_Pay_OrderId
+                    </th>
+                    <th data-hide="phone,tablet">
+                        @GlobalResources.StringResource.OrderManagement_Pay_OrderDate
+                    </th>
+                    <th data-hide="phone,tablet">
+                        @GlobalResources.StringResource.OrderManagement_Pay_TimeLap
+                    </th>
+                    <th>
+                        @GlobalResources.StringResource.OrderManagement_Pay_CustomerName
+                    </th>
+                    <th>
+                        @GlobalResources.StringResource.OrderManagement_Pay_Mobile
+                    </th>
+
+                    <th data-hide="phone,tablet">
+                        @GlobalResources.StringResource.OrderManagement_Ship_Deliver
+                    </th>
+                    <th data-hide="phone,tablet">
+                        @GlobalResources.StringResource.OrderManagement_Pay_StatusId
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var m in Model)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>
+                            @m.OrderId
+                        </td>
+                        <td>
+                            @m.OrderDate
+                        </td>
+                        <td>
+                            @m.TimeLaps
+                        </td>
+                        <td>
+                            @m.CustomerName
+                        </td>
+                        <td>
+                            <a href="tel:@m.Mobile"><img src="~/Content/Images/logo_Phone.png" height="30" /> @m.Mobile </a>
+                        </td>
+
+                        <td>
+                            @m.Deliver
+                        </td>
+                        <td>
+                            @Html.DropDownListFor(n => m.StatusId, m.Statuses, "", new { @class = "form-control" })
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="8">
+                        <div class="pagination pagination-centered"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<div class="col-md-12 form-inline text-right">
+    <div class="btn btn-default">
+        @Html.ActionLink("Save", "Index", "Order")
+    </div>
+    <div class="btn btn-default">
+        @Html.ActionLink("Cancel", "Index", "Order")
+    </div>
+    <div class="btn btn-default">
+        @Html.ActionLink("Apply", "Index", "Order")
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+
+    $(function () {
+        $('table').footable().bind('footable_filtering', function (e) {
+            var selected = $('.filter-status').find(':selected').text();
+            if (selected && selected.length > 0) {
+                e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+                e.clear = !e.filter;
+            }
+        });
+
+        $('table').bind('footable_breakpoint', function () {
+            $('table').trigger('footable_expand_first_row');
+        });
+
+        $('.clear-filter').click(function (e) {
+            e.preventDefault();
+            $('.filter-status').val('');
+            $('table.demo').trigger('footable_clear_filter');
+        });
+
+        $('.filter-status').change(function (e) {
+            e.preventDefault();
+            $('table.demo').trigger('footable_filter', { filter: $('#filter').val() });
+        });
+
+        $('.filter-api').click(function (e) {
+            e.preventDefault();
+
+            //get the footable filter object
+            var footableFilter = $('table').data('footable-filter');
+
+            alert('about to filter table by "tech"');
+            //filter by 'tech'
+            footableFilter.filter('tech');
+
+            //clear the filter
+            if (confirm('clear filter now?')) {
+                footableFilter.clearFilter();
+            }
+        });
+
+        $('#change-page-size').change(function (e) {
+            e.preventDefault();
+            var pageSize = $(this).val();
+            $('.footable').data('page-size', pageSize);
+            $('.footable').trigger('footable_initialized');
+        });
+
+        $('#change-nav-size').change(function (e) {
+            e.preventDefault();
+            var navSize = $(this).val();
+            $('.footable').data('limit-navigation', navSize);
+            $('.footable').trigger('footable_initialized');
+        });
+    });
+</script>

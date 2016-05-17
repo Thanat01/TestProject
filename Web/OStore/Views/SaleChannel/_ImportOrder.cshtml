@@ -1,69 +1,81 @@
 ﻿@model OStore.Models.SaleChannel.ImportOrderViewModel
 
-<div class="row form-group">
-    @Html.LabelFor(model => model.SourceId, htmlAttributes: new { @class = "control-label col-md-2" })
-    <div class="col-md-4">
-        @Html.DropDownListFor(model => model.SourceId, Model.Sources, "", new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.SourceId, "", new { @class = "text-danger" })
-    </div>
-</div>
-
-<div class="row form-group">
-    <div class="control-label col-md-2">choose file</div>
-    <div class="col-md-10">
-        @Html.FileUploadForm("../SaleChannel/ImportOrderData")
-    </div>
-</div>
-
-@if (Model.Orders.Count>0)
-{ 
-<!-- /.row -->
-<div class="row">
-    <div class="col-lg-12">
-        <div class="panel panel-default">
-            <!-- /.panel-heading -->
-            <div class="panel-body">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Order Id</th>
-                                <th>Ref. ID</th>
-                                <th>Ordering date</th>
-                                <th>QTY</th>
-                                <th>Revenue</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            @foreach (var order in Model.Orders)
-                            {
-                                <tr>
-                                    <td>
-                                     <input type="checkbox"/>
-                                    </td>
-                                    <td>@order.OrderId </td>
-                                    <td>@order.RefId </td>
-                                    <td>@order.OrderDate</td>
-                                    <td>@order.OrderQuantity</td>
-                                    <td>@order.Revenue</td>
-                                    <td>@order.Status</td>
-                                </tr>
-    
-                            }
-
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.table-responsive -->
-            </div>
-            <!-- /.panel-body -->
+<div class="col-md-12" id="uploadFile">
+    <div class="row form-group">
+        @Html.LabelFor(model => model.SourceId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.DropDownListFor(model => model.SourceId, Model.Sources, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SourceId, "", new { @class = "text-danger" })
         </div>
-        <!-- /.panel -->
     </div>
 
+    <div class="row form-group">
+        <div class="control-label col-md-2">choose file</div>
+        <div class="col-md-10">
+            @Html.FileUploadForm("../SaleChannel/ImportOrderData")
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="col-md-12 text-center">
+            <a class="btn btn-default" onclick="ShowHidePanel('uploadItem', 'uploadFile');">Upload</a>
+        </div>
+    </div>
 </div>
-<!-- /.row -->
+
+@if (Model.Orders.Count > 0)
+{
+        <!-- /.row -->
+    <div class="row" id="uploadItem" style="display:none;">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Order Id</th>
+                                    <th>Ref. ID</th>
+                                    <th>Ordering date</th>
+                                    <th>QTY</th>
+                                    <th>Revenue</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var order in Model.Orders)
+                                {
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td>@order.OrderId </td>
+                                        <td>@order.RefId </td>
+                                        <td>@order.OrderDate</td>
+                                        <td>@order.OrderQuantity</td>
+                                        <td>@order.Revenue</td>
+                                        <td>@order.Status</td>
+                                    </tr>
+
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <div class="col-md-12 form-inline text-right">
+            <a class="btn btn-default" onclick="ShowHidePanel('uploadFile', 'uploadItem');">Save</a>
+            <a class="btn btn-default" onclick="ShowHidePanel('uploadFile', 'uploadItem');">Cancel</a>
+            <a class="btn btn-default" onclick="ShowHidePanel('uploadFile', 'uploadItem');">Apply</a>
+        </div>
+    </div>
+        <!-- /.row -->
 }

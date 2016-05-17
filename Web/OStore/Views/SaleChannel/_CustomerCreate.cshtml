@@ -1,0 +1,120 @@
+﻿@model OStore.Models.Customer.CustomerModel
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Firstname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline">
+                @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Lastname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10  form-inline">
+                @Html.EditorFor(model => model.Lastname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nickname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10  form-inline">
+                @Html.EditorFor(model => model.Nickname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nickname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10  form-inline">
+                @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Facebook, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10  form-inline">
+                @Html.EditorFor(model => model.Facebook, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Facebook, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Line, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10  form-inline">
+                @Html.EditorFor(model => model.Line, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Line, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Instargram, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10  form-inline">
+                @Html.EditorFor(model => model.Instargram, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Instargram, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 ">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProvinceId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4 ">
+                @Html.DropDownListFor(model => model.ProvinceId, Model.Provinces, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProvinceId, "", new { @class = "text-danger" })
+            </div>
+
+            @Html.LabelFor(model => model.DistrictId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4 ">
+                @Html.DropDownListFor(model => model.DistrictId, Model.Districts, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DistrictId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SubDistrictId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.SubDistrictId, Model.SubDistricts, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SubDistrictId, "", new { @class = "text-danger" })
+            </div>
+
+            @Html.LabelFor(model => model.PostalCodeId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.PostalCodeId, Model.PostalCodes, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PostalCodeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-6 form-inline">
+        @*@Html.ActionLink("Add more", "Create", new { controller = "Customer" }, new { @class = "form-control" })*@
+        <a class="btn btn-default" onclick="ShowHidePanel('customerCreate','customerList');">Add more</a>
+    </div>
+    <div class="col-md-6 form-inline text-right">
+        <a class="btn btn-default" onclick="ShowHidePanel('customerList', 'customerCreate');">Save</a>
+        <a class="btn btn-default" onclick="ShowHidePanel('customerList', 'customerCreate');">Cancel</a>
+        <a class="btn btn-default" onclick="ShowHidePanel('customerList', 'customerCreate');">Apply</a>
+
+        @*@Html.ActionLink("Save", "CreateOrderManual", new { /* id=item.PrimaryKey */ }, new { @class = "form-control" })
+        @Html.ActionLink("Cancel", "CreateOrderManual", new { /* id=item.PrimaryKey */ }, new { @class = "form-control" })
+        @Html.ActionLink("Apply", "CreateOrderManual", new { }, new { @class = "form-control" })*@
+
+    </div>
+}

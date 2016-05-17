@@ -1,10 +1,10 @@
-﻿using OStore.Models.Product;
+﻿using GlobalResources;
+using OStore.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using GlobalResources;
 
 namespace OStore.Models.SaleChannel
 {

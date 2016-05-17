@@ -1,11 +1,11 @@
-﻿
+﻿@model IEnumerable<OStore.Models.Customer.CustomerModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="col-lg-12">
-    <h1 class="page-header">Sales Channel</h1>
+    <h1 class="page-header">Marketing</h1>
 </div>
 
 <div class="row">
@@ -14,30 +14,53 @@
             <div class="panel-body">
                 <ul class="nav nav-tabs">
 
-                    <li>
-                        <a href="#Customer" data-toggle="tab">Customer</a>
+                    <li class="active">
+                        <a href="#Customer" data-toggle="tab">@GlobalResources.StringResource.Marketing_Tab_Customer</a>
                     </li>
                     <li>
-                        <a href="#Promotion" data-toggle="tab">Report promotion code</a>
-                    </li>
-                    <li>
-                        <a href="#Return" data-toggle="tab">Return & Exchange</a>
+                        <a href="#Promotion" data-toggle="tab">@GlobalResources.StringResource.Marketing_Tab_Promotion</a>
                     </li>
                 </ul>
                 <div class="tab-content">
-
-                    <div class="tab-pane fade in active" style="margin-top:30px;" id="Manual">
-                        @*@Html.Action("CreateOrderManual", "SaleChannel")*@
+                    <div class="tab-pane fade in active" style="margin-top:30px;" id="Customer">
+                        <div id="customerList" class="col-md-12">
+                            @Html.Partial("_CustomerList", Model)
+                        </div>
+                        <div id="customerCreate" style="display:none;" class="col-md-12">
+                            @Html.Partial("_CustomerCreate", new OStore.Models.Customer.CustomerModel())
+                        </div>
                     </div>
-                    <div class="tab-pane fade in" style="margin-top:30px;" id="Import">
+                    <div class="tab-pane fade in" style="margin-top:30px;" id="Promotion">
 
-                        @*@Html.Action("ImportOrder", "SaleChannel")*@
+                        <div class="col-md-12">
+
+                            <ul class="nav nav-tabs">
+
+                                <li class="active">
+                                    <a href="#PromotionCreate" data-toggle="tab">@GlobalResources.StringResource.Marketing_Promotion_Tab_Create</a>
+                                </li>
+                                <li>
+                                    <a href="#PromotionReport" data-toggle="tab">@GlobalResources.StringResource.Marketing_Promotion_Tab_Report</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" style="margin-top:30px;" id="PromotionCreate">
+                                    <div class="col-md-12">
+                                        @Html.Action("CreateNewPromotion", "Marketing")
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade in" style="margin-top:30px;" id="PromotionReport">
+                                    <div class="col-md-12">
+                                        @Html.Action("ReportPromotionCode", "Marketing")
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
                     </div>
-                    <div class="tab-pane fade in" style="margin-top:30px;" id="Return">
-
-                        @*@Html.Partial("_ReturnExchange", null)*@
-                    </div>
-
                 </div>
             </div>
 

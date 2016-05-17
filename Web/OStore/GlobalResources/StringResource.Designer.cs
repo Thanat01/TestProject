@@ -61,6 +61,393 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Marketing_Customer_Address {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to District.
+        /// </summary>
+        public static string Marketing_Customer_District {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_District", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Marketing_Customer_Email {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Facebook.
+        /// </summary>
+        public static string Marketing_Customer_Facebook {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Facebook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Marketing_Customer_Firstname {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Firstname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Instargram.
+        /// </summary>
+        public static string Marketing_Customer_Instargram {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Instargram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string Marketing_Customer_IsActive {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_IsActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name.
+        /// </summary>
+        public static string Marketing_Customer_Lastname {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Lastname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Line.
+        /// </summary>
+        public static string Marketing_Customer_Line {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Line", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mobile.
+        /// </summary>
+        public static string Marketing_Customer_Mobile {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Mobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nick name.
+        /// </summary>
+        public static string Marketing_Customer_Nickname {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Nickname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Picture.
+        /// </summary>
+        public static string Marketing_Customer_Picture {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Picture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zip code.
+        /// </summary>
+        public static string Marketing_Customer_PostalCode {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_PostalCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Province.
+        /// </summary>
+        public static string Marketing_Customer_Province {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_Province", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subdistrict.
+        /// </summary>
+        public static string Marketing_Customer_SubDistrict {
+            get {
+                return ResourceManager.GetString("Marketing_Customer_SubDistrict", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount Amount.
+        /// </summary>
+        public static string Marketing_Promotion_Amount {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_Amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code.
+        /// </summary>
+        public static string Marketing_Promotion_Code {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_Code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer.
+        /// </summary>
+        public static string Marketing_Promotion_CustomerName {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_CustomerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount Type.
+        /// </summary>
+        public static string Marketing_Promotion_DiscountType {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_DiscountType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Date.
+        /// </summary>
+        public static string Marketing_Promotion_EffectiveDate {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_EffectiveDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Time.
+        /// </summary>
+        public static string Marketing_Promotion_EffectiveTime {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_EffectiveTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expire Date.
+        /// </summary>
+        public static string Marketing_Promotion_ExpiredDate {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_ExpiredDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expire Time.
+        /// </summary>
+        public static string Marketing_Promotion_ExpiredTime {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_ExpiredTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string Marketing_Promotion_IsActive {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_IsActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How many time to use.
+        /// </summary>
+        public static string Marketing_Promotion_LimitPerCustomer {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_LimitPerCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How many time to use.
+        /// </summary>
+        public static string Marketing_Promotion_LimitTotal {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_LimitTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum Discount.
+        /// </summary>
+        public static string Marketing_Promotion_MaximumDiscount {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_MaximumDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum Price.
+        /// </summary>
+        public static string Marketing_Promotion_MinimumPurchase {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_MinimumPurchase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum Item.
+        /// </summary>
+        public static string Marketing_Promotion_MinimunItem {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_MinimunItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Promotion name.
+        /// </summary>
+        public static string Marketing_Promotion_Name {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No..
+        /// </summary>
+        public static string Marketing_Promotion_No {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string Marketing_Promotion_OrderDate {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_OrderDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Id.
+        /// </summary>
+        public static string Marketing_Promotion_OrderId {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_OrderId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount Percentage.
+        /// </summary>
+        public static string Marketing_Promotion_Percentage {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_Percentage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Per Code.
+        /// </summary>
+        public static string Marketing_Promotion_PerCode {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_PerCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Per User.
+        /// </summary>
+        public static string Marketing_Promotion_PerUser {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_PerUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revenue.
+        /// </summary>
+        public static string Marketing_Promotion_Revenue {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_Revenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Marketing_Promotion_Status {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create New promotion code.
+        /// </summary>
+        public static string Marketing_Promotion_Tab_Create {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_Tab_Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report promotion code.
+        /// </summary>
+        public static string Marketing_Promotion_Tab_Report {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_Tab_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total used.
+        /// </summary>
+        public static string Marketing_Promotion_UsedQuantity {
+            get {
+                return ResourceManager.GetString("Marketing_Promotion_UsedQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer.
+        /// </summary>
+        public static string Marketing_Tab_Customer {
+            get {
+                return ResourceManager.GetString("Marketing_Tab_Customer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Promotion.
+        /// </summary>
+        public static string Marketing_Tab_Promotion {
+            get {
+                return ResourceManager.GetString("Marketing_Tab_Promotion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Delivery_Setup_btnCancel {
@@ -363,6 +750,357 @@ namespace GlobalResources {
         public static string Order_Manual_TotalAmount {
             get {
                 return ResourceManager.GetString("Order_Manual_TotalAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick &amp; Pack.
+        /// </summary>
+        public static string OrderManagement_PackAndPack_Title {
+            get {
+                return ResourceManager.GetString("OrderManagement_PackAndPack_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Ordermanagement_Pay_COD_Tab_Cancel {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_COD_Tab_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string Ordermanagement_Pay_COD_Tab_Confirm {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_COD_Tab_Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uncall.
+        /// </summary>
+        public static string Ordermanagement_Pay_COD_Tab_Uncall {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_COD_Tab_Uncall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string OrderManagement_Pay_CustomerName {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_CustomerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cut off time.
+        /// </summary>
+        public static string OrderManagement_Pay_CutOffTime {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_CutOffTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select geography.
+        /// </summary>
+        public static string OrderManagement_Pay_Geography {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_Geography", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item Code.
+        /// </summary>
+        public static string OrderManagement_Pay_ItemCode {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_ItemCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string OrderManagement_Pay_ItemDescription {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_ItemDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item Line.
+        /// </summary>
+        public static string OrderManagement_Pay_ItemLine {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_ItemLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Line.
+        /// </summary>
+        public static string OrderManagement_Pay_Line {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_Line", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string OrderManagement_Pay_Mobile {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_Mobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date/Time.
+        /// </summary>
+        public static string OrderManagement_Pay_OrderDate {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_OrderDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select from date.
+        /// </summary>
+        public static string OrderManagement_Pay_OrderDateFrom {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_OrderDateFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select from to.
+        /// </summary>
+        public static string OrderManagement_Pay_OrderDateTo {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_OrderDateTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Id.
+        /// </summary>
+        public static string OrderManagement_Pay_OrderId {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_OrderId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick up time.
+        /// </summary>
+        public static string OrderManagement_Pay_PickUpTime {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_PickUpTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paid confirm.
+        /// </summary>
+        public static string Ordermanagement_Pay_Prepay_Tab_PaidConfirm {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_Prepay_Tab_PaidConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Post.
+        /// </summary>
+        public static string Ordermanagement_Pay_Prepay_Tab_Post {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_Prepay_Tab_Post", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unpost.
+        /// </summary>
+        public static string Ordermanagement_Pay_Prepay_Tab_Unpost {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_Prepay_Tab_Unpost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string OrderManagement_Pay_Price {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reason.
+        /// </summary>
+        public static string OrderManagement_Pay_Reason {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_Reason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remark.
+        /// </summary>
+        public static string OrderManagement_Pay_Remark {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_Remark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select sale channel.
+        /// </summary>
+        public static string OrderManagement_Pay_SaleChannelId {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_SaleChannelId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string OrderManagement_Pay_StatusId {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_StatusId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Store Staff.
+        /// </summary>
+        public static string OrderManagement_Pay_StoreStaff {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_StoreStaff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to COD.
+        /// </summary>
+        public static string Ordermanagement_Pay_Tab_COD {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_Tab_COD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prepay.
+        /// </summary>
+        public static string Ordermanagement_Pay_Tab_Prepay {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_Tab_Prepay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Laps.
+        /// </summary>
+        public static string OrderManagement_Pay_TimeLap {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_TimeLap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay.
+        /// </summary>
+        public static string OrderManagement_Pay_Title {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pack.
+        /// </summary>
+        public static string Ordermanagement_PickPack_Tab_Pack {
+            get {
+                return ResourceManager.GetString("Ordermanagement_PickPack_Tab_Pack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick.
+        /// </summary>
+        public static string Ordermanagement_PickPack_Tab_Pick {
+            get {
+                return ResourceManager.GetString("Ordermanagement_PickPack_Tab_Pick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deliver.
+        /// </summary>
+        public static string OrderManagement_Ship_Deliver {
+            get {
+                return ResourceManager.GetString("OrderManagement_Ship_Deliver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select all.
+        /// </summary>
+        public static string OrderManagement_Ship_SelectAll {
+            get {
+                return ResourceManager.GetString("OrderManagement_Ship_SelectAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ship.
+        /// </summary>
+        public static string OrderManagement_Ship_Title {
+            get {
+                return ResourceManager.GetString("OrderManagement_Ship_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay.
+        /// </summary>
+        public static string Ordermanagement_Tab_Title_Pay {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Tab_Title_Pay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick &amp; pack.
+        /// </summary>
+        public static string Ordermanagement_Tab_Title_PickPack {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Tab_Title_PickPack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ship.
+        /// </summary>
+        public static string Ordermanagement_Tab_Title_Ship {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Tab_Title_Ship", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Management.
+        /// </summary>
+        public static string OrderManagement_Title {
+            get {
+                return ResourceManager.GetString("OrderManagement_Title", resourceCulture);
             }
         }
         

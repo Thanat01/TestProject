@@ -192,6 +192,252 @@
   <data name="Order_Manual_TotalAmount" xml:space="preserve">
     <value>Price product</value>
   </data>
+  <data name="Marketing_Customer_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Marketing_Customer_District" xml:space="preserve">
+    <value>District</value>
+  </data>
+  <data name="Marketing_Customer_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Marketing_Customer_Facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="Marketing_Customer_Firstname" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Marketing_Customer_Instargram" xml:space="preserve">
+    <value>Instargram</value>
+  </data>
+  <data name="Marketing_Customer_IsActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Marketing_Customer_Lastname" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Marketing_Customer_Line" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="Marketing_Customer_Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="Marketing_Customer_Nickname" xml:space="preserve">
+    <value>Nick name</value>
+  </data>
+  <data name="Marketing_Customer_PostalCode" xml:space="preserve">
+    <value>Zip code</value>
+  </data>
+  <data name="Marketing_Customer_Province" xml:space="preserve">
+    <value>Province</value>
+  </data>
+  <data name="Marketing_Customer_SubDistrict" xml:space="preserve">
+    <value>Subdistrict</value>
+  </data>
+  <data name="Marketing_Promotion_CustomerName" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Marketing_Promotion_No" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="Marketing_Promotion_OrderDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Marketing_Promotion_OrderId" xml:space="preserve">
+    <value>Order Id</value>
+  </data>
+  <data name="Marketing_Promotion_Revenue" xml:space="preserve">
+    <value>Revenue</value>
+  </data>
+  <data name="Marketing_Promotion_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Marketing_Promotion_Amount" xml:space="preserve">
+    <value>Discount Amount</value>
+  </data>
+  <data name="Marketing_Promotion_Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Marketing_Promotion_DiscountType" xml:space="preserve">
+    <value>Discount Type</value>
+  </data>
+  <data name="Marketing_Promotion_EffectiveDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="Marketing_Promotion_EffectiveTime" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="Marketing_Promotion_ExpiredDate" xml:space="preserve">
+    <value>Expire Date</value>
+  </data>
+  <data name="Marketing_Promotion_ExpiredTime" xml:space="preserve">
+    <value>Expire Time</value>
+  </data>
+  <data name="Marketing_Promotion_IsActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Marketing_Promotion_LimitPerCustomer" xml:space="preserve">
+    <value>How many time to use</value>
+  </data>
+  <data name="Marketing_Promotion_LimitTotal" xml:space="preserve">
+    <value>How many time to use</value>
+  </data>
+  <data name="Marketing_Promotion_MaximumDiscount" xml:space="preserve">
+    <value>Maximum Discount</value>
+  </data>
+  <data name="Marketing_Promotion_MinimumPurchase" xml:space="preserve">
+    <value>Minimum Price</value>
+  </data>
+  <data name="Marketing_Promotion_MinimunItem" xml:space="preserve">
+    <value>Minimum Item</value>
+  </data>
+  <data name="Marketing_Promotion_Name" xml:space="preserve">
+    <value>Promotion name</value>
+  </data>
+  <data name="Marketing_Promotion_Percentage" xml:space="preserve">
+    <value>Discount Percentage</value>
+  </data>
+  <data name="Marketing_Promotion_UsedQuantity" xml:space="preserve">
+    <value>Total used</value>
+  </data>
+  <data name="Marketing_Promotion_PerCode" xml:space="preserve">
+    <value>Per Code</value>
+  </data>
+  <data name="Marketing_Promotion_PerUser" xml:space="preserve">
+    <value>Per User</value>
+  </data>
+  <data name="Marketing_Promotion_Tab_Create" xml:space="preserve">
+    <value>Create New promotion code</value>
+  </data>
+  <data name="Marketing_Promotion_Tab_Report" xml:space="preserve">
+    <value>Report promotion code</value>
+  </data>
+  <data name="Marketing_Tab_Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Marketing_Tab_Promotion" xml:space="preserve">
+    <value>Promotion</value>
+  </data>
+  <data name="Marketing_Customer_Picture" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="OrderManagement_Title" xml:space="preserve">
+    <value>Order Management</value>
+  </data>
+  <data name="Ordermanagement_Tab_Title_Pay" xml:space="preserve">
+    <value>Pay</value>
+  </data>
+  <data name="Ordermanagement_Tab_Title_PickPack" xml:space="preserve">
+    <value>Pick &amp; pack</value>
+  </data>
+  <data name="Ordermanagement_Tab_Title_Ship" xml:space="preserve">
+    <value>Ship</value>
+  </data>
+  <data name="OrderManagement_Pay_CutOffTime" xml:space="preserve">
+    <value>Cut off time</value>
+  </data>
+  <data name="OrderManagement_Pay_Geography" xml:space="preserve">
+    <value>Select geography</value>
+  </data>
+  <data name="OrderManagement_Pay_OrderDateFrom" xml:space="preserve">
+    <value>Select from date</value>
+  </data>
+  <data name="OrderManagement_Pay_OrderDateTo" xml:space="preserve">
+    <value>Select from to</value>
+  </data>
+  <data name="OrderManagement_Pay_PickUpTime" xml:space="preserve">
+    <value>Pick up time</value>
+  </data>
+  <data name="OrderManagement_Pay_SaleChannelId" xml:space="preserve">
+    <value>Select sale channel</value>
+  </data>
+  <data name="OrderManagement_Pay_Title" xml:space="preserve">
+    <value>Pay</value>
+  </data>
+  <data name="OrderManagement_PackAndPack_Title" xml:space="preserve">
+    <value>Pick &amp; Pack</value>
+  </data>
+  <data name="OrderManagement_Ship_Title" xml:space="preserve">
+    <value>Ship</value>
+  </data>
+  <data name="Ordermanagement_Pay_Tab_COD" xml:space="preserve">
+    <value>COD</value>
+  </data>
+  <data name="Ordermanagement_Pay_Tab_Prepay" xml:space="preserve">
+    <value>Prepay</value>
+  </data>
+  <data name="Ordermanagement_Pay_COD_Tab_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Ordermanagement_Pay_COD_Tab_Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Ordermanagement_Pay_COD_Tab_Uncall" xml:space="preserve">
+    <value>Uncall</value>
+  </data>
+  <data name="Ordermanagement_Pay_Prepay_Tab_PaidConfirm" xml:space="preserve">
+    <value>Paid confirm</value>
+  </data>
+  <data name="Ordermanagement_Pay_Prepay_Tab_Post" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="Ordermanagement_Pay_Prepay_Tab_Unpost" xml:space="preserve">
+    <value>Unpost</value>
+  </data>
+  <data name="OrderManagement_Pay_CustomerName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OrderManagement_Pay_ItemCode" xml:space="preserve">
+    <value>Item Code</value>
+  </data>
+  <data name="OrderManagement_Pay_ItemDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="OrderManagement_Pay_ItemLine" xml:space="preserve">
+    <value>Item Line</value>
+  </data>
+  <data name="OrderManagement_Pay_Line" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="OrderManagement_Pay_Mobile" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="OrderManagement_Pay_OrderDate" xml:space="preserve">
+    <value>Date/Time</value>
+  </data>
+  <data name="OrderManagement_Pay_OrderId" xml:space="preserve">
+    <value>Order Id</value>
+  </data>
+  <data name="OrderManagement_Pay_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="OrderManagement_Pay_Reason" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="OrderManagement_Pay_Remark" xml:space="preserve">
+    <value>Remark</value>
+  </data>
+  <data name="OrderManagement_Pay_StatusId" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="OrderManagement_Pay_StoreStaff" xml:space="preserve">
+    <value>Store Staff</value>
+  </data>
+  <data name="OrderManagement_Pay_TimeLap" xml:space="preserve">
+    <value>Time Laps</value>
+  </data>
+  <data name="Ordermanagement_PickPack_Tab_Pack" xml:space="preserve">
+    <value>Pack</value>
+  </data>
+  <data name="Ordermanagement_PickPack_Tab_Pick" xml:space="preserve">
+    <value>Pick</value>
+  </data>
+  <data name="OrderManagement_Ship_SelectAll" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="OrderManagement_Ship_Deliver" xml:space="preserve">
+    <value>Deliver</value>
+  </data>
   <data name="Delivery_Setup_btnCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
