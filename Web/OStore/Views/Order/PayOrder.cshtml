@@ -1,0 +1,169 @@
+﻿@model IEnumerable<OStore.Models.Orders.OrderInfoViewModel>
+
+@{
+    ViewBag.Title = "PayOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="../Content/Footable/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../Content/Footable/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+<script src="../Scripts/Footable/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+
+<div class="col-lg-12">
+    <h1 class="page-header">@GlobalResources.StringResource.OrderManagement_Pay_Title</h1>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel">
+            <div class="panel-body">
+                <ul class="nav nav-tabs">
+
+                    <li class="active">
+                        <a href="#COD" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_Tab_COD</a>
+                    </li>
+                    <li>
+                        <a href="#Prepay" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_Tab_Prepay</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+
+                    <div class="tab-pane fade in active" style="margin-top:30px;" id="COD">
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs">
+
+                                <li class="active">
+                                    <a href="#CODUncall" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_COD_Tab_Uncall</a>
+                                </li>
+                                <li>
+                                    <a href="#CODConfirm" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_COD_Tab_Confirm</a>
+                                </li>
+                                <li>
+                                    <a href="#CODCancel" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_COD_Tab_Cancel</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+
+                                <div class="tab-pane fade in active" style="margin-top:30px;" id="CODUncall">
+                                    @Html.Partial("PayCodUncall", Model)
+                                </div>
+                                <div class="tab-pane fade in" style="margin-top:30px;" id="CODConfirm">
+                                    @Html.Partial("PayCodConfirm", Model)
+                                </div>
+                                <div class="tab-pane fade in" style="margin-top:30px;" id="CODCancel">
+                                    @Html.Partial("PayCodCancel", Model)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade in" style="margin-top:30px;" id="Prepay">
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs">
+
+                                <li class="active">
+                                    <a href="#PrepayPost" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_Prepay_Tab_Post</a>
+                                </li>
+                                <li>
+                                    <a href="#PrepayUnpost" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_Prepay_Tab_Unpost</a>
+                                </li>
+                                <li>
+                                    <a href="#PrepayPaidConfirm" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_Prepay_Tab_PaidConfirm</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+
+                                <div class="tab-pane fade in active" style="margin-top:30px;" id="PrepayPost">
+                                    @Html.Partial("PayPrepayPost", Model)
+                                </div>
+                                <div class="tab-pane fade in" style="margin-top:30px;" id="PrepayUnpost">
+                                    @Html.Partial("PayPrepayUnpost", Model)
+                                </div>
+                                <div class="tab-pane fade in" style="margin-top:30px;" id="PrepayPaidConfirm">
+                                    @Html.Partial("PayPrepayPaidConfirm", Model)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12 form-inline text-right">
+    <div class="btn btn-default">
+        @Html.ActionLink("Save", "Index", "Order")
+    </div>
+    <div class="btn btn-default">
+        @Html.ActionLink("Cancel", "Index", "Order")
+    </div>
+    <div class="btn btn-default">
+        @Html.ActionLink("Apply", "Index", "Order")
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('table.demo').footable().bind('footable_filtering', function (e) {
+            var selected = $(this).prev('p').find('.filter-status').find(':selected').text();
+            if (selected && selected.length > 0) {
+                e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+                e.clear = !e.filter;
+            }
+        });
+
+        $('.clear-filter').click(function (e) {
+            e.preventDefault();
+            var $parent = $(this).closest('p');
+            $parent.find('.filter-status').val('');
+            if ($parent.find('#filterCODUnCall').length > 0) {
+                $('table.demo.one').trigger('footable_clear_filter');
+            } else {
+                $('table.demo.two').trigger('footable_clear_filter');
+            }
+        });
+
+        $('.filter-status').change(function (e) {
+            e.preventDefault();
+            var $parent = $(this).closest('p');
+            if ($parent.find('#filterCODUnCall').length > 0) {
+                $('table.demo.one').trigger('footable_filter', { filter: $parent.find('#filter1').val() });
+            } else {
+                $('table.demo.two').trigger('footable_filter', { filter: $parent.find('#filter2').val() });
+            }
+        });
+
+        $('.filter-api').click(function (e) {
+            e.preventDefault();
+
+            //get the footable filter object
+            var footableFilter = $('table').data('footable-filter');
+
+            alert('about to filter table by "tech"');
+            //filter by 'tech'
+            footableFilter.filter('tech');
+
+            //clear the filter
+            if (confirm('clear filter now?')) {
+                footableFilter.clearFilter();
+            }
+        });
+
+        $('#change-page-size').change(function (e) {
+            e.preventDefault();
+            var pageSize = $(this).val();
+            $('.footable').data('page-size', pageSize);
+            $('.footable').trigger('footable_initialized');
+        });
+
+        $('#change-nav-size').change(function (e) {
+            e.preventDefault();
+            var navSize = $(this).val();
+            $('.footable').data('limit-navigation', navSize);
+            $('.footable').trigger('footable_initialized');
+        });
+    });
+</script>

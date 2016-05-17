@@ -1,0 +1,122 @@
+﻿@model IEnumerable<OStore.Models.Orders.OrderInfoViewModel>
+
+@{
+    ViewBag.Title = "PickPackOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="../Content/Footable/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../Content/Footable/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+<script src="../Scripts/Footable/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+
+<div class="col-lg-12">
+    <h1 class="page-header">@GlobalResources.StringResource.OrderManagement_PackAndPack_Title</h1>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel">
+            <div class="panel-body">
+                <ul class="nav nav-tabs">
+
+                    <li class="active">
+                        <a href="#Pick" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_PickPack_Tab_Pick</a>
+                    </li>
+                    <li>
+                        <a href="#Pack" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_PickPack_Tab_Pack</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+
+                    <div class="tab-pane fade in active" style="margin-top:30px;" id="Pick">
+                        <div class="panel-body">
+                            @Html.Partial("PickOrder", Model)
+                        </div>
+                    </div>
+                    <div class="tab-pane fade in" style="margin-top:30px;" id="Pack">
+                        <div class="panel-body">
+                            @Html.Partial("PackOrder", Model)
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12 form-inline text-right">
+    <div class="btn btn-default">
+        @Html.ActionLink("Save", "Index", "Order")
+    </div>
+    <div class="btn btn-default">
+        @Html.ActionLink("Cancel", "Index", "Order")
+    </div>
+    <div class="btn btn-default">
+        @Html.ActionLink("Apply", "Index", "Order")
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+
+    $(function () {
+        $('table').footable().bind('footable_filtering', function (e) {
+            var selected = $('.filter-status').find(':selected').text();
+            if (selected && selected.length > 0) {
+                e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+                e.clear = !e.filter;
+            }
+        });
+
+        $('table').bind('footable_breakpoint', function () {
+            $('table').trigger('footable_expand_first_row');
+        });
+
+        $('.clear-filter').click(function (e) {
+            e.preventDefault();
+            $('.filter-status').val('');
+            $('table.demo').trigger('footable_clear_filter');
+        });
+
+        $('.filter-status').change(function (e) {
+            e.preventDefault();
+            $('table.demo').trigger('footable_filter', { filter: $('#filter').val() });
+        });
+
+        $('.filter-api').click(function (e) {
+            e.preventDefault();
+
+            //get the footable filter object
+            var footableFilter = $('table').data('footable-filter');
+
+            alert('about to filter table by "tech"');
+            //filter by 'tech'
+            footableFilter.filter('tech');
+
+            //clear the filter
+            if (confirm('clear filter now?')) {
+                footableFilter.clearFilter();
+            }
+        });
+
+        $('#change-page-size').change(function (e) {
+            e.preventDefault();
+            var pageSize = $(this).val();
+            $('.footable').data('page-size', pageSize);
+            $('.footable').trigger('footable_initialized');
+        });
+
+        $('#change-nav-size').change(function (e) {
+            e.preventDefault();
+            var navSize = $(this).val();
+            $('.footable').data('limit-navigation', navSize);
+            $('.footable').trigger('footable_initialized');
+        });
+    });
+</script>

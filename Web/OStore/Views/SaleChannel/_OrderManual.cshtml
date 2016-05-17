@@ -11,8 +11,8 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <hr />
+    <div id="manualOrder" class="form-horizontal">
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.OrderId, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -54,8 +54,7 @@
                 @Html.DisplayFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.DisplayFor(model => model.Lastname, new { htmlAttributes = new { @class = "form-control" } })
 
-
-                <img data-toggle="modal" data-target="#myModal" src="~/Content/Images/Add.svg" />
+                <img data-toggle="modal" onclick="ShowHidePanel('customerList', 'manualOrder');" src="~/Content/Images/Add.svg" />
 
                 @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
 
@@ -69,7 +68,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="panel panel-default">
-                                    <input type="text" class="form-contr" /> <button type="button" class="btn btn-info" >Customer</button>
+                                    <input type="text" class="form-contr" /> <button type="button" class="btn btn-info">Customer</button>
                                 </div>
                                 <div class="col-md-2">
                                     <img src="~/Content/Images/logo.png" width="30px;" />
@@ -92,6 +91,133 @@
 
         @*Product List*@
         <div class="panel panel-default">
+            <table class=" table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+                <thead>
+                    <tr>
+                        <th data-hide="phone">
+                            SKU
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th data-hide="phone,tablet">
+                            Stock
+                        </th>
+                        <th data-hide="phone,tablet">
+                            Color
+                        </th>
+                        <th data-hide="phone,tablet">
+                            Size
+                        </th>
+                        <th data-hide="phone">
+                            Price
+                        </th>
+                        <th data-hide="phone,tablet">
+                            QTY
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.Products)
+                    {
+                        <tr>
+                            <td>@product.SKU</td>
+                            <td>@product.Name</td>
+                            <td>@product.StockQuantity</td>
+                            <td>
+                                @Html.DropDownListFor(model => product.ColorId, product.Colors, "", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => product.ColorId, "", new { @class = "text-danger" })
+                            </td>
+                            <td>
+                                @Html.DropDownListFor(model => product.SizeId, product.Sizes, "", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => product.SizeId, "", new { @class = "text-danger" })
+                            </td>
+                            <td>@product.Price</td>
+                            <td>
+                                @Html.EditorFor(model => product.OrderQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => product.OrderQuantity, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="8">
+                            <div class="col-md-12 text-center">
+                                <a onclick="ShowHidePanel('productList', 'manualOrder');"> <img src="~/Content/Images/Add.svg" width="30px;" /> Add product</a>
+                            </div>
+                            <div class="pagination pagination-centered"></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        @*End Product List*@
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TotalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline text-right">
+                @Html.EditorFor(model => model.TotalAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DeliveryChannelId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4 form-inline">
+                @Html.DropDownListFor(model => model.DeliveryChannelId, Model.DeliveryChannels, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DeliveryChannelId, "", new { @class = "text-danger" })
+            </div>
+
+            @Html.LabelFor(model => model.DeliveryAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4 form-inline text-right">
+                @Html.EditorFor(model => model.DeliveryAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DeliveryAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiscountAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline text-right">
+                @Html.EditorFor(model => model.DiscountAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DiscountAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GrandTotalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline text-right">
+                @Html.EditorFor(model => model.GrandTotalAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GrandTotalAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Remark, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Remark, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Remark, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-12 form-inline text-right">
+            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Save</a>
+            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Cancel</a>
+            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Apply</a>
+        </div>
+    </div>
+    
+    //Product List
+    <div id="productList" style="display:none;">
+        <div class="panel">
+            <div class="col-md-12 form-inline row">
+                <input id="filter" type="text" placeholder="Search..." class="filter-status form-control" />
+            </div>
             <table class=" table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
                 <thead>
                     <tr>
@@ -145,7 +271,7 @@
                                 @Html.EditorFor(model => product.OrderQuantity, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => product.OrderQuantity, "", new { @class = "text-danger" })
                             </td>
-                            <td></td>
+                            <td><input type="checkbox" class="form-control" /></td>
                         </tr>
                     }
 
@@ -153,7 +279,7 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="5">
+                        <td colspan="8">
                             <div class="pagination pagination-centered"></div>
                         </td>
                     </tr>
@@ -161,79 +287,30 @@
             </table>
         </div>
 
-        @*End Product List*@
-
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TotalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.TotalAmount, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TotalAmount, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DeliveryChannelId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.DropDownListFor(model => model.DeliveryChannelId, Model.DeliveryChannels, "", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.DeliveryChannelId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DeliveryAmount, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.DeliveryAmount, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DeliveryAmount, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DiscountAmount, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.DiscountAmount, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DiscountAmount, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.GrandTotalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                    @Html.EditorFor(model => model.GrandTotalAmount, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.GrandTotalAmount, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Remark, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Remark, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Remark, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10" style=" padding-top:10px;">
-                <div class="btn btn-success">
-                    @Html.ActionLink("Save", "CreateOrderManual", new { /* id=item.PrimaryKey */ })
-                </div>
-                <div class="btn btn-info">
-                    @Html.ActionLink("Cancel", "CreateOrderManual", new { /* id=item.PrimaryKey */ })
-                </div>
-                <div class="btn btn-default">
-                    @Html.ActionLink("Apply", "CreateOrderManual", new { /* id=item.PrimaryKey */ })
-                </div>
-            </div>
+        <div class="col-md-12 form-inline text-right">
+            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Save</a>
+            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Cancel</a>
+            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Apply</a>
         </div>
     </div>
+    
+    //Customer List
+    <div id="customerList" style="display:none">
+
+        @Html.Action("ShowCustomerList", "SaleChannel")
+        <div class="col-md-6 form-inline">
+            <a class="btn btn-default" onclick="ShowHidePanel('customerCreate','customerList');">Add more</a>
+        </div>
+        <div class="col-md-12 form-inline text-right">
+            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'customerList');">Save</a>
+            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'customerList');">Cancel</a>
+            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'customerList');">Apply</a>
+        </div>
+    </div>
+    <div id="customerCreate" style="display:none;" class="col-md-12">
+        @Html.Partial("_CustomerCreate", new OStore.Models.Customer.CustomerModel())
+    </div>
+
 }
 <script type="text/javascript">
     $(function () {

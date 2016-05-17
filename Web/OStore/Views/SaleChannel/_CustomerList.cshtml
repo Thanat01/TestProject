@@ -1,0 +1,112 @@
+﻿@model IEnumerable<OStore.Models.Customer.CustomerModel>
+
+<link href="../Content/Footable/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../Content/Footable/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+<script src="../Scripts/Footable/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+
+
+<div class="tab-content">
+    <div class="panel" id="demo">
+
+        <div class="col-md-6 form-inline">
+            <input id="filter" type="text" class="form-control filter-status" placeholder="Search..." />
+
+        </div>
+
+        <table class="table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+
+            <tbody>
+                @foreach (var m in Model)
+                {
+                    <tr>
+                        <td><img src="@m.PictureURL"></td>
+                        <td>@m.Firstname</td>
+                        <td>@m.Lastname</td>
+                        <td>
+                            <div class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'customerList');">Choose</div>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <div class="pagination pagination-centered"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
+</div>
+<script type="text/javascript">
+
+
+    $(function () {
+        $('table').footable().bind('footable_filtering', function (e) {
+            var selected = $('.filter-status').find(':selected').text();
+            if (selected && selected.length > 0) {
+                e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+                e.clear = !e.filter;
+            }
+        });
+
+        $('table').bind('footable_breakpoint', function () {
+            $('table').trigger('footable_expand_first_row');
+        });
+
+        $('.clear-filter').click(function (e) {
+            e.preventDefault();
+            $('.filter-status').val('');
+            $('table.demo').trigger('footable_clear_filter');
+        });
+
+        $('.filter-status').change(function (e) {
+            e.preventDefault();
+            $('table.demo').trigger('footable_filter', { filter: $('#filter').val() });
+        });
+
+        $('.filter-api').click(function (e) {
+            e.preventDefault();
+
+            //get the footable filter object
+            var footableFilter = $('table').data('footable-filter');
+
+            alert('about to filter table by "tech"');
+            //filter by 'tech'
+            footableFilter.filter('tech');
+
+            //clear the filter
+            if (confirm('clear filter now?')) {
+                footableFilter.clearFilter();
+            }
+        });
+
+        $('#change-page-size').change(function (e) {
+            e.preventDefault();
+            var pageSize = $(this).val();
+            $('.footable').data('page-size', pageSize);
+            $('.footable').trigger('footable_initialized');
+        });
+
+        $('#change-nav-size').change(function (e) {
+            e.preventDefault();
+            var navSize = $(this).val();
+            $('.footable').data('limit-navigation', navSize);
+            $('.footable').trigger('footable_initialized');
+        });
+    });
+</script>
+
+
+@section Scripts {
+
+    @Scripts.Render("~/Scripts/ViewModel/Customer/ListVM.js")
+
+
+}

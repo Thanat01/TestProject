@@ -11,6 +11,12 @@ namespace OStore.Controllers
 {
     public class ProductController : Controller
     {
+        [HttpGet, ActionName("Index")]
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         [HttpGet, ActionName("List")]
         public ActionResult List(int? categoryId)
         {

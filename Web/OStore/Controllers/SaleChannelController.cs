@@ -94,5 +94,11 @@ namespace OStore.Controllers
                 throw;
             }
         }
+
+        public ActionResult ShowCustomerList()
+        {
+
+            return PartialView("_CustomerList", SessionProvider.Instance.Customers);
+        }
     }
 }

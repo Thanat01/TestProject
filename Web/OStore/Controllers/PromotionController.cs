@@ -10,6 +10,12 @@ namespace OStore.Controllers
 {
     public class PromotionController : Controller
     {
+        [HttpGet, ActionName("Index")]
+        public ActionResult Index()
+        {
+            return View(new PromotionViewModel());
+        }
+
         [HttpGet, ActionName("List")]
         public ActionResult List()
         {
@@ -34,5 +40,7 @@ namespace OStore.Controllers
         {
             return Json(SessionProvider.Instance.Promotions, JsonRequestBehavior.AllowGet);
         }
+
+
     }
 }

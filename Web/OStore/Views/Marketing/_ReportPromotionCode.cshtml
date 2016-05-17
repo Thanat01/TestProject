@@ -1,0 +1,123 @@
+﻿@model IEnumerable<OStore.Models.Promotion.ReportPromotionViewModel>
+
+<div class="row">
+    <div class="col-md-6 form-inline">
+        Search  <input id="filter" type="text" class="form-control filter-status" placeholder="Promotion Code" />
+    </div>
+</div>
+<br />
+@foreach (var promotion in Model)
+{
+    <div class="panel" id="demo">
+        <div class="col-md-6 form-inline">
+            > Code : @promotion.PromotionCode
+        </div>
+
+        <table class="table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+            <thead>
+                <tr>
+                    <th>
+                        @GlobalResources.StringResource.Marketing_Promotion_No
+                    </th>
+                    <th data-hide="all">
+                        @GlobalResources.StringResource.Marketing_Promotion_OrderId
+                    </th>
+                    <th>
+                        @GlobalResources.StringResource.Marketing_Promotion_CustomerName
+                    </th>
+                    <th data-hide="phone,tablet">
+                        @GlobalResources.StringResource.Marketing_Promotion_OrderDate
+                    </th>
+                    <th data-hide="phone,tablet">
+                        @GlobalResources.StringResource.Marketing_Promotion_Revenue
+                    </th>
+                    <th data-hide="all">
+                        @GlobalResources.StringResource.Marketing_Promotion_Status
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in promotion.Orders)
+                {
+                    <tr>
+                        <td>@order.No</td>
+                        <td>@order.OrderId</td>
+                        <td>@order.CustomerName</td>
+                        <td>@order.OrderDate</td>
+                        <td>@order.Revenue</td>
+                        <td>@order.Status</td>
+                    </tr>
+                }
+
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <div class="pagination pagination-centered"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <br />
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('table').footable().bind('footable_filtering', function (e) {
+            var selected = $('.filter-status').find(':selected').text();
+            if (selected && selected.length > 0) {
+                e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+                e.clear = !e.filter;
+            }
+        });
+
+        $('table').bind('footable_breakpoint', function () {
+            $('table').trigger('footable_expand_first_row');
+        });
+
+        $('.clear-filter').click(function (e) {
+            e.preventDefault();
+            $('.filter-status').val('');
+            $('table.demo').trigger('footable_clear_filter');
+        });
+
+        $('.filter-status').change(function (e) {
+            e.preventDefault();
+            $('table.demo').trigger('footable_filter', { filter: $('#filter').val() });
+        });
+
+        $('.filter-api').click(function (e) {
+            e.preventDefault();
+
+            //get the footable filter object
+            var footableFilter = $('table').data('footable-filter');
+
+            alert('about to filter table by "tech"');
+            //filter by 'tech'
+            footableFilter.filter('tech');
+
+            //clear the filter
+            if (confirm('clear filter now?')) {
+                footableFilter.clearFilter();
+            }
+        });
+
+        $('#change-page-size').change(function (e) {
+            e.preventDefault();
+            var pageSize = $(this).val();
+            $('.footable').data('page-size', pageSize);
+            $('.footable').trigger('footable_initialized');
+        });
+
+        $('#change-nav-size').change(function (e) {
+            e.preventDefault();
+            var navSize = $(this).val();
+            $('.footable').data('limit-navigation', navSize);
+            $('.footable').trigger('footable_initialized');
+        });
+    });
+</script>
+
