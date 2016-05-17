@@ -6,27 +6,27 @@
 }
 
 
-    <div class="col-lg-12">
-        <h1 class="page-header">@ViewBag.Title</h1>
-    </div>
+<div class="col-lg-12">
+    <h1 class="page-header">@ViewBag.Title</h1>
+</div>
 
 
 <div class="row">
     <div class="col-xs-12">
-        <div class="panel panel-default">
+        <div class="panel">
             <div class="panel-body">
                 <ul class="nav nav-tabs">
                     @foreach (var channel in Model)
                     {
-                        <li>
-                            <a href="#@channel.Id" data-toggle="tab">@channel.Name</a>
+                        <li class="@(channel.Name=="COD"?"active":"")">
+                            <a href="#@channel.Id"  data-toggle="tab">@channel.Name</a>
                         </li>
                     }
                 </ul>
                 <div class="tab-content">
                     @foreach (var channel in Model)
                     {
-                        <div class="tab-pane fade in active" id="@channel.Id">
+                        <div class="tab-pane fade in @(channel.Name=="COD" ? "active" : "")" id="@channel.Id">
                             <h4>
                                 @Html.CheckBox(channel.Name, true) Set up @channel.Description
                             </h4>
@@ -80,12 +80,14 @@
     </div>
 </div>
 
-<div class="col-md-6 form-inline">
-    @Html.ActionLink("Add more", "Create", new { controller = "Customer" }, new { @class = "form-control" })
-</div>
-<div class="col-md-6 form-inline text-right">
-    @Html.ActionLink("Save", "CreateOrderManual", new { /* id=item.PrimaryKey */ }, new { @class = "form-control" })
-    @Html.ActionLink("Cancel", "CreateOrderManual", new { /* id=item.PrimaryKey */ }, new { @class = "form-control" })
-    @Html.ActionLink("Apply", "CreateOrderManual", new { }, new { @class = "form-control" })
-
+<div class="col-md-12 form-inline text-right">
+    <div class="btn btn-default">
+        @Html.ActionLink("Save", "Index", "Payment")
+    </div>
+    <div class="btn btn-default">
+        @Html.ActionLink("Cancel", "Index", "Payment")
+    </div>
+    <div class="btn btn-default">
+        @Html.ActionLink("Apply", "Index", "Payment")
+    </div>
 </div>

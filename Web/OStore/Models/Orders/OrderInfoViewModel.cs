@@ -9,6 +9,13 @@ namespace OStore.Models.Orders
 {
     public class OrderInfoViewModel
     {
+        public OrderInfoViewModel()
+        {
+            Statuses = new List<System.Web.Mvc.SelectListItem>();
+            Statuses.Add(new System.Web.Mvc.SelectListItem() { Value = "1", Text = "Shipping" });
+            Statuses.Add(new System.Web.Mvc.SelectListItem() { Value = "2", Text = "Shipped" });
+        }
+
         [Display(Name = @"OrderManagement_Pay_OrderId", ResourceType = typeof(StringResource))]
         public string OrderId { get; set; }
 
@@ -51,5 +58,8 @@ namespace OStore.Models.Orders
 
         [Display(Name = @"OrderManagement_Pay_Remark", ResourceType = typeof(StringResource))]
         public string Remark { get; set; }
+
+        [Display(Name = @"OrderManagement_Ship_Deliver", ResourceType = typeof(StringResource))]
+        public string Deliver { get; set; }
     }
 }

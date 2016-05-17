@@ -943,6 +943,42 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pack.
+        /// </summary>
+        public static string Ordermanagement_PickPack_Tab_Pack {
+            get {
+                return ResourceManager.GetString("Ordermanagement_PickPack_Tab_Pack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick.
+        /// </summary>
+        public static string Ordermanagement_PickPack_Tab_Pick {
+            get {
+                return ResourceManager.GetString("Ordermanagement_PickPack_Tab_Pick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deliver.
+        /// </summary>
+        public static string OrderManagement_Ship_Deliver {
+            get {
+                return ResourceManager.GetString("OrderManagement_Ship_Deliver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select all.
+        /// </summary>
+        public static string OrderManagement_Ship_SelectAll {
+            get {
+                return ResourceManager.GetString("OrderManagement_Ship_SelectAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ship.
         /// </summary>
         public static string OrderManagement_Ship_Title {

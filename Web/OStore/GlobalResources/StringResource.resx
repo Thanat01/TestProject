@@ -426,4 +426,16 @@
   <data name="OrderManagement_Pay_TimeLap" xml:space="preserve">
     <value>Time Laps</value>
   </data>
+  <data name="Ordermanagement_PickPack_Tab_Pack" xml:space="preserve">
+    <value>Pack</value>
+  </data>
+  <data name="Ordermanagement_PickPack_Tab_Pick" xml:space="preserve">
+    <value>Pick</value>
+  </data>
+  <data name="OrderManagement_Ship_SelectAll" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="OrderManagement_Ship_Deliver" xml:space="preserve">
+    <value>Deliver</value>
+  </data>
 </root>

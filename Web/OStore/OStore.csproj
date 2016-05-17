@@ -160,13 +160,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\StringResource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StringResource.resx</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\DeliveryController.cs" />
     <Compile Include="Controllers\MarketingController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="GlobalResources\StringResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -223,6 +219,8 @@
     <Compile Include="Models\Location\PostalCodeModel.cs" />
     <Compile Include="Models\Location\ProvinceModel.cs" />
     <Compile Include="Models\Location\SubDistrictModel.cs" />
+    <Compile Include="Models\Orders\OrderInfoViewModel.cs" />
+    <Compile Include="Models\Orders\SearchConditionViewModel.cs" />
     <Compile Include="Models\PaymentChannelModel.cs" />
     <Compile Include="Models\ProductCategoryViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -232,7 +230,8 @@
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\Product\OrderProductViewModel.cs" />
     <Compile Include="Models\Product\ProductVariantViewModel.cs" />
-    <Compile Include="Models\PromotionViewModel.cs" />
+    <Compile Include="Models\Promotion\PromotionViewModel.cs" />
+    <Compile Include="Models\Promotion\ReportPromotionViewModel.cs" />
     <Compile Include="Models\RoleModel.cs" />
     <Compile Include="Models\SaleChannelViewModel.cs" />
     <Compile Include="Models\SaleChannel\ImportOrderViewModel.cs" />
@@ -692,9 +691,12 @@
     <Content Include="Content\FooTable\fonts\footable.ttf" />
     <Content Include="Content\FooTable\fonts\footable.woff" />
     <Content Include="Content\FooTable\footable.core.css" />
+    <Content Include="Content\Images\logo_facebook.jpg" />
     <Content Include="Content\Images\Add.svg" />
     <Content Include="Content\Images\alpha_service_area-01.svg" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\logo_Line.png" />
+    <Content Include="Content\Images\logo_Phone.png" />
     <Content Include="Content\Images\thaipost_service_area-01.svg" />
     <Content Include="Content\sb-admin-2.css" />
     <Content Include="Content\timeline.css" />
@@ -1106,6 +1108,29 @@
     <Content Include="Views\SaleChannel\_OrderManual.cshtml" />
     <Content Include="Views\Marketing\Index.cshtml" />
     <Content Include="Views\Delivery\Setup.cshtml" />
+    <Content Include="Views\Customer\_CustomerList.cshtml" />
+    <Content Include="Views\Marketing\_CustomerList.cshtml" />
+    <Content Include="Views\Marketing\_CustomerCreate.cshtml" />
+    <Content Include="Views\Marketing\_ReportPromotionCode.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Promotion\Index.cshtml" />
+    <Content Include="Views\Marketing\_CreatePromotion.cshtml" />
+    <Content Include="Views\SaleChannel\_CustomerList.cshtml" />
+    <Content Include="Views\SaleChannel\_CustomerCreate.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\_SearchCondition.cshtml" />
+    <Content Include="Views\Order\PayOrder.cshtml" />
+    <Content Include="Views\Order\PickPackOrder.cshtml" />
+    <Content Include="Views\Order\ShipOrder.cshtml" />
+    <Content Include="Views\Order\PayCodUncall.cshtml" />
+    <Content Include="Views\Order\PayCodConfirm.cshtml" />
+    <Content Include="Views\Order\PayCodCancel.cshtml" />
+    <Content Include="Views\Order\PayPrepayPost.cshtml" />
+    <Content Include="Views\Order\PayPrepayUnpost.cshtml" />
+    <Content Include="Views\Order\PayPrepayPaidConfirm.cshtml" />
+    <Content Include="Views\Order\CODUnCall.cshtml" />
+    <Content Include="Views\Order\PickOrder.cshtml" />
+    <Content Include="Views\Order\PackOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1132,13 +1157,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\StringResource.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>StringResource.designer.cs</LastGenOutput>
-    </Content>
     <EmbeddedResource Include="GlobalResources\StringResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>StringResource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>GlobalResources</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

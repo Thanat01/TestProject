@@ -1,55 +1,35 @@
-﻿@model IEnumerable<OStore.Models.Promotion.ReportPromotionViewModel>
+﻿@model IEnumerable<OStore.Models.Customer.CustomerModel>
 
-<div class="row">
-    <div class="col-md-6 form-inline">
-        Search  <input id="filter" type="text" class="form-control filter-status" placeholder="Promotion Code" />
-    </div>
-</div>
-<br />
-@foreach (var promotion in Model)
-{
+<link href="../Content/Footable/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../Content/Footable/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+<script src="../Scripts/Footable/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+
+
+<div class="tab-content">
     <div class="panel" id="demo">
+
         <div class="col-md-6 form-inline">
-            > Code : @promotion.PromotionCode
+            <input id="filter" type="text" class="form-control filter-status" placeholder="Search..." />
+
         </div>
 
         <table class="table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
-            <thead>
-                <tr>
-                    <th>
-                        @GlobalResources.StringResource.Marketing_Promotion_No
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.Marketing_Promotion_OrderId
-                    </th>
-                    <th>
-                        @GlobalResources.StringResource.Marketing_Promotion_CustomerName
-                    </th>
-                    <th data-hide="phone,tablet">
-                        @GlobalResources.StringResource.Marketing_Promotion_OrderDate
-                    </th>
-                    <th data-hide="phone,tablet">
-                        @GlobalResources.StringResource.Marketing_Promotion_Revenue
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.Marketing_Promotion_Status
-                    </th>
 
-                </tr>
-            </thead>
             <tbody>
-                @foreach (var order in promotion.Orders)
+                @foreach (var m in Model)
                 {
                     <tr>
-                        <td>@order.No</td>
-                        <td>@order.OrderId</td>
-                        <td>@order.CustomerName</td>
-                        <td>@order.OrderDate</td>
-                        <td>@order.Revenue</td>
-                        <td>@order.Status</td>
+                        <td><img src="@m.PictureURL"></td>
+                        <td>@m.Firstname</td>
+                        <td>@m.Lastname</td>
+                        <td>
+                            <div class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'customerList');">Choose</div>
+                        </td>
                     </tr>
                 }
-
 
             </tbody>
             <tfoot>
@@ -61,10 +41,12 @@
             </tfoot>
         </table>
     </div>
-    <br />
-}
 
+
+</div>
 <script type="text/javascript">
+
+
     $(function () {
         $('table').footable().bind('footable_filtering', function (e) {
             var selected = $('.filter-status').find(':selected').text();
@@ -121,3 +103,10 @@
     });
 </script>
 
+
+@section Scripts {
+
+    @Scripts.Render("~/Scripts/ViewModel/Customer/ListVM.js")
+
+
+}

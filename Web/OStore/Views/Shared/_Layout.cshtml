@@ -57,6 +57,16 @@
                 responsive: true
             });
         });
+
+        function ShowHidePanel(show, hide) {
+            var create = document.getElementById(show);
+            if (create != null)
+                create.style = "display:display";
+
+            var list = document.getElementById(hide);
+            if (list != null)
+                list.style = "display:none";
+        }
     </script>
 
     @Scripts.Render("~/bundles/dropzonescripts")

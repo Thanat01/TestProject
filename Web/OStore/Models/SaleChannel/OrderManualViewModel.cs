@@ -1,4 +1,4 @@
-﻿using OStore.GlobalResources;
+﻿using GlobalResources;
 using OStore.Models.Product;
 using System;
 using System.Collections.Generic;

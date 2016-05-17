@@ -23,15 +23,19 @@ namespace OStore.Models.Orders
         public List<System.Web.Mvc.SelectListItem> Provinces { get; set; }
 
         [Display(Name = @"OrderManagement_Pay_OrderDateFrom", ResourceType = typeof(StringResource))]
+        [DataType(DataType.Date)]
         public DateTime OrderDateFrom { get; set; }
 
         [Display(Name = @"OrderManagement_Pay_OrderDateTo", ResourceType = typeof(StringResource))]
+        [DataType(DataType.Date)]
         public DateTime OrderDateTo { get; set; }
 
         [Display(Name = @"OrderManagement_Pay_CutOffTime", ResourceType = typeof(StringResource))]
+        [DataType(DataType.Time)]
         public DateTime CutOffTime { get; set; }
 
         [Display(Name = @"OrderManagement_Pay_PickUpTime", ResourceType = typeof(StringResource))]
+        [DataType(DataType.Time)]
         public DateTime PickupTime { get; set; }
 
     }

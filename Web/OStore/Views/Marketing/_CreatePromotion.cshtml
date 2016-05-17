@@ -61,7 +61,7 @@
             @Html.LabelFor(model => model.LimitPerCustomer, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10 form-inline">
                 @Html.EditorFor(model => model.LimitPerCustomer, new { htmlAttributes = new { @class = "form-control" } })
-                @Resources.StringResource.Marketing_Promotion_PerUser
+                @GlobalResources.StringResource.Marketing_Promotion_PerUser
                 @Html.ValidationMessageFor(model => model.LimitPerCustomer, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -70,7 +70,7 @@
             @Html.LabelFor(model => model.LimitTotal, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10 form-inline">
                 @Html.EditorFor(model => model.LimitTotal, new { htmlAttributes = new { @class = "form-control" } })
-                @Resources.StringResource.Marketing_Promotion_PerCode
+                @GlobalResources.StringResource.Marketing_Promotion_PerCode
                 @Html.ValidationMessageFor(model => model.LimitTotal, "", new { @class = "text-danger" })
             </div>
         </div>
