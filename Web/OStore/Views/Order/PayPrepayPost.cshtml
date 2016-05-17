@@ -1,13 +1,8 @@
 ﻿@model IEnumerable<OStore.Models.Orders.OrderInfoViewModel>
 
-
 <div class="tab-content">
     <div class="panel" id="demo">
 
-        <div class="col-md-6 form-inline">
-            <input id="filter" type="text" class="form-control filter-status" placeholder="Search..." />
-
-        </div>
 
         <table class="table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
             <thead>
@@ -75,17 +70,16 @@
                             @m.CustomerName
                         </td>
                         <td>
-                            @m.Mobile
+                            <a href="tel:@m.Mobile"><img src="~/Content/Images/logo_Phone.png" height="30" /> @m.Mobile </a>
                         </td>
                         <td>
-                            @m.Line
+                            <a target="_blank" href="http://line.me/ti/p/~" + @m.Line> <img src="~/Content/Images/logo_Line.png" height="30" />  </a>
                         </td>
                         <td>
                             @m.Price
                         </td>
                         <td>
-                            @m.StatusId
-                            @Html.DropDownListFor(n => m.StatusId, m.Statuses, "Please Select", new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.DropDownListFor(n => m.StatusId, m.Statuses, "", new { @class = "form-control" })
                         </td>
                         <td>
                             @m.Remark

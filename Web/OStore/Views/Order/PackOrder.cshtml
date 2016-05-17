@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<OStore.Models.Orders.OrderInfoViewModel>
 
-
 <div class="tab-content">
     <div class="panel" id="demo">
 
-        <table class="table demo three" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+
+        <table class="table demo" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
             <thead>
                 <tr>
                     <th data-toggle="true" data-hide="phone,tablet">
@@ -23,28 +23,7 @@
                         @GlobalResources.StringResource.OrderManagement_Pay_Mobile
                     </th>
                     <th data-hide="phone,tablet">
-                        @GlobalResources.StringResource.OrderManagement_Pay_Line
-                    </th>
-                    <th data-hide="phone,tablet">
-                        @GlobalResources.StringResource.OrderManagement_Pay_Price
-                    </th>
-                    <th data-hide="phone,tablet">
                         @GlobalResources.StringResource.OrderManagement_Pay_StatusId
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_Reason
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_StoreStaff
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_ItemLine
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_ItemCode
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_ItemDescription
                     </th>
 
                 </tr>
@@ -68,30 +47,11 @@
                         <td>
                             <a href="tel:@m.Mobile"><img src="~/Content/Images/logo_Phone.png" height="30" /> @m.Mobile </a>
                         </td>
-                        <td>
-                            <a target="_blank" href="http://line.me/ti/p/~" + @m.Line> <img src="~/Content/Images/logo_Line.png" height="30" />  </a>
-                        </td>
-                        <td>
-                            @m.Price
-                        </td>
+
                         <td>
                             @Html.DropDownListFor(n => m.StatusId, m.Statuses, "", new { @class = "form-control" })
                         </td>
-                        <td>
-                            @m.Reason
-                        </td>
-                        <td>
-                            @m.StoreStaff
-                        </td>
-                        <td>
-                            @m.ItemLine
-                        </td>
-                        <td>
-                            @m.ItemCode
-                        </td>
-                        <td>
-                            @m.ItemDescription
-                        </td>
+
                     </tr>
                 }
 
@@ -99,7 +59,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="13">
+                    <td colspan="6">
                         <div class="pagination pagination-centered"></div>
                     </td>
                 </tr>
