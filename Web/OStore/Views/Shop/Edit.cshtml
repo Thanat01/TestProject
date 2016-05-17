@@ -1,170 +1,219 @@
-﻿@model OStore.Models.ShopModel
+﻿@using OStore.Providers
+@model OStore.Models.ShopModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = GlobalResources.StringResource.Shop_Edit_Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>@ViewBag.Title</h2>
 
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#detail" data-toggle="tab">@GlobalResources.StringResource.Shop_Edit_TabDetail</a></li>
+    <li role="presentation"><a href="#about" data-toggle="tab">@GlobalResources.StringResource.Shop_Edit_TabAbout</a></li>
+    <li role="presentation"><a href="#faqs" data-toggle="tab">@GlobalResources.StringResource.Shop_Edit_TabFAQs</a></li>
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active in" id="detail">
+        <div class="panel panel-default" style="margin-top: 12px;">
+            <div class="panel-body">
+                @using (Html.BeginForm("Edit", "Shop", FormMethod.Post))
+                {
+                    <div class="form-horizontal" role="form">
+                        @* ShopName *@
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopName</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(c => c.ShopName, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        @* Logo *@
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopLogo</label>
+                            <div class="col-sm-10">
+                                @Html.FileUploadForm("../../Shop/SaveLogo")
+                                @Html.ValidationMessageFor(model => model.Logo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        @* Facebook *@
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopFB</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(c => c.FaceBookId, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        @* LINE *@
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopLine</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(c => c.LineId, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        @* Instagram *@
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopIG</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(c => c.InstagramId, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        @* Address *@
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopAddress</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(c => c.AddressLine01, new { @class = "form-control" })
+                            </div>
+                        </div>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>ShopModel</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+                        <div class="form-group">
+                            @* Province *@
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopProvince</label>
+                            <div class="col-sm-4">
+                                @Html.DropDownListFor(c => c.ProvinceId, Model.Provinces, new {@class = "form-control"})
+                            </div>
+                            @* District *@
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopDistrict</label>
+                            <div class="col-sm-4">
+                                @Html.DropDownListFor(c => c.DistrictId, Model.Districts, new { @class = "form-control" })
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShortName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ShortName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ShortName, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="form-group">
+                            @* Sub-District *@
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopSubDistrict</label>
+                            <div class="col-sm-4">
+                                @Html.DropDownListFor(c => c.SubDistrictId, Model.SubDistricts, new { @class = "form-control" })
+                            </div>
+                            @* ZipCode *@
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopZipCode</label>
+                            <div class="col-sm-4">
+                                @Html.DropDownListFor(c => c.PostCode, Model.PostalCodes, new { @class = "form-control" })
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LongName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LongName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LongName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DNS, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DNS, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DNS, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProvinceId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProvinceId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProvinceId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DistrictId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DistrictId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DistrictId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SubDistrictId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SubDistrictId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SubDistrictId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PostCode, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PostCode, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PostCode, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FaceBookId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FaceBookId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FaceBookId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LineId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LineId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LineId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.InstargramId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.InstargramId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.InstargramId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Vision, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Vision, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Vision, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TimZoneId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TimZoneId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TimZoneId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsActive)
-                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.FileUploadForm("../../Shop/SaveLogo")
-                @Html.ValidationMessageFor(model => model.Logo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                        @* Telephone *@
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopTelephone</label>
+                            <div class="col-sm-4">
+                                @Html.TextBoxFor(c => c.Mobile, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group pull-right" style="margin-top:50px;">
+                            <button class="btn btn-success" type="submit" name="command" value="Save" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnSave</button>
+                            <button class="btn btn-bitbucket" type="submit" name="command" value="Cancel" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnCancel</button>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
-}
+    <div class="tab-pane fade" id="about">
+        <div class="panel panel-default" style="margin-top: 12px;">
+            <div class="panel-body">
+                @using (Html.BeginForm("Edit", "Shop", FormMethod.Post))
+                {
+                    <div class="form-horizontal" role="form">
+                        @* About Us *@
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_AboutUs</label>
+                            <div class="col-sm-4">
+                                @Html.TextAreaFor(c => c.AboutUs, new { @class = "form-control", rows = "6" })
+                            </div>
+                        </div>
+                        <div class="form-group pull-right" style="margin-top:50px;">
+                            <button class="btn btn-success" type="submit" name="command" value="Save" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnSave</button>
+                            <button class="btn btn-bitbucket" type="submit" name="command" value="Cancel" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnCancel</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="faqs">
+        <div class="panel panel-default" style="margin-top: 12px;">
+            <div class="panel-body">
+                @using (Html.BeginForm("SaveFAQ", "Shop", FormMethod.Post))
+                {
+                    <div class="form-horizontal" role="form">
+                     
+                     
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">Q:</label>
+                            <div class="col-sm-11">
+                                @Html.TextBoxFor(c => c.Faq.Question, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">A:</label>
+                            <div class="col-sm-11">
+                                @Html.TextBoxFor(c => c.Faq.Answer, new { @class = "form-control" })
+                            </div>
+                        </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+                        @if (Model != null && Model.ListOfFAQs != null)
+                        {
+                            for (var i = 0; i < Model.ListOfFAQs.Count; i++)
+                            {
+                                <div class="form-group">
+                                    <label class="control-label col-sm-1">Q:</label>
+                                    <div class="col-sm-11">
+                                        @Html.TextBoxFor(c=>c.ListOfFAQs[i].Question, new { @class = "form-control" })
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-1">A:</label>
+                                    <div class="col-sm-11">
+                                       @Html.TextBoxFor(c => c.ListOfFAQs[i].Answer, new { @class = "form-control" })
+                                    </div>
+
+                                </div>
+                            }
+
+
+                    
+                        }
+                        <div id="faqss"></div>
+                        <div class="col-sm-offset-1">
+                            <button class="btn btn-success " @*onclick="addInput('faqss');"*@ type="submit" style="margin-top: 12px;"><i class="glyphicon glyphicon-plus-sign"></i>Add More</button>
+                        </div>
+                        <div class="form-group pull-right" style="margin-top: 50px;">
+                            <button class="btn btn-success" type="submit" name="command" value="Save" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnSave</button>
+                            <button class="btn btn-bitbucket" type="submit" name="command" value="Cancel" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnCancel</button>
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
 </div>
+<script type="text/javascript">
+    var counter = 0;
+    var limit = 10;
+    var viewModel = {
+        key: ko.observable(""),
+        value: ko.observable(""),
+        selectedItem: ko.observable()
+    };
+
+ 
+    ko.applyBindings(viewModel);
+</script>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script type="text/javascript">
         Dropzone.options.dropzoneForm = {
-        maxFiles: 1,
-        init: function () {
-            var myDropzone = this;
-            this.on("complete", function (data) {
-                var res = JSON.parse(data.xhr.responseText);
-                console.log(res.Message);
-            });
-        }
-    };
+            maxFiles: 1,
+            init: function () {
+                var myDropzone = this;
+                this.on("complete", function (data) {
+                    var res = JSON.parse(data.xhr.responseText);
+                    console.log(res.Message);
+                });
+            }
+        };
     </script>
 
 }

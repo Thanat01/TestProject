@@ -33,16 +33,54 @@ namespace OStore.Controllers
 
         public ActionResult Edit()
         {
-            return View(SessionProvider.Instance.CurrentShop);
+            Lazy<ShopModel> lazyModel = new Lazy<ShopModel>();
+            ShopModel viewModel = lazyModel.Value;
+            //SessionProvider.Remove("ShopFAQs");
+            //viewModel.FAQs = SessionProvider.Instance.ShopFAQs;
+            
+            //return View(viewModel);
+            return View(viewModel);
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(ShopModel shop)
+        // [ValidateAntiForgeryToken]
+        public ActionResult Edit(ShopModel shop, string command)
         {
-            ATApi.Instance.UpdateShopInfo(new ModelApi.UpdateShopInfoRequestModel() { Shop = shop });
-
+            if (!string.IsNullOrWhiteSpace(command))
+            {
+                if (command == "Save")
+                {
+                    ATApi.Instance.UpdateShopInfo(new ModelApi.UpdateShopInfoRequestModel() { Shop = shop });
+                }
+            }
             return View("Index", SessionProvider.Instance.CurrentShop);
+        }
+
+        [HttpPost]
+        public ActionResult SaveFAQ(ShopModel shop)
+        {
+            try
+            {
+                if(shop.ListOfFAQs==null)
+                {
+                    SessionProvider.Instance.ShopFAQs = new List<FAQ>();
+                    SessionProvider.Instance.ShopFAQs.Add(shop.Faq);
+                }
+                else
+                {
+                    shop.ListOfFAQs.Add(shop.Faq);
+                    SessionProvider.Instance.ShopFAQs = shop.ListOfFAQs;
+                 
+                }
+              
+                SessionProvider.Instance.ShopFAQs.RemoveAll(c => c== null);
+                return RedirectToAction("Edit");
+            }
+            catch (Exception)
+            {
+                    
+                throw;
+            }
         }
 
         [HttpPost]

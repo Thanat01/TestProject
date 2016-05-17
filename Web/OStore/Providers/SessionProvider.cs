@@ -46,6 +46,21 @@ namespace OStore.Providers
         {
             Remove("CurrentShop");
         }
+        public List<FAQ> ShopFAQs
+        {
+            get
+            {
+                if (!IsExist("ShopFAQs"))
+                {
+                    Set<List<FAQ>>("ShopFAQs", null );
+                }
+
+                return Get<List<FAQ>>("ShopFAQs");
+            }
+            set { Set<List<FAQ>>("ShopFAQs", value); }
+        }
+       
+
         #endregion
 
         #region  Product Category

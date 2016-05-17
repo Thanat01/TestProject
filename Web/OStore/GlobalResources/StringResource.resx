@@ -192,4 +192,85 @@
   <data name="Order_Manual_TotalAmount" xml:space="preserve">
     <value>Price product</value>
   </data>
+  <data name="Delivery_Setup_btnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Delivery_Setup_btnSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Delivery_Setup_Cost" xml:space="preserve">
+    <value>Shipping Cost:</value>
+  </data>
+  <data name="Delivery_Setup_D1Name" xml:space="preserve">
+    <value>Name: Alpha</value>
+  </data>
+  <data name="Delivery_Setup_D1_Info" xml:space="preserve">
+    <value>Service Area: Bangkok, Nonthaburi, Samut Prakan, Pathum Thani</value>
+  </data>
+  <data name="Delivery_Setup_D2Name" xml:space="preserve">
+    <value>Name: Thaipost</value>
+  </data>
+  <data name="Delivery_Setup_D2_Info" xml:space="preserve">
+    <value>Service Area: Thailand</value>
+  </data>
+  <data name="Delivery_Setup_ServiceDay" xml:space="preserve">
+    <value>Service day: </value>
+  </data>
+  <data name="Delivery_Setup_Title" xml:space="preserve">
+    <value>Set Up Delivery Channel</value>
+  </data>
+  <data name="Shop_Edit_TabAbout" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="Shop_Edit_TabDetail" xml:space="preserve">
+    <value>Shop Detail</value>
+  </data>
+  <data name="Shop_Edit_TabFAQs" xml:space="preserve">
+    <value>FAQs</value>
+  </data>
+  <data name="Shop_Edit_Title" xml:space="preserve">
+    <value>Shop Info</value>
+  </data>
+  <data name="Shop_Edit_AboutUs" xml:space="preserve">
+    <value>About Us:</value>
+  </data>
+  <data name="Shop_Edit_btnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Shop_Edit_btnSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Shop_Edit_ShopAddress" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="Shop_Edit_ShopDistrict" xml:space="preserve">
+    <value>District:</value>
+  </data>
+  <data name="Shop_Edit_ShopFB" xml:space="preserve">
+    <value>Facebook:</value>
+  </data>
+  <data name="Shop_Edit_ShopIG" xml:space="preserve">
+    <value>Instagram:</value>
+  </data>
+  <data name="Shop_Edit_ShopLine" xml:space="preserve">
+    <value>LINE:</value>
+  </data>
+  <data name="Shop_Edit_ShopLogo" xml:space="preserve">
+    <value>Logo:</value>
+  </data>
+  <data name="Shop_Edit_ShopName" xml:space="preserve">
+    <value>Shop Names:</value>
+  </data>
+  <data name="Shop_Edit_ShopProvince" xml:space="preserve">
+    <value>Province:</value>
+  </data>
+  <data name="Shop_Edit_ShopSubDistrict" xml:space="preserve">
+    <value>Sub-District:</value>
+  </data>
+  <data name="Shop_Edit_ShopTelephone" xml:space="preserve">
+    <value>Tel:</value>
+  </data>
+  <data name="Shop_Edit_ShopZipCode" xml:space="preserve">
+    <value>Zip Code:</value>
+  </data>
 </root>
