@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OStore.GlobalResources {
+namespace GlobalResources {
     using System;
     
     
@@ -57,6 +57,87 @@ namespace OStore.GlobalResources {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Delivery_Setup_btnCancel {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_btnCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Delivery_Setup_btnSave {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_btnSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shipping Cost:.
+        /// </summary>
+        public static string Delivery_Setup_Cost {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_Cost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Area: Bangkok, Nonthaburi, Samut Prakan, Pathum Thani.
+        /// </summary>
+        public static string Delivery_Setup_D1_Info {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D1_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name: Alpha.
+        /// </summary>
+        public static string Delivery_Setup_D1Name {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D1Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Area: Thailand.
+        /// </summary>
+        public static string Delivery_Setup_D2_Info {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D2_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name: Thaipost.
+        /// </summary>
+        public static string Delivery_Setup_D2Name {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D2Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service day: .
+        /// </summary>
+        public static string Delivery_Setup_ServiceDay {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_ServiceDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Up Delivery Channel.
+        /// </summary>
+        public static string Delivery_Setup_Title {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_Title", resourceCulture);
             }
         }
         
@@ -282,6 +363,168 @@ namespace OStore.GlobalResources {
         public static string Order_Manual_TotalAmount {
             get {
                 return ResourceManager.GetString("Order_Manual_TotalAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Us:.
+        /// </summary>
+        public static string Shop_Edit_AboutUs {
+            get {
+                return ResourceManager.GetString("Shop_Edit_AboutUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Shop_Edit_btnCancel {
+            get {
+                return ResourceManager.GetString("Shop_Edit_btnCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Shop_Edit_btnSave {
+            get {
+                return ResourceManager.GetString("Shop_Edit_btnSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address:.
+        /// </summary>
+        public static string Shop_Edit_ShopAddress {
+            get {
+                return ResourceManager.GetString("Shop_Edit_ShopAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to District:.
+        /// </summary>
+        public static string Shop_Edit_ShopDistrict {
+            get {
+                return ResourceManager.GetString("Shop_Edit_ShopDistrict", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Facebook:.
+        /// </summary>
+        public static string Shop_Edit_ShopFB {
+            get {
+                return ResourceManager.GetString("Shop_Edit_ShopFB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Instagram:.
+        /// </summary>
+        public static string Shop_Edit_ShopIG {
+            get {
+                return ResourceManager.GetString("Shop_Edit_ShopIG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LINE:.
+        /// </summary>
+        public static string Shop_Edit_ShopLine {
+            get {
+                return ResourceManager.GetString("Shop_Edit_ShopLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logo:.
+        /// </summary>
+        public static string Shop_Edit_ShopLogo {
+            get {
+                return ResourceManager.GetString("Shop_Edit_ShopLogo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shop Names:.
+        /// </summary>
+        public static string Shop_Edit_ShopName {
+            get {
+                return ResourceManager.GetString("Shop_Edit_ShopName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Province:.
+        /// </summary>
+        public static string Shop_Edit_ShopProvince {
+            get {
+                return ResourceManager.GetString("Shop_Edit_ShopProvince", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sub-District:.
+        /// </summary>
+        public static string Shop_Edit_ShopSubDistrict {
+            get {
+                return ResourceManager.GetString("Shop_Edit_ShopSubDistrict", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tel:.
+        /// </summary>
+        public static string Shop_Edit_ShopTelephone {
+            get {
+                return ResourceManager.GetString("Shop_Edit_ShopTelephone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zip Code:.
+        /// </summary>
+        public static string Shop_Edit_ShopZipCode {
+            get {
+                return ResourceManager.GetString("Shop_Edit_ShopZipCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Us.
+        /// </summary>
+        public static string Shop_Edit_TabAbout {
+            get {
+                return ResourceManager.GetString("Shop_Edit_TabAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shop Detail.
+        /// </summary>
+        public static string Shop_Edit_TabDetail {
+            get {
+                return ResourceManager.GetString("Shop_Edit_TabDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FAQs.
+        /// </summary>
+        public static string Shop_Edit_TabFAQs {
+            get {
+                return ResourceManager.GetString("Shop_Edit_TabFAQs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shop Info.
+        /// </summary>
+        public static string Shop_Edit_Title {
+            get {
+                return ResourceManager.GetString("Shop_Edit_Title", resourceCulture);
             }
         }
     }

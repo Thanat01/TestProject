@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -160,11 +161,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\StringResource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StringResource.resx</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\DeliveryController.cs" />
     <Compile Include="Controllers\MarketingController.cs" />
     <Compile Include="GlobalResources\StringResource.Designer.cs">
@@ -1132,13 +1128,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\StringResource.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>StringResource.designer.cs</LastGenOutput>
-    </Content>
     <EmbeddedResource Include="GlobalResources\StringResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>StringResource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>GlobalResources</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

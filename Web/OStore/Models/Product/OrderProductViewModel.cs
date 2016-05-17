@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using OStore.GlobalResources;
+using GlobalResources;
+
 
 namespace OStore.Models.Product
 {
