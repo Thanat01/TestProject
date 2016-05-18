@@ -31,18 +31,6 @@
                     <th data-hide="phone,tablet">
                         @GlobalResources.StringResource.OrderManagement_Pay_StatusId
                     </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_StoreStaff
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_ItemLine
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_ItemCode
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_ItemDescription
-                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -71,19 +59,7 @@
                             @m.Price
                         </td>
                         <td>
-                           @Html.DropDownListFor(n => m.StatusId, m.Statuses, "", new { @class = "form-control" })
-                        </td>
-                        <td>
-                            @m.StoreStaff
-                        </td>
-                        <td>
-                            @m.ItemLine
-                        </td>
-                        <td>
-                            @m.ItemCode
-                        </td>
-                        <td>
-                            @m.ItemDescription
+                            <span>Confirm</span>
                         </td>
                     </tr>
                 }
@@ -92,7 +68,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="12">
+                    <td colspan="8">
                         <div class="pagination pagination-centered"></div>
                     </td>
                 </tr>

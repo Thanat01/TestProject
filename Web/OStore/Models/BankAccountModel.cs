@@ -8,7 +8,13 @@ namespace OStore.Models
 {
     public class BankAccountModel
     {
+        public BankAccountModel()
+        {
+            Banks = new List<System.Web.Mvc.SelectListItem>();
+        }
+
         public int BankId { get; set; }
+        public List<System.Web.Mvc.SelectListItem> Banks { get; set; }
 
         public string Branch { get; set; }
 

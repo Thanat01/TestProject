@@ -33,7 +33,7 @@
                     <th data-hide="phone,tablet">
                         @GlobalResources.StringResource.OrderManagement_Pay_StatusId
                     </th>
-                    <th data-hide="all">
+                    @*<th data-hide="all">
                         @GlobalResources.StringResource.OrderManagement_Pay_Remark
                     </th>
                     <th data-hide="all">
@@ -50,7 +50,7 @@
                     </th>
                     <th data-hide="all">
                         @GlobalResources.StringResource.OrderManagement_Pay_Reason
-                    </th>
+                    </th>*@
 
 
                 </tr>
@@ -81,9 +81,11 @@
                             @m.Price
                         </td>
                         <td>
-                           @Html.DropDownListFor(n => m.StatusId, m.Statuses, "", new { @class = "form-control" })
+                           <div class="col-md-10">Verifield</div>
+                            <div class="col-md-10"><a href="~/Content/Images/slip.jpg" target="_blank"> <img src="~/Content/Images/attachFile.svg">Attach Slip</a></div>
+                            <div class="col-md-10"><a href="~/Content/Images/label01.jpg" target="_blank"><span class="btn btn-default">Print Label</span></a></div>
                         </td>
-                        <td>
+                        @*<td>
                             @m.Remark
                         </td>
                         <td>
@@ -100,7 +102,7 @@
                         </td>
                         <td>
                             @m.Reason
-                        </td>
+                        </td>*@
                     </tr>
                 }
 
@@ -108,7 +110,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="5">
+                    <td colspan="8">
                         <div class="pagination pagination-centered"></div>
                     </td>
                 </tr>
