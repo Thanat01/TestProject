@@ -53,6 +53,10 @@
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
@@ -228,7 +232,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MenuItemModel.cs" />
     <Compile Include="Models\Navbar.cs" />
-    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\Product\ProductViewModel.cs" />
     <Compile Include="Models\Product\OrderProductViewModel.cs" />
     <Compile Include="Models\Product\ProductVariantViewModel.cs" />
     <Compile Include="Models\Promotion\PromotionViewModel.cs" />
@@ -692,12 +696,15 @@
     <Content Include="Content\FooTable\fonts\footable.ttf" />
     <Content Include="Content\FooTable\fonts\footable.woff" />
     <Content Include="Content\FooTable\footable.core.css" />
+    <Content Include="Content\Images\attachFile.svg" />
+    <Content Include="Content\Images\label01.jpg" />
     <Content Include="Content\Images\logo_facebook.jpg" />
     <Content Include="Content\Images\Add.svg" />
     <Content Include="Content\Images\alpha_service_area-01.svg" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\logo_Line.png" />
     <Content Include="Content\Images\logo_Phone.png" />
+    <Content Include="Content\Images\slip.jpg" />
     <Content Include="Content\Images\thaipost_service_area-01.svg" />
     <Content Include="Content\sb-admin-2.css" />
     <Content Include="Content\timeline.css" />

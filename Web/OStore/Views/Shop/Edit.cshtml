@@ -6,7 +6,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
+<div class="col-lg-12">
+    <h1 class="page-header">@ViewBag.Title</h1>
+</div>
 
 <ul class="nav nav-tabs">
     <li role="presentation" class="active"><a href="#detail" data-toggle="tab">@GlobalResources.StringResource.Shop_Edit_TabDetail</a></li>
@@ -30,7 +32,7 @@
                         @* Logo *@
                         <div class="form-group">
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopLogo</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-4">
                                 @Html.FileUploadForm("../../Shop/SaveLogo")
                                 @Html.ValidationMessageFor(model => model.Logo, "", new { @class = "text-danger" })
                             </div>
@@ -38,21 +40,21 @@
                         @* Facebook *@
                         <div class="form-group">
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopFB</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-4">
                                 @Html.TextBoxFor(c => c.FaceBookId, new { @class = "form-control" })
                             </div>
                         </div>
                         @* LINE *@
                         <div class="form-group">
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopLine</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-4">
                                 @Html.TextBoxFor(c => c.LineId, new { @class = "form-control" })
                             </div>
                         </div>
                         @* Instagram *@
                         <div class="form-group">
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopIG</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-4">
                                 @Html.TextBoxFor(c => c.InstagramId, new { @class = "form-control" })
                             </div>
                         </div>
