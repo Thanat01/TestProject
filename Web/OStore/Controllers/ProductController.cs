@@ -1,5 +1,6 @@
 ﻿using OStore.ModelApi;
 using OStore.Models;
+using OStore.Models.Product;
 using OStore.Providers;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace OStore.Controllers
         [HttpGet, ActionName("Index")]
         public ActionResult Index()
         {
+            Session["ProductId"] = string.Format("New_{0}", Guid.NewGuid().ToString());
             return View();
         }
 
@@ -35,6 +37,32 @@ namespace OStore.Controllers
             PMApi.Instance.UpdateProduct(new UpdateProductRequestModel() { Product = product });
 
             return View(SessionProvider.Instance.GetProduct(0));
+        }
+
+        [HttpPost]
+        public ActionResult SaveProductImage()
+        {
+            bool isSavedSuccessfully = true;
+            try
+            {
+                foreach (string fileName in Request.Files)
+                {
+                    HttpPostedFileBase file = Request.Files[fileName];
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        ImageProvider.Instance.SaveProduct(file, Session["ProductId"].ToString(), "");
+                    }
+                }
+            }
+            catch
+            {
+                isSavedSuccessfully = false;
+            }
+
+            if (isSavedSuccessfully)
+                return Json(new { Message = "Secondary" });
+            else
+                return Json(new { Message = "Error in saving file" });
         }
     }
 }

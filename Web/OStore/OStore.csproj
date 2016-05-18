@@ -234,6 +234,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MenuItemModel.cs" />
     <Compile Include="Models\Navbar.cs" />
+    <Compile Include="Models\Product\ProductItemViewModel.cs" />
     <Compile Include="Models\Product\ProductViewModel.cs" />
     <Compile Include="Models\Product\OrderProductViewModel.cs" />
     <Compile Include="Models\Product\ProductVariantViewModel.cs" />

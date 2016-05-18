@@ -1,5 +1,6 @@
 ﻿using Library.Api.Model;
 using OStore.Models;
+using OStore.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;

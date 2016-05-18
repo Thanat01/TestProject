@@ -2,6 +2,7 @@
 using OStore.Models;
 using OStore.Models.Customer;
 using OStore.Models.Location;
+using OStore.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;

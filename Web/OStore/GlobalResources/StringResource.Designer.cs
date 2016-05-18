@@ -1294,6 +1294,240 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        public static string Product_Create_Category {
+            get {
+                return ResourceManager.GetString("Product_Create_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colour.
+        /// </summary>
+        public static string Product_Create_Color {
+            get {
+                return ResourceManager.GetString("Product_Create_Color", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cost price.
+        /// </summary>
+        public static string Product_Create_Cost {
+            get {
+                return ResourceManager.GetString("Product_Create_Cost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Days.
+        /// </summary>
+        public static string Product_Create_Days {
+            get {
+                return ResourceManager.GetString("Product_Create_Days", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Product_Create_Description {
+            get {
+                return ResourceManager.GetString("Product_Create_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string Product_Create_IsActive {
+            get {
+                return ResourceManager.GetString("Product_Create_IsActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colour.
+        /// </summary>
+        public static string Product_Create_Item_Color {
+            get {
+                return ResourceManager.GetString("Product_Create_Item_Color", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cost.
+        /// </summary>
+        public static string Product_Create_Item_Cost {
+            get {
+                return ResourceManager.GetString("Product_Create_Item_Cost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Material.
+        /// </summary>
+        public static string Product_Create_Item_Material {
+            get {
+                return ResourceManager.GetString("Product_Create_Item_Material", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manufacturer SKU.
+        /// </summary>
+        public static string Product_Create_Item_MFSKU {
+            get {
+                return ResourceManager.GetString("Product_Create_Item_MFSKU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string Product_Create_Item_Price {
+            get {
+                return ResourceManager.GetString("Product_Create_Item_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string Product_Create_Item_Quantity {
+            get {
+                return ResourceManager.GetString("Product_Create_Item_Quantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        public static string Product_Create_Item_Size {
+            get {
+                return ResourceManager.GetString("Product_Create_Item_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKU.
+        /// </summary>
+        public static string Product_Create_Item_SKU {
+            get {
+                return ResourceManager.GetString("Product_Create_Item_SKU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sell Price.
+        /// </summary>
+        public static string Product_Create_Item_SpecialPrice {
+            get {
+                return ResourceManager.GetString("Product_Create_Item_SpecialPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Universal SKU.
+        /// </summary>
+        public static string Product_Create_Item_UNSKU {
+            get {
+                return ResourceManager.GetString("Product_Create_Item_UNSKU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Material.
+        /// </summary>
+        public static string Product_Create_Material {
+            get {
+                return ResourceManager.GetString("Product_Create_Material", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Product_Create_Name {
+            get {
+                return ResourceManager.GetString("Product_Create_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pre-Order.
+        /// </summary>
+        public static string Product_Create_PrepareDate {
+            get {
+                return ResourceManager.GetString("Product_Create_PrepareDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string Product_Create_Price {
+            get {
+                return ResourceManager.GetString("Product_Create_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show when out of stock.
+        /// </summary>
+        public static string Product_Create_ShowWhenOutStock {
+            get {
+                return ResourceManager.GetString("Product_Create_ShowWhenOutStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        public static string Product_Create_Size {
+            get {
+                return ResourceManager.GetString("Product_Create_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sell price.
+        /// </summary>
+        public static string Product_Create_SpecialPrice {
+            get {
+                return ResourceManager.GetString("Product_Create_SpecialPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tags.
+        /// </summary>
+        public static string Product_Create_Tag {
+            get {
+                return ResourceManager.GetString("Product_Create_Tag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create product.
+        /// </summary>
+        public static string Product_Create_Title {
+            get {
+                return ResourceManager.GetString("Product_Create_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload Pictures.
+        /// </summary>
+        public static string Product_Create_UploadImage {
+            get {
+                return ResourceManager.GetString("Product_Create_UploadImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Us:.
         /// </summary>
         public static string Shop_Edit_AboutUs {

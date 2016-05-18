@@ -1,43 +1,27 @@
-﻿@model OStore.Models.ProductViewModel
+﻿@model OStore.Models.Product.ProductViewModel
 
 @{
-    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">@ViewBag.Title</h1>
+        <h1 class="page-header">@GlobalResources.StringResource.Product_Create_Title</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>ProductViewModel</h4>
-        <hr />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShopId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ShopId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ShopId, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.SKU, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SKU, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SKU, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
+        @*Name*@
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -46,20 +30,130 @@
             </div>
         </div>
 
+        @*Description*@
         <div class="form-group">
             @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = "6" })
                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
             </div>
         </div>
 
+        @*Images*@
+        <div class="form-group">
+            <label class="control-label col-md-2">@GlobalResources.StringResource.Product_Create_UploadImage</label>
+            <div class="col-md-10 form-inline">
+                @Html.FileUploadForm("../Product/SaveProductImage")
+            </div>
+        </div>
+
+        @*Cost*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cost, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline">
+                @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*Price*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline">
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*SpecialPrice*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.SpecialPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline">
+                @Html.EditorFor(model => model.SpecialPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SpecialPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        @*Categories*@
+
+
+        @*PrepareDate*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrepareDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline">
+                @Html.EditorFor(model => model.PrepareDate, new { htmlAttributes = new { @class = "form-control" } })
+                <span>@GlobalResources.StringResource.Product_Create_Days</span>
+                @Html.ValidationMessageFor(model => model.PrepareDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*Show When Out of Stock*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShowWhenOutStock, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.ShowWhenOutStock, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ShowWhenOutStock, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        @*Detail*@
+        @*Size*@
+        <div class="form-group">
+            <label class="control-label col-md-2">@GlobalResources.StringResource.Product_Create_Size</label>
+            <div class="col-md-10 form-inline">
+                <div class="form-control">
+                    <input type="text" value="" data-role="tagsinput" />
+                </div>
+            </div>
+        </div>
+
+        @*Color*@
+        <div class="form-group">
+            <label class="control-label col-md-2">@GlobalResources.StringResource.Product_Create_Color</label>
+            <div class="col-md-10 form-inline">
+                <div class="form-control">
+                    <input type="text" value="" data-role="tagsinput" />
+                </div>
+            </div>
+        </div>
+
+        @*Material*@
+        <div class="form-group">
+            <label class="control-label col-md-2">@GlobalResources.StringResource.Product_Create_Material</label>
+            <div class="col-md-10 form-inline">
+                <div class="form-control">
+                    <input type="text" value="" data-role="tagsinput" />
+                </div>
+            </div>
+        </div>
+
+        @* Size detail *@
+
+
+        @* Product Items *@
+
+
+        @*IsActive*@
         <div class="form-group">
             @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-10 form-inline">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.IsActive)
                     @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        @*Tags*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tags, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 form-inline">
+                <div class="form-control">
+                    <input type="text" value="Cute,Dress" data-role="tagsinput" />
                 </div>
             </div>
         </div>
@@ -71,7 +165,3 @@
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "List")
-</div>

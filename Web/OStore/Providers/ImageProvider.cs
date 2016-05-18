@@ -24,6 +24,63 @@ namespace OStore.Providers
             CategoryPath = string.Format("{0}/categories", root);
             ProductPath = string.Format("{0}/products", root);
         }
+
+        #region Product
+        public void SaveProduct(HttpPostedFileBase file, string product, string desFileName)
+        {
+            try
+            {
+                if (file != null && file.ContentLength > 0)
+                {
+                    desFileName = string.IsNullOrWhiteSpace(desFileName) ? Guid.NewGuid().ToString() : string.Format("{0}{1}", System.IO.Path.GetFileNameWithoutExtension(desFileName), System.IO.Path.GetExtension(file.FileName));
+                    string path = string.Format("{0}/{1}", ProductPath, product);
+                    if (!System.IO.Directory.Exists(path))
+                        System.IO.Directory.CreateDirectory(path);
+
+                    file.SaveAs(string.Format("{0}/{1}", path, desFileName));
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public List<string> GetProduct(int productId)
+        {
+            try
+            {
+                List<string> images = new List<string>();
+
+
+
+                return images;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public void ReProductPathName(string oldName, string newName)
+        {
+            try
+            {
+                string oldPath = string.Format("{0}/{1}", ProductPath, oldName);
+                if (System.IO.Directory.Exists(oldPath))
+                {
+                    Microsoft.VisualBasic.FileIO.FileSystem.RenameDirectory(oldPath, newName);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #endregion
+
+        #region Category
         public void SaveCategory(HttpPostedFileBase file, string category, string desFileName)
         {
             try
@@ -75,8 +132,9 @@ namespace OStore.Providers
                 throw;
             }
         }
+        #endregion
 
-
+        #region Logo
         public void SaveLogo(HttpPostedFileBase file)
         {
             try
@@ -118,5 +176,6 @@ namespace OStore.Providers
                 throw;
             }
         }
+        #endregion
     }
 }
