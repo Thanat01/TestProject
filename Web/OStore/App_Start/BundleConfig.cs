@@ -47,6 +47,13 @@ namespace OStore
             bundles.Add(new StyleBundle("~/Content/FooTable").Include(
                     "~/Content/Footable/Footable/bootstrap.css",
                     "~/Content/Footable/footable.core.css?v=2-0-1"));
+
+            bundles.Add(new ScriptBundle("~/bundles/bootstraptags").Include(
+        "~/Scripts/bootstrap-tagsinput.js"
+       ));
+
+            bundles.Add(new StyleBundle("~/Content/bootstraptagscss").Include(
+                   "~/Content/bootstrap-tagsinput.css.css"));
         }
     }
 }

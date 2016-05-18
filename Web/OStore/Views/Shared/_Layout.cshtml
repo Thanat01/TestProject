@@ -7,11 +7,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>OStore</title>
+    <!-- jQuery -->
+    @Scripts.Render("~/bundles/jquery")
+    <script src="@Url.Content("~/bower_components/jquery/dist/jquery.min.js")"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="@Url.Content("~/bower_components/metisMenu/dist/metisMenu.min.js")"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/knockout")
     @Styles.Render("~/Content/dropzonescss")
 
+    @Styles.Render("~/Content/bootstraptagscss")
 
     <!-- DataTables CSS -->
     <link href="@Url.Content("~/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css")" rel="stylesheet" type="text/css" />
@@ -21,11 +27,14 @@
     <link href="@Url.Content("~/bower_components/morrisjs/morris.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/bower_components/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
 
-    <!-- jQuery -->
-    @Scripts.Render("~/bundles/jquery")
-    <script src="@Url.Content("~/bower_components/jquery/dist/jquery.min.js")"></script>
-    @Scripts.Render("~/bundles/bootstrap")
-    <script src="@Url.Content("~/bower_components/metisMenu/dist/metisMenu.min.js")"></script>
+    
+
+    @* BootstrapTags *@
+    @Scripts.Render("~/bundles/bootstraptags")
+  
+    @Scripts.Render("~/bundles/dropzonescripts")
+    @Scripts.Render("~/bundles/knockout")
+    @RenderSection("scripts", required: false)
 
 </head>
 <body>
@@ -68,10 +77,7 @@
                 list.style = "display:none";
         }
     </script>
-
-    @Scripts.Render("~/bundles/dropzonescripts")
-    @Scripts.Render("~/bundles/knockout")
-    @RenderSection("scripts", required: false)
+  
 </body>
 </html>
 

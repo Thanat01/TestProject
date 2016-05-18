@@ -519,4 +519,67 @@
   <data name="Shop_Edit_ShopZipCode" xml:space="preserve">
     <value>Zip Code:</value>
   </data>
+  <data name="Exchange_Index_btnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Exchange_Index_btnSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Exchange_Index_ExGrid_Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Exchange_Index_ExGrid_DateTime" xml:space="preserve">
+    <value>Date/Time Return</value>
+  </data>
+  <data name="Exchange_Index_ExGrid_ExchangeId" xml:space="preserve">
+    <value>Exchange ID</value>
+  </data>
+  <data name="Exchange_Index_ExGrid_LINE" xml:space="preserve">
+    <value>LINE</value>
+  </data>
+  <data name="Exchange_Index_ExGrid_Name" xml:space="preserve">
+    <value>Receiver Name</value>
+  </data>
+  <data name="Exchange_Index_ExGrid_OrderId" xml:space="preserve">
+    <value>Order ID</value>
+  </data>
+  <data name="Exchange_Index_ExGrid_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Exchange_Index_ExGrid_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Exchange_Index_ExSubTab_Exchanged" xml:space="preserve">
+    <value>Exchanged</value>
+  </data>
+  <data name="Exchange_Index_ExSubTab_Exchanging" xml:space="preserve">
+    <value>Exchanging</value>
+  </data>
+  <data name="Exchange_Index_ExSubTab_Pack" xml:space="preserve">
+    <value>Pack</value>
+  </data>
+  <data name="Exchange_Index_ExSubTab_Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Exchange_Index_ExSubTab_Pick" xml:space="preserve">
+    <value>Pick</value>
+  </data>
+  <data name="Exchange_Index_lblAttach" xml:space="preserve">
+    <value>Attached File</value>
+  </data>
+  <data name="Exchange_Index_lblSelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="Exchange_Index_MainTab_Exchange" xml:space="preserve">
+    <value>Exchange</value>
+  </data>
+  <data name="Exchange_Index_MainTab_Return" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="Exchange_Index_Title" xml:space="preserve">
+    <value>Return &amp; Exchange</value>
+  </data>
+  <data name="Common_CopyMessage" xml:space="preserve">
+    <value>Hello, you can view the product by going to this link - </value>
+  </data>
 </root>

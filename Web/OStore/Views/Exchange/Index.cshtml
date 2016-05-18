@@ -1,0 +1,269 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = GlobalResources.StringResource.Exchange_Index_Title;
+}
+<link href="../Content/Footable/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../Content/Footable/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+<script src="../Scripts/Footable/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+<h1>@ViewBag.Title</h1>
+
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#return" data-toggle="tab">@GlobalResources.StringResource.Exchange_Index_MainTab_Return</a></li>
+    <li role="presentation"><a href="#exchange" data-toggle="tab">@GlobalResources.StringResource.Exchange_Index_MainTab_Exchange</a></li>
+</ul>
+
+<div id="mainTabs" class="tab-content">
+    @* Return Tab *@
+    <div class="tab-pane fade active in" id="return">
+
+    </div>
+
+    @* Exchange Tab *@
+    <div class="tab-pane fade" id="exchange">
+        <ul class="nav nav-tabs" style="margin-top: 12px;">
+            <li role="presentation" class="active"><a href="#pending" data-toggle="tab">@GlobalResources.StringResource.Exchange_Index_ExSubTab_Pending</a></li>
+            <li role="presentation"><a href="#exchange#pick" data-toggle="tab">@GlobalResources.StringResource.Exchange_Index_ExSubTab_Pick</a></li>
+            <li role="presentation"><a href="#pack" data-toggle="tab">@GlobalResources.StringResource.Exchange_Index_ExSubTab_Pack</a></li>
+            <li role="presentation"><a href="#exchanging" data-toggle="tab">@GlobalResources.StringResource.Exchange_Index_ExSubTab_Exchanging</a></li>
+            <li role="presentation"><a href="#exchanged" data-toggle="tab">@GlobalResources.StringResource.Exchange_Index_ExSubTab_Exchanged</a></li>
+        </ul>
+
+        @* Exchange Sub Tabs *@
+        <div id="exchangeSubTabs" class="tab-content" style="margin-top: 12px;">
+            @* Pending *@
+            <div class="tab-pane fade active in" id="pending">
+                <table  class="table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+                    <thead>
+                    <tr>
+                        <th data-hide="phone">
+                            @GlobalResources.StringResource.Exchange_Index_ExGrid_ExchangeId
+                        </th>
+                        <th>
+                            @GlobalResources.StringResource.Exchange_Index_ExGrid_OrderId
+                        </th>
+                        <th data-hide="phone,tablet">
+                            @GlobalResources.StringResource.Exchange_Index_ExGrid_DateTime
+                        </th>
+                        <th data-hide="phone,tablet">
+                            @GlobalResources.StringResource.Exchange_Index_ExGrid_Name
+                        </th>
+                        <th data-hide="phone,tablet">
+                            @GlobalResources.StringResource.Exchange_Index_ExGrid_Contact
+                        </th>
+                        <th data-hide="phone">
+                            @GlobalResources.StringResource.Exchange_Index_ExGrid_LINE
+                        </th>
+                        <th data-hide="phone,tablet">
+                            @GlobalResources.StringResource.Exchange_Index_ExGrid_Price
+                        </th>
+                        <th>
+                            @GlobalResources.StringResource.Exchange_Index_ExGrid_Status
+                        </th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.ExchangePendingRecords.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    <button type="button" data-bind="click: ShowOrHide('Pd',@i)">@Model.ExchangePendingRecords[i].ExchangeId</button>
+                                </td>
+                                <td>
+                                    </td>
+
+                            </tr>
+                            <tr><td><div id="Pd-@i" style="display:block;">Product Detail</div></td></tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            @* Pick *@
+            @using (Html.BeginForm("ExchangePick", "Exchange", FormMethod.Post))
+            {
+            <div class="tab-pane fade" id="exchange#pick">
+                <table class="table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+                    <thead>
+                        <tr>
+                            <th data-hide="phone">
+                                @GlobalResources.StringResource.Exchange_Index_ExGrid_ExchangeId
+                            </th>
+                            <th>
+                                @GlobalResources.StringResource.Exchange_Index_ExGrid_OrderId
+                            </th>
+                            <th data-hide="phone,tablet">
+                                @GlobalResources.StringResource.Exchange_Index_ExGrid_DateTime
+                            </th>
+                            <th data-hide="phone,tablet">
+                                @GlobalResources.StringResource.Exchange_Index_ExGrid_Name
+                            </th>
+                            <th data-hide="phone,tablet">
+                                @GlobalResources.StringResource.Exchange_Index_ExGrid_Contact
+                            </th>
+                            <th data-hide="phone">
+                                @GlobalResources.StringResource.Exchange_Index_ExGrid_LINE
+                            </th>
+                            <th data-hide="phone,tablet">
+                                @GlobalResources.StringResource.Exchange_Index_ExGrid_Price
+                            </th>
+                            <th>
+                                @GlobalResources.StringResource.Exchange_Index_ExGrid_Status
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.ExchangePendingRecords.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    <button type="button" data-bind="click: ShowOrHide('Pick',@i)">@Model.ExchangePendingRecords[i].ExchangeId</button>
+                                </td>
+                                <td>
+                                    @Model.ExchangePendingRecords[i].OrderId
+                                </td>
+                                <td>
+                                    @Model.ExchangePendingRecords[i].DateTime
+                                </td>
+                                <td>
+                                    @Model.ExchangePendingRecords[i].ReceiverName
+                                </td>
+                                <td>
+                                    @Model.ExchangePendingRecords[i].Contact
+                                </td>
+                                <td>
+                                    @Model.ExchangePendingRecords[i].LINE
+                                </td>
+                                <td>
+                                    @Model.ExchangePendingRecords[i].Price
+                                </td>
+                                <td>
+                                 <button class="btn btn-default" type="submit" name="exchangeid" value="@Model.ExchangePendingRecords[i].ExchangeId">To Pack</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div id="Pick-@i" style="display: block;">Product Detail</div>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            </div>
+            }
+            @* Pack *@
+            <div class="tab-pane fade" id="pack">
+
+            </div>
+
+            @* Exchanging *@
+            <div class="tab-pane fade" id="exchanging">
+
+            </div>
+
+            @* Exchanged *@
+            <div class="tab-pane fade" id="exchanged">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    debugger;
+    var url = document.location.toString();
+    if (url.match('#')) {
+       
+        $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+        
+    }
+
+    // Change hash for page-reload
+    $('.nav-tabs a').on('shown.bs.tab', function(e) {
+        window.location.hash = e.target.hash;
+    });
+
+    var viewModel = {
+        showMessage: ko.observable(false)
+    };
+
+    function ShowOrHide(tabId, index) {
+        var combined = tabId + '-' + index;
+
+        if (document.getElementById(combined).style.display == "block") {
+            document.getElementById(combined).style.display = "none";
+        }
+        else {
+            document.getElementById(combined).style.display = "block";
+        }
+        //var flag = this.showMessage;
+        //flag(!flag());
+    };
+    
+    ko.applyBindings(viewModel);
+
+    $(function () {
+        $('table').footable().bind('footable_filtering', function (e) {
+            var selected = $('.filter-status').find(':selected').text();
+            if (selected && selected.length > 0) {
+                e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+                e.clear = !e.filter;
+            }
+        });
+
+        $('table').bind('footable_breakpoint', function () {
+            $('table').trigger('footable_expand_first_row');
+        });
+
+        $('.clear-filter').click(function (e) {
+            e.preventDefault();
+            $('.filter-status').val('');
+            $('table.demo').trigger('footable_clear_filter');
+        });
+
+        $('.filter-status').change(function (e) {
+            e.preventDefault();
+            $('table.demo').trigger('footable_filter', { filter: $('#filter').val() });
+        });
+
+        $('.filter-api').click(function (e) {
+            e.preventDefault();
+
+            //get the footable filter object
+            var footableFilter = $('table').data('footable-filter');
+
+            alert('about to filter table by "tech"');
+            //filter by 'tech'
+            footableFilter.filter('tech');
+
+            //clear the filter
+            if (confirm('clear filter now?')) {
+                footableFilter.clearFilter();
+            }
+        });
+
+        $('#change-page-size').change(function (e) {
+            e.preventDefault();
+            var pageSize = $(this).val();
+            $('.footable').data('page-size', pageSize);
+            $('.footable').trigger('footable_initialized');
+        });
+
+        $('#change-nav-size').change(function (e) {
+            e.preventDefault();
+            var navSize = $(this).val();
+            $('.footable').data('limit-navigation', navSize);
+            $('.footable').trigger('footable_initialized');
+        });
+    });
+</script>
