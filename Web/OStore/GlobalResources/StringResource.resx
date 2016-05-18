@@ -582,4 +582,82 @@
   <data name="Common_CopyMessage" xml:space="preserve">
     <value>Hello, you can view the product by going to this link - </value>
   </data>
+  <data name="Product_Create_Title" xml:space="preserve">
+    <value>Create product</value>
+  </data>
+  <data name="Product_Create_UploadImage" xml:space="preserve">
+    <value>Upload Pictures</value>
+  </data>
+  <data name="Product_Create_Days" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="Product_Create_Color" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="Product_Create_Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="Product_Create_Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Product_Create_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Product_Create_Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Product_Create_Cost" xml:space="preserve">
+    <value>Cost price</value>
+  </data>
+  <data name="Product_Create_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Product_Create_IsActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Product_Create_PrepareDate" xml:space="preserve">
+    <value>Pre-Order</value>
+  </data>
+  <data name="Product_Create_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Product_Create_ShowWhenOutStock" xml:space="preserve">
+    <value>Show when out of stock</value>
+  </data>
+  <data name="Product_Create_SpecialPrice" xml:space="preserve">
+    <value>Sell price</value>
+  </data>
+  <data name="Product_Create_Tag" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="Product_Create_Item_Color" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="Product_Create_Item_Cost" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="Product_Create_Item_Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="Product_Create_Item_MFSKU" xml:space="preserve">
+    <value>Manufacturer SKU</value>
+  </data>
+  <data name="Product_Create_Item_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Product_Create_Item_Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Product_Create_Item_Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Product_Create_Item_SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Product_Create_Item_SpecialPrice" xml:space="preserve">
+    <value>Sell Price</value>
+  </data>
+  <data name="Product_Create_Item_UNSKU" xml:space="preserve">
+    <value>Universal SKU</value>
+  </data>
 </root>
