@@ -37,7 +37,8 @@ namespace OStore.Controllers
             ShopModel viewModel = lazyModel.Value;
             //SessionProvider.Remove("ShopFAQs");
             //viewModel.FAQs = SessionProvider.Instance.ShopFAQs;
-            
+           
+
             //return View(viewModel);
             return View(viewModel);
         }

@@ -79,43 +79,47 @@ namespace OStore.Models
                 _listOfFAQs = value;
             }
         }
+        private List<TreeViewExampleModel> _treeview;
+        public List<TreeViewExampleModel> TreeViewExamples
+        {
+            get
+            {
+                if(_treeview==null)
+                {
+                    _treeview = SessionProvider.Instance.DummyDataTreeview;
+                    
+                }
+                return _treeview;
+            }
+            set
+            {
+                _treeview = value;
+            }
 
-        ////private List<KeyValuePair<string, string>> _faqs;
-        //public List<KeyValuePair<string, string>> FAQs
-        //{
-        //    get { return _faqs ?? (_faqs = SessionProvider.Instance.ShopFAQs); }
-        //    set
-        //    {
-        //        _faqs = value;
-        //    }
-        //}
 
-        //private KeyValuePair<string, string> _faq;
-        //public KeyValuePair<string, string> FAQ
-        //{
-        //    get { return _faq; }
-        //    set { _faq = value; }
-        //}
-
-        //public string _faqKey
-        //{
-        //    get { return _faq.Key; }
-        //    set { _faq = new KeyValuePair<string, string>(value, _faq.Value); }
-        //}
-
-        //public string _faqValue
-        //{
-        //    get { return _faq.Value; }
-        //    set { _faq = new KeyValuePair<string, string>(_faq.Key, value); }
-        //}
-        //public string DNS { get; set; }
-        //public string Vision { get; set; }
-        //public string TimZoneId { get; set; }
-        //public bool IsActive { get; set; }
+        }
     }
     public class FAQ
     {
         public string Question { get; set; }
         public string Answer { get; set; }
+    }
+    public class TreeViewExampleModel
+    {
+        public string Display { get; set; }
+        public bool Checked { get; set; }
+       
+
+       // private List<TreeViewExampleModel> _sub;
+        public List<TreeViewExampleModel> SubCategories { get; set; }
+        //{
+        //    get { return _sub ?? (_sub = new List<TreeViewExampleModel>()); }
+        //    set
+        //    {
+        //        _sub = value;
+        //    }
+
+
+        //}
     }
 }

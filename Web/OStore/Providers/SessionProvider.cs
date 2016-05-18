@@ -60,8 +60,55 @@ namespace OStore.Providers
             }
             set { Set<List<FAQ>>("ShopFAQs", value); }
         }
-       
 
+        public List<TreeViewExampleModel> DummyDataTreeview
+        {
+            get
+            {
+                if (!IsExist("DummyDataTreeview"))
+                {
+                    List<TreeViewExampleModel> data = new List<TreeViewExampleModel>();
+                    data.Add(new TreeViewExampleModel()
+                    {
+                        Checked = false,
+                        Display = "Shirt"
+                    });
+                    data.Add(new TreeViewExampleModel()
+                    {
+                        Checked = false,
+                        Display = "Shorts"
+                    });
+                    data.Add(new TreeViewExampleModel()
+                    {
+                        Checked = false,
+                        Display = "Swimming",
+                        SubCategories = new List<TreeViewExampleModel>()
+                        {
+                            new TreeViewExampleModel()
+                            {
+                                Checked = false,
+                                Display = "Men"
+                                ,
+                                SubCategories = new List<TreeViewExampleModel>()
+                                {
+                                    new TreeViewExampleModel()
+                                    {
+                                        Display = "RealMan",
+                                        Checked = false
+                                    }
+                                }
+                            }
+                        }
+                    });
+                 
+                   
+                    Set<List<TreeViewExampleModel>>("DummyDataTreeview", data);
+                }
+
+                return Get<List<TreeViewExampleModel>>("DummyDataTreeview");
+            }
+            set { Set<List<TreeViewExampleModel>>("DummyDataTreeview", value); }
+        }
         #endregion
 
         #region  Product Category
