@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using OStore.Models;
 using System.Collections.Generic;
+using Facebook;
 
 namespace OStore.Controllers
 {
@@ -329,7 +330,15 @@ namespace OStore.Controllers
             {
                 return RedirectToAction("Login");
             }
-
+            if (loginInfo.Login.LoginProvider == "Facebook")
+            {
+                var identity = AuthenticationManager.GetExternalIdentity(DefaultAuthenticationTypes.ExternalCookie);
+                var access_token = identity.FindFirstValue("FacebookAccessToken");
+                var fb = new FacebookClient(access_token);
+                dynamic myInfo = fb.Get("/me?fields=email,picture,about,bio"); // specify the email field
+                loginInfo.Email = myInfo.email;
+                string picurl = myInfo.picture.data.url;
+            }
             // Sign in the user with this external login provider if the user already has a login
             var result = OStore.Providers.ATApi.Instance.ExternalSignIn(loginInfo.Login.LoginProvider, loginInfo.Login.ProviderKey);//  .ExternalSignInAsync(loginInfo, isPersistent: false);
             switch (result.Status)

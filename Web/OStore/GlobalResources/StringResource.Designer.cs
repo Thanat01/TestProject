@@ -61,6 +61,276 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hello, you can view the product by going to this link - .
+        /// </summary>
+        public static string Common_CopyMessage {
+            get {
+                return ResourceManager.GetString("Common_CopyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Delivery_Setup_btnCancel {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_btnCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Delivery_Setup_btnSave {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_btnSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shipping Cost:.
+        /// </summary>
+        public static string Delivery_Setup_Cost {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_Cost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Area: Bangkok, Nonthaburi, Samut Prakan, Pathum Thani.
+        /// </summary>
+        public static string Delivery_Setup_D1_Info {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D1_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name: Alpha.
+        /// </summary>
+        public static string Delivery_Setup_D1Name {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D1Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Area: Thailand.
+        /// </summary>
+        public static string Delivery_Setup_D2_Info {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D2_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name: Thaipost.
+        /// </summary>
+        public static string Delivery_Setup_D2Name {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D2Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service day: .
+        /// </summary>
+        public static string Delivery_Setup_ServiceDay {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_ServiceDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Up Delivery Channel.
+        /// </summary>
+        public static string Delivery_Setup_Title {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Exchange_Index_btnCancel {
+            get {
+                return ResourceManager.GetString("Exchange_Index_btnCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Exchange_Index_btnSave {
+            get {
+                return ResourceManager.GetString("Exchange_Index_btnSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string Exchange_Index_ExGrid_Contact {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExGrid_Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date/Time Return.
+        /// </summary>
+        public static string Exchange_Index_ExGrid_DateTime {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExGrid_DateTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exchange ID.
+        /// </summary>
+        public static string Exchange_Index_ExGrid_ExchangeId {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExGrid_ExchangeId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LINE.
+        /// </summary>
+        public static string Exchange_Index_ExGrid_LINE {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExGrid_LINE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Receiver Name.
+        /// </summary>
+        public static string Exchange_Index_ExGrid_Name {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExGrid_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order ID.
+        /// </summary>
+        public static string Exchange_Index_ExGrid_OrderId {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExGrid_OrderId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string Exchange_Index_ExGrid_Price {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExGrid_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Exchange_Index_ExGrid_Status {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExGrid_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exchanged.
+        /// </summary>
+        public static string Exchange_Index_ExSubTab_Exchanged {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExSubTab_Exchanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exchanging.
+        /// </summary>
+        public static string Exchange_Index_ExSubTab_Exchanging {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExSubTab_Exchanging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pack.
+        /// </summary>
+        public static string Exchange_Index_ExSubTab_Pack {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExSubTab_Pack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pending.
+        /// </summary>
+        public static string Exchange_Index_ExSubTab_Pending {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExSubTab_Pending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick.
+        /// </summary>
+        public static string Exchange_Index_ExSubTab_Pick {
+            get {
+                return ResourceManager.GetString("Exchange_Index_ExSubTab_Pick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attached File.
+        /// </summary>
+        public static string Exchange_Index_lblAttach {
+            get {
+                return ResourceManager.GetString("Exchange_Index_lblAttach", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select All.
+        /// </summary>
+        public static string Exchange_Index_lblSelectAll {
+            get {
+                return ResourceManager.GetString("Exchange_Index_lblSelectAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exchange.
+        /// </summary>
+        public static string Exchange_Index_MainTab_Exchange {
+            get {
+                return ResourceManager.GetString("Exchange_Index_MainTab_Exchange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Return.
+        /// </summary>
+        public static string Exchange_Index_MainTab_Return {
+            get {
+                return ResourceManager.GetString("Exchange_Index_MainTab_Return", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Return &amp; Exchange.
+        /// </summary>
+        public static string Exchange_Index_Title {
+            get {
+                return ResourceManager.GetString("Exchange_Index_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Address.
         /// </summary>
         public static string Marketing_Customer_Address {
@@ -444,87 +714,6 @@ namespace GlobalResources {
         public static string Marketing_Tab_Promotion {
             get {
                 return ResourceManager.GetString("Marketing_Tab_Promotion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cancel.
-        /// </summary>
-        public static string Delivery_Setup_btnCancel {
-            get {
-                return ResourceManager.GetString("Delivery_Setup_btnCancel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Save.
-        /// </summary>
-        public static string Delivery_Setup_btnSave {
-            get {
-                return ResourceManager.GetString("Delivery_Setup_btnSave", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Shipping Cost:.
-        /// </summary>
-        public static string Delivery_Setup_Cost {
-            get {
-                return ResourceManager.GetString("Delivery_Setup_Cost", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Service Area: Bangkok, Nonthaburi, Samut Prakan, Pathum Thani.
-        /// </summary>
-        public static string Delivery_Setup_D1_Info {
-            get {
-                return ResourceManager.GetString("Delivery_Setup_D1_Info", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name: Alpha.
-        /// </summary>
-        public static string Delivery_Setup_D1Name {
-            get {
-                return ResourceManager.GetString("Delivery_Setup_D1Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Service Area: Thailand.
-        /// </summary>
-        public static string Delivery_Setup_D2_Info {
-            get {
-                return ResourceManager.GetString("Delivery_Setup_D2_Info", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name: Thaipost.
-        /// </summary>
-        public static string Delivery_Setup_D2Name {
-            get {
-                return ResourceManager.GetString("Delivery_Setup_D2Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Service day: .
-        /// </summary>
-        public static string Delivery_Setup_ServiceDay {
-            get {
-                return ResourceManager.GetString("Delivery_Setup_ServiceDay", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Set Up Delivery Channel.
-        /// </summary>
-        public static string Delivery_Setup_Title {
-            get {
-                return ResourceManager.GetString("Delivery_Setup_Title", resourceCulture);
             }
         }
         
