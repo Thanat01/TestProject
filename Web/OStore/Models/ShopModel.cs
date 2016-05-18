@@ -65,6 +65,7 @@ namespace OStore.Models
 
         public string Logo { get; set; }
 
+        [AllowHtml]
         public string AboutUs { get; set; }
         //public List<KeyValuePair<string,string>> FAQs { get; set; }
         public FAQ Faq { get; set; }
