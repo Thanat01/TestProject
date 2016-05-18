@@ -166,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DeliveryController.cs" />
+    <Compile Include="Controllers\ExchangeController.cs" />
     <Compile Include="Controllers\MarketingController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="GlobalResources\StringResource.Designer.cs">
@@ -220,6 +221,7 @@
     <Compile Include="Models\Customer\CustomerModel.cs" />
     <Compile Include="Models\Delivery\DeliveryChannelModel.cs" />
     <Compile Include="Models\Delivery\DeliverySetupViewModel.cs" />
+    <Compile Include="Models\Exchange\ExchangeIndexViewModel.cs" />
     <Compile Include="Models\Location\DistrictModel.cs" />
     <Compile Include="Models\Location\PostalCodeModel.cs" />
     <Compile Include="Models\Location\ProvinceModel.cs" />
@@ -685,6 +687,7 @@
     <Content Include="bower_components\raphael\license.txt" />
     <Content Include="bower_components\raphael\raphael-min.js" />
     <Content Include="bower_components\raphael\raphael.js" />
+    <Content Include="Content\bootstrap-tagsinput.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1014,6 +1017,8 @@
     <Content Include="Content\less\mixins.less" />
     <Content Include="Content\less\sb-admin-2.less" />
     <Content Include="Content\less\variables.less" />
+    <Content Include="Scripts\bootstrap-tagsinput.js" />
+    <Content Include="Scripts\bootstrap-tagsinput.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\dropzone\dropzone.js" />
@@ -1026,6 +1031,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\bootstrap-tagsinput.min.js.map" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\FooTable\footable.bookmarkable.js" />
     <Content Include="Scripts\FooTable\footable.filter.js" />
@@ -1139,6 +1145,7 @@
     <Content Include="Views\Order\CODUnCall.cshtml" />
     <Content Include="Views\Order\PickOrder.cshtml" />
     <Content Include="Views\Order\PackOrder.cshtml" />
+    <None Include="Views\Exchange\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

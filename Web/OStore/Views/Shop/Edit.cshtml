@@ -22,11 +22,16 @@
                 @using (Html.BeginForm("Edit", "Shop", FormMethod.Post))
                 {
                     <div class="form-horizontal" role="form">
+                        <div >
+                            <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" />
+                        </div>
+                       
                         @* ShopName *@
                         <div class="form-group">
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopName</label>
                             <div class="col-sm-10">
-                                @Html.TextBoxFor(c => c.ShopName, new { @class = "form-control" })
+                                @Html.TextBoxFor(c => c.ShopName, new {@class = "form-control", id="testTbx"})
+                                <button type="button" onclick="copyToClipboard(document.getElementById('testTbx'))">Copy</button>
                             </div>
                         </div>
                         @* Logo *@
@@ -34,7 +39,7 @@
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopLogo</label>
                             <div class="col-sm-4">
                                 @Html.FileUploadForm("../../Shop/SaveLogo")
-                                @Html.ValidationMessageFor(model => model.Logo, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.Logo, "", new {@class = "text-danger"})
                             </div>
                         </div>
                         @* Facebook *@
@@ -62,7 +67,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopAddress</label>
                             <div class="col-sm-10">
-                                @Html.TextBoxFor(c => c.AddressLine01, new { @class = "form-control" })
+                                @Html.TextBoxFor(c => c.AddressLine01, new {@class = "form-control"})
                             </div>
                         </div>
 
@@ -75,7 +80,7 @@
                             @* District *@
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopDistrict</label>
                             <div class="col-sm-4">
-                                @Html.DropDownListFor(c => c.DistrictId, Model.Districts, new { @class = "form-control" })
+                                @Html.DropDownListFor(c => c.DistrictId, Model.Districts, new {@class = "form-control"})
                             </div>
                         </div>
 
@@ -83,12 +88,12 @@
                             @* Sub-District *@
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopSubDistrict</label>
                             <div class="col-sm-4">
-                                @Html.DropDownListFor(c => c.SubDistrictId, Model.SubDistricts, new { @class = "form-control" })
+                                @Html.DropDownListFor(c => c.SubDistrictId, Model.SubDistricts, new {@class = "form-control"})
                             </div>
                             @* ZipCode *@
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopZipCode</label>
                             <div class="col-sm-4">
-                                @Html.DropDownListFor(c => c.PostCode, Model.PostalCodes, new { @class = "form-control" })
+                                @Html.DropDownListFor(c => c.PostCode, Model.PostalCodes, new {@class = "form-control"})
                             </div>
                         </div>
 
@@ -96,10 +101,10 @@
                         <div class="form-group">
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_ShopTelephone</label>
                             <div class="col-sm-4">
-                                @Html.TextBoxFor(c => c.Mobile, new { @class = "form-control" })
+                                @Html.TextBoxFor(c => c.Mobile, new {@class = "form-control"})
                             </div>
                         </div>
-                        <div class="form-group pull-right" style="margin-top:50px;">
+                        <div class="form-group pull-right" style="margin-top: 50px;">
                             <button class="btn btn-success" type="submit" name="command" value="Save" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnSave</button>
                             <button class="btn btn-bitbucket" type="submit" name="command" value="Cancel" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnCancel</button>
                         </div>
@@ -176,7 +181,7 @@
                         }
                         <div id="faqss"></div>
                         <div class="col-sm-offset-1">
-                            <button class="btn btn-success " @*onclick="addInput('faqss');"*@ type="submit" style="margin-top: 12px;"><i class="glyphicon glyphicon-plus-sign"></i>Add More</button>
+                            <button class="btn btn-success " @*onclick="addInput('faqss');"*@ type="button" style="margin-top: 12px;"><i class="glyphicon glyphicon-plus-sign"></i>Add More</button>
                         </div>
                         <div class="form-group pull-right" style="margin-top: 50px;">
                             <button class="btn btn-success" type="submit" name="command" value="Save" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnSave</button>
@@ -201,6 +206,28 @@
 
  
     ko.applyBindings(viewModel);
+
+    function copyToClipboard(elem) {
+       var target = elem;
+        var origSelectionStart = elem.selectionStart;
+       var  origSelectionEnd = elem.selectionEnd;
+        var currentFocus = document.activeElement;
+        target.focus();
+        var previousValue = target.value;
+
+        target.value = "@GlobalResources.StringResource.Common_CopyMessage " + target.value;
+        target.setSelectionRange(0, target.value.length);
+        
+       
+        var succeed;
+        try {
+            succeed = document.execCommand("copy");
+            target.value = previousValue;
+        } catch (e) {
+            succeed = false;
+        }
+        return succeed;
+    }
 </script>
 
 @section Scripts {

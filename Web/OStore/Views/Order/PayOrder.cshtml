@@ -62,24 +62,22 @@
                     <div class="tab-pane fade in" style="margin-top:30px;" id="Prepay">
                         <div class="panel-body">
                             <ul class="nav nav-tabs">
-
                                 <li class="active">
-                                    <a href="#PrepayPost" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_Prepay_Tab_Post</a>
+                                    <a href="#PrepayUnpost" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_Prepay_Tab_Unpost</a>
                                 </li>
                                 <li>
-                                    <a href="#PrepayUnpost" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_Prepay_Tab_Unpost</a>
+                                    <a href="#PrepayPost" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_Prepay_Tab_Post</a>
                                 </li>
                                 <li>
                                     <a href="#PrepayPaidConfirm" data-toggle="tab">@GlobalResources.StringResource.Ordermanagement_Pay_Prepay_Tab_PaidConfirm</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
-
-                                <div class="tab-pane fade in active" style="margin-top:30px;" id="PrepayPost">
-                                    @Html.Partial("PayPrepayPost", Model)
-                                </div>
-                                <div class="tab-pane fade in" style="margin-top:30px;" id="PrepayUnpost">
+                                <div class="tab-pane fade in active" style="margin-top:30px;" id="PrepayUnpost">
                                     @Html.Partial("PayPrepayUnpost", Model)
+                                </div>
+                                <div class="tab-pane fade in" style="margin-top:30px;" id="PrepayPost">
+                                    @Html.Partial("PayPrepayPost", Model)
                                 </div>
                                 <div class="tab-pane fade in" style="margin-top:30px;" id="PrepayPaidConfirm">
                                     @Html.Partial("PayPrepayPaidConfirm", Model)

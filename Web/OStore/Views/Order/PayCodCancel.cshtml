@@ -34,18 +34,6 @@
                     <th data-hide="all">
                         @GlobalResources.StringResource.OrderManagement_Pay_Reason
                     </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_StoreStaff
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_ItemLine
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_ItemCode
-                    </th>
-                    <th data-hide="all">
-                        @GlobalResources.StringResource.OrderManagement_Pay_ItemDescription
-                    </th>
 
                 </tr>
             </thead>
@@ -75,22 +63,10 @@
                             @m.Price
                         </td>
                         <td>
-                            @Html.DropDownListFor(n => m.StatusId, m.Statuses, "", new { @class = "form-control" })
+                            <span>Cancel</span>
                         </td>
-                        <td>
+                        <td style="color:red;">
                             @m.Reason
-                        </td>
-                        <td>
-                            @m.StoreStaff
-                        </td>
-                        <td>
-                            @m.ItemLine
-                        </td>
-                        <td>
-                            @m.ItemCode
-                        </td>
-                        <td>
-                            @m.ItemDescription
                         </td>
                     </tr>
                 }

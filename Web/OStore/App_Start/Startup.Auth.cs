@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Facebook;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using OStore.Models;
@@ -53,10 +55,24 @@ namespace OStore
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
-
-            app.UseFacebookAuthentication(
-               appId: "1002185923150955",
-               appSecret: "94a2be2e80638e8ec93c3e8140687975");
+            app.UseFacebookAuthentication(new FacebookAuthenticationOptions
+            {
+                AppId = "1002185923150955",
+                AppSecret = "94a2be2e80638e8ec93c3e8140687975",
+                Scope = { "email"},
+                Provider = new FacebookAuthenticationProvider
+                {
+                    OnAuthenticated = context =>
+                    {
+                        context.Identity.AddClaim(new System.Security.Claims.Claim("FacebookAccessToken", context.AccessToken));
+                        return Task.FromResult(true);
+                    }
+                }
+            });
+            
+            //app.UseFacebookAuthentication(
+            //   appId: "1002185923150955",
+            //   appSecret: "94a2be2e80638e8ec93c3e8140687975");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
