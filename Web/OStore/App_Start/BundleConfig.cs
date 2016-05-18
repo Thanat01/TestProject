@@ -23,6 +23,9 @@ namespace OStore
             bundles.Add(new ScriptBundle("~/bundles/dropzonescripts").Include(
          "~/Scripts/dropzone/dropzone.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/richText").Include(
+        "~/Scripts/ckeditor/ckeditor.js"));
+
             bundles.Add(new StyleBundle("~/Content/dropzonescss").Include(
                      "~/Content/dropzone/dropzone.css"));
 

@@ -6,6 +6,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <div class="col-lg-12">
     <h1 class="page-header">@ViewBag.Title</h1>
 </div>
@@ -122,8 +123,8 @@
                         @* About Us *@
                         <div class="form-group">
                             <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_AboutUs</label>
-                            <div class="col-sm-4">
-                                @Html.TextAreaFor(c => c.AboutUs, new { @class = "form-control", rows = "6" })
+                            <div class="col-sm-10">
+                                @Html.TextAreaFor(c => c.AboutUs, new { @class = "form-control",@id="editor", rows = "6" })
                             </div>
                         </div>
                         <div class="form-group pull-right" style="margin-top:50px;">
@@ -196,6 +197,9 @@
 
 </div>
 <script type="text/javascript">
+
+    CKEDITOR.replace('editor');
+
     var counter = 0;
     var limit = 10;
     var viewModel = {
@@ -208,9 +212,9 @@
     ko.applyBindings(viewModel);
 
     function copyToClipboard(elem) {
-       var target = elem;
+        var target = elem;
         var origSelectionStart = elem.selectionStart;
-       var  origSelectionEnd = elem.selectionEnd;
+        var  origSelectionEnd = elem.selectionEnd;
         var currentFocus = document.activeElement;
         target.focus();
         var previousValue = target.value;
