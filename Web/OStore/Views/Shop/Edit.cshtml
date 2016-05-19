@@ -26,12 +26,12 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            for(int i =0;i< TreeViewExamples.Count;i++)
+            for (int i = 0; i < TreeViewExamples.Count; i++)
             {
-                
-                if(TreeViewExamples[i].SubCategories != null)
+
+                if (TreeViewExamples[i].SubCategories != null)
                 {
-                    
+
                     builder.Append(string.Format("<li>{0}{1}<ul>{2}</ul></li>", TreeViewExamples[i].Display, Html.CheckBoxFor(m => TreeViewExamples[i].Checked, new { @class = "checkbox-inline" }), GenerateNavigationTabs(TreeViewExamples[i].SubCategories)));
                 }
                 else
@@ -39,10 +39,11 @@
 
                     builder.Append(string.Format("<li>{0}{1}</li>", TreeViewExamples[i].Display, Html.CheckBoxFor(m => TreeViewExamples[i].Checked, new { @class = "checkbox-inline" })));
 
-                    
+
 
                 }
             }
+          
             //model.ForEach(m =>
             //{
             //    if (m.SubCategories!=null)

@@ -71,37 +71,47 @@ namespace OStore.Providers
                     data.Add(new TreeViewExampleModel()
                     {
                         Checked = false,
-                        Display = "Shirt"
+                        Display = "Dress",
+                        Id=1
                     });
                     data.Add(new TreeViewExampleModel()
                     {
                         Checked = false,
-                        Display = "Shorts"
+                        Display = "Shoes",
+                        Id = 2
                     });
                     data.Add(new TreeViewExampleModel()
                     {
                         Checked = false,
                         Display = "Swimming",
+                        Id = 3,
                         SubCategories = new List<TreeViewExampleModel>()
                         {
                             new TreeViewExampleModel()
                             {
                                 Checked = false,
-                                Display = "Men"
-                                ,
-                                SubCategories = new List<TreeViewExampleModel>()
-                                {
-                                    new TreeViewExampleModel()
-                                    {
-                                        Display = "RealMan",
-                                        Checked = false
-                                    }
-                                }
-                            }
+                                Display = "Men",
+                                Id = 31
+                            },new TreeViewExampleModel()
+                            {
+                                Checked = false,
+                                Display = "Women",
+                                Id = 32
+                            },new TreeViewExampleModel()
+                            {
+                                Checked = false,
+                                Display = "Kids",
+                                Id = 33
+                            },
                         }
                     });
-                 
-                   
+                    data.Add(new TreeViewExampleModel()
+                    {
+                        Checked = false,
+                        Display = "Shirts",
+                        Id = 4
+                    });
+
                     Set<List<TreeViewExampleModel>>("DummyDataTreeview", data);
                 }
 

@@ -108,7 +108,7 @@ namespace OStore.Models
     {
         public string Display { get; set; }
         public bool Checked { get; set; }
-       
+        public int Id { get; set; }
 
        // private List<TreeViewExampleModel> _sub;
         public List<TreeViewExampleModel> SubCategories { get; set; }
