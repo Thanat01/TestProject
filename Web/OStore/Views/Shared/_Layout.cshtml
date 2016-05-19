@@ -15,7 +15,9 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/knockout")
-    @Styles.Render("~/Content/dropzonescss")
+                    @Styles.Render("~/Content/dropzonescss")
+                    <link href="~/Content/KendoUi/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Content/KendoUi/kendo.uniform.min.css" rel="stylesheet" />
 
     @Styles.Render("~/Content/bootstraptagscss")
     @Scripts.Render("~/bundles/richText")
@@ -37,7 +39,8 @@
     @RenderSection("scripts", required: false)
 
 </head>
-<body>
+<body><script src="~/Scripts/Kendo/kendo.all.min.js"></script>
+<script src="~/Scripts/KnockoutKendo.js"></script>
     <div id="wrapper">
         <!-- Navigation -->
         @Html.Action("Index", "Navbar")

@@ -61,8 +61,65 @@ namespace OStore.Providers
             }
             set { Set<List<FAQ>>("ShopFAQs", value); }
         }
-       
 
+        public List<TreeViewExampleModel> DummyDataTreeview
+        {
+            get
+            {
+                if (!IsExist("DummyDataTreeview"))
+                {
+                    List<TreeViewExampleModel> data = new List<TreeViewExampleModel>();
+                    data.Add(new TreeViewExampleModel()
+                    {
+                        Checked = false,
+                        Display = "Dress",
+                        Id=1
+                    });
+                    data.Add(new TreeViewExampleModel()
+                    {
+                        Checked = false,
+                        Display = "Shoes",
+                        Id = 2
+                    });
+                    data.Add(new TreeViewExampleModel()
+                    {
+                        Checked = false,
+                        Display = "Swimming",
+                        Id = 3,
+                        SubCategories = new List<TreeViewExampleModel>()
+                        {
+                            new TreeViewExampleModel()
+                            {
+                                Checked = false,
+                                Display = "Men",
+                                Id = 31
+                            },new TreeViewExampleModel()
+                            {
+                                Checked = false,
+                                Display = "Women",
+                                Id = 32
+                            },new TreeViewExampleModel()
+                            {
+                                Checked = false,
+                                Display = "Kids",
+                                Id = 33
+                            },
+                        }
+                    });
+                    data.Add(new TreeViewExampleModel()
+                    {
+                        Checked = false,
+                        Display = "Shirts",
+                        Id = 4
+                    });
+
+                    Set<List<TreeViewExampleModel>>("DummyDataTreeview", data);
+                }
+
+                return Get<List<TreeViewExampleModel>>("DummyDataTreeview");
+            }
+            set { Set<List<TreeViewExampleModel>>("DummyDataTreeview", value); }
+        }
         #endregion
 
         #region  Product Category
