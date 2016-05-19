@@ -22,12 +22,9 @@
                 <p>
                     @foreach (AuthenticationDescription p in loginProviders)
                     {
-                        <div class="form-inline text-center" style="background-color: #3b5998;">
-                            <img src="~/Content/Images/logo_facebook.jpg" class="form-inline" width="30px" />
+                        <div class="form-inline text-center" style="background-color: #3b5998; height:45px;border-radius:4px; ">
                             <button type="submit" class="btn  form-control" style="background-color: #3b5998;color:white;" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">
-
-                                Connect with Facebook
-
+                                <img src="~/Content/Images/logo_facebook.jpg" class="form-inline" width="30px" />  Connect with Facebook
                             </button>
                         </div>
                     }

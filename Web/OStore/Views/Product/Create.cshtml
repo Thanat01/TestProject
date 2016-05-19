@@ -6,10 +6,7 @@
 
 
 <div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header">@GlobalResources.StringResource.Product_Create_Title</h1>
-    </div>
-    <!-- /.col-lg-12 -->
+    <h2>@GlobalResources.StringResource.Product_Create_Title</h2>
 </div>
 
 
@@ -34,7 +31,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = "6" })
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @id = "editor", rows = "6" })
+
                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -105,9 +103,7 @@
         <div class="form-group">
             <label class="control-label col-md-2">@GlobalResources.StringResource.Product_Create_Size</label>
             <div class="col-md-10 form-inline">
-                <div class="form-control">
-                    <input type="text" value="" data-role="tagsinput" />
-                </div>
+                <input type="text" value="" data-role="tagsinput" />
             </div>
         </div>
 
@@ -115,9 +111,7 @@
         <div class="form-group">
             <label class="control-label col-md-2">@GlobalResources.StringResource.Product_Create_Color</label>
             <div class="col-md-10 form-inline">
-                <div class="form-control">
-                    <input type="text" value="" data-role="tagsinput" />
-                </div>
+                <input type="text" value="" data-role="tagsinput" />
             </div>
         </div>
 
@@ -125,9 +119,7 @@
         <div class="form-group">
             <label class="control-label col-md-2">@GlobalResources.StringResource.Product_Create_Material</label>
             <div class="col-md-10 form-inline">
-                <div class="form-control">
-                    <input type="text" value="" data-role="tagsinput" />
-                </div>
+                <input type="text" value="" data-role="tagsinput" />
             </div>
         </div>
 
@@ -152,9 +144,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Tags, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10 form-inline">
-                <div class="form-control">
-                    <input type="text" value="Cute,Dress" data-role="tagsinput" />
-                </div>
+
+                <input type="text" value="Cute,Dress" data-role="tagsinput" />
+
             </div>
         </div>
 
@@ -165,3 +157,9 @@
         </div>
     </div>
 }
+
+<script type="text/javascript">
+
+    CKEDITOR.replace('editor');
+
+</script>

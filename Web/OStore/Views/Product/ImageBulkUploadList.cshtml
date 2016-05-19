@@ -1,0 +1,155 @@
+﻿@model IEnumerable<OStore.Models.ProductImport.ImportImageViewModel>
+@{
+    ViewBag.Title = "ImageBulkUploadList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="../Content/Footable/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../Content/Footable/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+<script src="../Scripts/Footable/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="../Scripts/Footable/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+
+<div class="row">
+    <h2>@GlobalResources.StringResource.Product_Import_BulkUploadList_Title</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10 form-inline">
+                <input id="filter" type="text" class="form-control filter-status" placeholder="@GlobalResources.StringResource.Common_PlacHolder_Search" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <table class="table demo" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+                <thead>
+                    <tr>
+                        <th data-toggle="true">
+
+                        </th>
+                        <th data-toggle="true">
+                            SKU
+                        </th>
+                        <th data-hide="all">
+                            Product
+                        </th>
+                        <th data-hide="all">
+                            @GlobalResources.StringResource.Product_Import_BulkUploadList_Description
+                        </th>
+                        <th data-hide="all">
+                            Pictures
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var m in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.CheckBoxFor(c => m.IsChecked, new { @class = "control-label" })
+                            </td>
+                            <td>
+                                @m.SKU
+                            </td>
+                            <td>
+                                @m.Name
+                            </td>
+                            <td>
+                                @m.Description
+                            </td>
+                            <td>
+                                @foreach (var n in m.Images)
+                                {
+                                    <a target="_blank" href="~/Content/Shop/@n">
+                                        <img src="~/Content/Shop/@n" height="100">
+                                    </a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <div class="pagination pagination-centered"></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-12 form-inline text-right">
+        <a class="btn btn-default" onclick="">Save</a>
+        <a class="btn btn-default" onclick="">Cancel</a>
+        <a class="btn btn-default" onclick="">Apply</a>
+    </div>
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('table.demo').footable().bind('footable_filtering', function (e) {
+            var selected = $(this).prev('p').find('.filter-status').find(':selected').text();
+            if (selected && selected.length > 0) {
+                e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+                e.clear = !e.filter;
+            }
+        });
+
+        $('.clear-filter').click(function (e) {
+            e.preventDefault();
+            var $parent = $(this).closest('p');
+            $parent.find('.filter-status').val('');
+            if ($parent.find('#filterCODUnCall').length > 0) {
+                $('table.demo.one').trigger('footable_clear_filter');
+            } else {
+                $('table.demo.two').trigger('footable_clear_filter');
+            }
+        });
+
+        $('.filter-status').change(function (e) {
+            e.preventDefault();
+            var $parent = $(this).closest('p');
+            if ($parent.find('#filterCODUnCall').length > 0) {
+                $('table.demo.one').trigger('footable_filter', { filter: $parent.find('#filter1').val() });
+            } else {
+                $('table.demo.two').trigger('footable_filter', { filter: $parent.find('#filter2').val() });
+            }
+        });
+        $('table').trigger('footable_expand_all');
+        $('.filter-api').click(function (e) {
+            e.preventDefault();
+
+            //get the footable filter object
+            var footableFilter = $('table').data('footable-filter');
+
+            alert('about to filter table by "tech"');
+            //filter by 'tech'
+            footableFilter.filter('tech');
+
+            //clear the filter
+            if (confirm('clear filter now?')) {
+                footableFilter.clearFilter();
+            }
+        });
+
+        $('#change-page-size').change(function (e) {
+            e.preventDefault();
+            var pageSize = $(this).val();
+            $('.footable').data('page-size', pageSize);
+            $('.footable').trigger('footable_initialized');
+        });
+
+        $('#change-nav-size').change(function (e) {
+            e.preventDefault();
+            var navSize = $(this).val();
+            $('.footable').data('limit-navigation', navSize);
+            $('.footable').trigger('footable_initialized');
+        });
+    });
+</script>
