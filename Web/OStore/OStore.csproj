@@ -239,6 +239,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MenuItemModel.cs" />
     <Compile Include="Models\Navbar.cs" />
+    <Compile Include="Models\ProductImport\ImportImageViewModel.cs" />
     <Compile Include="Models\Product\ProductItemViewModel.cs" />
     <Compile Include="Models\Product\ProductViewModel.cs" />
     <Compile Include="Models\Product\OrderProductViewModel.cs" />
@@ -706,6 +707,7 @@
     <Content Include="Content\FooTable\fonts\footable.woff" />
     <Content Include="Content\FooTable\footable.core.css" />
     <Content Include="Content\Images\attachFile.svg" />
+    <Content Include="Content\Images\icon_copy.png" />
     <Content Include="Content\Images\label01.jpg" />
     <Content Include="Content\Images\logo_facebook.jpg" />
     <Content Include="Content\Images\Add.svg" />
@@ -3182,10 +3184,13 @@
     <Content Include="Scripts\Kendo\messages\kendo.messages.zh-HK.min.js.map" />
     <Content Include="Scripts\Kendo\messages\kendo.messages.zh-TW.min.js.map" />
     <None Include="Views\Exchange\Index.cshtml" />
+    <Content Include="Views\Product\ExcelImport.cshtml" />
+    <Content Include="Views\Product\ImageBulkUpload.cshtml" />
+    <Content Include="Views\Product\ImageBulkUploadList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Shop\" />
+    <Folder Include="Content\Shop\1\" />
     <Folder Include="Content\social\" />
     <Folder Include="Scripts\ViewModel\Shop\" />
   </ItemGroup>

@@ -61,11 +61,29 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use a local account to log in..
+        /// </summary>
+        public static string Account_LogIn_LocalAccount_Title {
+            get {
+                return ResourceManager.GetString("Account_LogIn_LocalAccount_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hello, you can view the product by going to this link - .
         /// </summary>
         public static string Common_CopyMessage {
             get {
                 return ResourceManager.GetString("Common_CopyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search....
+        /// </summary>
+        public static string Common_PlacHolder_Search {
+            get {
+                return ResourceManager.GetString("Common_PlacHolder_Search", resourceCulture);
             }
         }
         
@@ -1524,6 +1542,131 @@ namespace GlobalResources {
         public static string Product_Create_UploadImage {
             get {
                 return ResourceManager.GetString("Product_Create_UploadImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Folder of image file..
+        /// </summary>
+        public static string Product_Import_BulkUpload_Header {
+            get {
+                return ResourceManager.GetString("Product_Import_BulkUpload_Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bulk upload.
+        /// </summary>
+        public static string Product_Import_BulkUpload_Title {
+            get {
+                return ResourceManager.GetString("Product_Import_BulkUpload_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input all your image product information at once with Bulk image..
+        /// </summary>
+        public static string Product_Import_BulkUpload_Title_Description {
+            get {
+                return ResourceManager.GetString("Product_Import_BulkUpload_Title_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Please read below information carefully before bulk image.&lt;/h3&gt;
+        ///
+        ///&lt;ul&gt;
+        ///	&lt;li&gt;Bulk image must must be use the name of image same product SKU&lt;/li&gt;
+        ///	&lt;li&gt;You can import no more than 300 images/ 1 time.&lt;/li&gt;
+        ///	&lt;li&gt;Bulk image it may take awhile to finish importing all you product images, OSTORE will alert you with an E-mail.&lt;/li&gt;
+        ///&lt;/ul&gt;.
+        /// </summary>
+        public static string Product_Import_BulkUpload_Warning {
+            get {
+                return ResourceManager.GetString("Product_Import_BulkUpload_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Product_Import_BulkUploadList_Description {
+            get {
+                return ResourceManager.GetString("Product_Import_BulkUploadList_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product images.
+        /// </summary>
+        public static string Product_Import_BulkUploadList_Title {
+            get {
+                return ResourceManager.GetString("Product_Import_BulkUploadList_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;How to start?&lt;/h3&gt;
+        ///
+        ///&lt;p&gt;Start by downloading a file, Excel Template input your information inside the given box,&lt;br /&gt;
+        ///and import your file into the system.&lt;/p&gt;
+        ///
+        ///&lt;hr /&gt;
+        ///&lt;h3&gt;What program should I use to manage my information?&lt;/h3&gt;
+        ///
+        ///&lt;p&gt;Although Microsoft Excel can manage file .Excel type but it cannot Encode your file to be in&lt;br /&gt;
+        ///UTF-8 type so we recommend for you to use Google Drive which is a free software from Google.&lt;/p&gt;
+        ///
+        ///&lt;hr /&gt;
+        ///&lt;h3&gt;Newly import products will have any affect on my existi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Product_Import_Excel_Description {
+            get {
+                return ResourceManager.GetString("Product_Import_Excel_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload File Excel.
+        /// </summary>
+        public static string Product_Import_Excel_SelectFile_Header {
+            get {
+                return ResourceManager.GetString("Product_Import_Excel_SelectFile_Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excel.
+        /// </summary>
+        public static string Product_Import_Excel_Title {
+            get {
+                return ResourceManager.GetString("Product_Import_Excel_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input all your product information at once with excel file..
+        /// </summary>
+        public static string Product_Import_Excel_Title_Description {
+            get {
+                return ResourceManager.GetString("Product_Import_Excel_Title_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Please read below information carefully before importing any data!&lt;/h3&gt;
+        ///
+        ///&lt;ul&gt;
+        ///	&lt;li&gt;With Excel importing method, you cannot cancel or retrieve your old information.&lt;/li&gt;
+        ///	&lt;li&gt;You can import, no more than 300 items/ 1 time. (If there are more than 300 items,&lt;br /&gt;
+        ///	the system will automatically delete your products. )&lt;/li&gt;
+        ///	&lt;li&gt;We will choose &amp;quot;Keep the existing products &amp;quot; as a default.&lt;/li&gt;
+        ///	&lt;li&gt;If you wish to replace all data by importing this Excel file,&lt;br /&gt;
+        ///	please choose &amp;quot;Repl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Product_Import_Excel_Warning {
+            get {
+                return ResourceManager.GetString("Product_Import_Excel_Warning", resourceCulture);
             }
         }
         

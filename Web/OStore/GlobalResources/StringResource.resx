@@ -660,4 +660,74 @@
   <data name="Product_Create_Item_UNSKU" xml:space="preserve">
     <value>Universal SKU</value>
   </data>
+  <data name="Common_PlacHolder_Search" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="Product_Import_BulkUploadList_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Product_Import_BulkUploadList_Title" xml:space="preserve">
+    <value>Product images</value>
+  </data>
+  <data name="Product_Import_BulkUpload_Header" xml:space="preserve">
+    <value>Import Folder of image file.</value>
+  </data>
+  <data name="Product_Import_BulkUpload_Title" xml:space="preserve">
+    <value>Bulk upload</value>
+  </data>
+  <data name="Product_Import_BulkUpload_Title_Description" xml:space="preserve">
+    <value>Input all your image product information at once with Bulk image.</value>
+  </data>
+  <data name="Product_Import_BulkUpload_Warning" xml:space="preserve">
+    <value>&lt;h3&gt;Please read below information carefully before bulk image.&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Bulk image must must be use the name of image same product SKU&lt;/li&gt;
+	&lt;li&gt;You can import no more than 300 images/ 1 time.&lt;/li&gt;
+	&lt;li&gt;Bulk image it may take awhile to finish importing all you product images, OSTORE will alert you with an E-mail.&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="Product_Import_Excel_Description" xml:space="preserve">
+    <value>&lt;h3&gt;How to start?&lt;/h3&gt;
+
+&lt;p&gt;Start by downloading a file, Excel Template input your information inside the given box,&lt;br /&gt;
+and import your file into the system.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h3&gt;What program should I use to manage my information?&lt;/h3&gt;
+
+&lt;p&gt;Although Microsoft Excel can manage file .Excel type but it cannot Encode your file to be in&lt;br /&gt;
+UTF-8 type so we recommend for you to use Google Drive which is a free software from Google.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h3&gt;Newly import products will have any affect on my existing products?&lt;/h3&gt;
+
+&lt;p&gt;We will not make any change to your existing information unless&lt;br /&gt;
+you choose to &amp;quot;Replace all products&amp;quot; function.&lt;/p&gt;</value>
+  </data>
+  <data name="Product_Import_Excel_SelectFile_Header" xml:space="preserve">
+    <value>Upload File Excel</value>
+  </data>
+  <data name="Product_Import_Excel_Title" xml:space="preserve">
+    <value>Excel</value>
+  </data>
+  <data name="Product_Import_Excel_Title_Description" xml:space="preserve">
+    <value>Input all your product information at once with excel file.</value>
+  </data>
+  <data name="Product_Import_Excel_Warning" xml:space="preserve">
+    <value>&lt;h3&gt;Please read below information carefully before importing any data!&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;With Excel importing method, you cannot cancel or retrieve your old information.&lt;/li&gt;
+	&lt;li&gt;You can import, no more than 300 items/ 1 time. (If there are more than 300 items,&lt;br /&gt;
+	the system will automatically delete your products. )&lt;/li&gt;
+	&lt;li&gt;We will choose &amp;quot;Keep the existing products &amp;quot; as a default.&lt;/li&gt;
+	&lt;li&gt;If you wish to replace all data by importing this Excel file,&lt;br /&gt;
+	please choose &amp;quot;Replace all products &amp;quot; from the menu below.&lt;/li&gt;
+	&lt;li&gt;It may take awhile to finish importing all your products, We will alert you with an E-mail.&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="Account_LogIn_LocalAccount_Title" xml:space="preserve">
+    <value>Use a local account to log in.</value>
+  </data>
 </root>

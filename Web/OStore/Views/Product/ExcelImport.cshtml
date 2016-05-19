@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "ExcelImport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h2>@GlobalResources.StringResource.Product_Import_Excel_Title</h2>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                <h2>@GlobalResources.StringResource.Product_Import_Excel_Title_Description</h2>
+            </div>
+            <div class="col-md-10">
+                @Html.Raw(HttpUtility.HtmlDecode(@GlobalResources.StringResource.Product_Import_Excel_Warning))
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-10"><h3>@GlobalResources.StringResource.Product_Import_Excel_SelectFile_Header</h3></span>
+            <div class="col-md-10">
+                <select class="form-control">
+                    <option value="0">Keep the existing products</option>
+                    <option value="1">Replace the existing products</option>
+                </select>
+            </div>
+            <div class="col-md-10">
+                @Html.FileUploadForm("../Product/ImportProductFromExcel")
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Raw(HttpUtility.HtmlDecode(@GlobalResources.StringResource.Product_Import_Excel_Description))
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-10 form-inline text-right">
+        <a class="btn btn-default" onclick="">Save</a>
+        <a class="btn btn-default" onclick="">Cancel</a>
+        <a class="btn btn-default" onclick="">Apply</a>
+    </div>
+}

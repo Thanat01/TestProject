@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace OStore.Models.Product
 {
@@ -23,6 +24,7 @@ namespace OStore.Models.Product
         public string Name { get; set; }
 
         [Display(Name = @"Product_Create_Description", ResourceType = typeof(StringResource))]
+        [AllowHtml]
         public string Description { get; set; }
 
         [Display(Name = @"Product_Create_Cost", ResourceType = typeof(StringResource))]

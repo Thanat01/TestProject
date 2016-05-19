@@ -54,7 +54,7 @@ namespace OStore.Controllers
                 OrderManualViewModel model = new OrderManualViewModel()
                 {
                     OrderId = "O0516E4",
-                    RegisterLink = "https://bill.ostore.com/th/b/ZPz6dmv",
+                    RegisterLink = "http://cassy-o.webflow.io/request-details",
                     OrderDate = DateTime.Now,
                     Status = "Order",
                     CustomerId=1,

@@ -24,9 +24,11 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.RegisterLink, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.RegisterLink, new { htmlAttributes = new { @class = "form-control" } })
-
+            <div class="col-md-10 form-inline">
+                @Html.TextBoxFor(model => model.RegisterLink, new { @class = "form-control", id = "txtRegisterLink", style = "border:0px;" })
+                <a>
+                    <img src="~/Content/Images/icon_copy.png" width="30" onclick="copyToClipboard(document.getElementById('txtRegisterLink'))" />
+                </a>
             </div>
         </div>
 
@@ -90,37 +92,38 @@
 
 
         @*Product List*@
-        <div class="panel panel-default">
-            <table class=" table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
-                <thead>
-                    <tr>
-                        <th data-hide="phone">
-                            SKU
-                        </th>
-                        <th>
-                            Name
-                        </th>
-                        <th data-hide="phone,tablet">
-                            Stock
-                        </th>
-                        <th data-hide="phone,tablet">
-                            Color
-                        </th>
-                        <th data-hide="phone,tablet">
-                            Size
-                        </th>
-                        <th data-hide="phone">
-                            Price
-                        </th>
-                        <th data-hide="phone,tablet">
-                            QTY
-                        </th>
+        <div class="form-group">
+            <div class="panel panel-default">
+                <table class=" table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+                    <thead>
+                        <tr>
+                            <th data-hide="phone">
+                                SKU
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th data-hide="phone,tablet">
+                                Stock
+                            </th>
+                            <th data-hide="phone,tablet">
+                                Color
+                            </th>
+                            <th data-hide="phone,tablet">
+                                Size
+                            </th>
+                            <th data-hide="phone">
+                                Price
+                            </th>
+                            <th data-hide="phone,tablet">
+                                QTY
+                            </th>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var product in Model.Products)
-                    {
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.Products)
+                        {
                         <tr>
                             <td>@product.SKU</td>
                             <td>@product.Name</td>
@@ -139,23 +142,23 @@
                                 @Html.ValidationMessageFor(model => product.OrderQuantity, "", new { @class = "text-danger" })
                             </td>
                         </tr>
-                    }
+                        }
 
 
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="8">
-                            <div class="col-md-12 text-center">
-                                <a onclick="ShowHidePanel('productList', 'manualOrder');"> <img src="~/Content/Images/Add.svg" width="30px;" /> Add product</a>
-                            </div>
-                            <div class="pagination pagination-centered"></div>
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="8">
+                                <div class="col-md-12 text-center">
+                                    <a onclick="ShowHidePanel('productList', 'manualOrder');"> <img src="~/Content/Images/Add.svg" width="30px;" /> Add product</a>
+                                </div>
+                                <div class="pagination pagination-centered"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
-
         @*End Product List*@
 
 
@@ -211,105 +214,105 @@
             <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Apply</a>
         </div>
     </div>
-    
-    //Product List
-    <div id="productList" style="display:none;">
-        <div class="panel">
-            <div class="col-md-12 form-inline row">
-                <input id="filter" type="text" placeholder="Search..." class="filter-status form-control" />
-            </div>
-            <table class=" table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
-                <thead>
-                    <tr>
-                        <th data-hide="phone" data-toggle="true">
-                            Picture
-                        </th>
-                        <th data-hide="phone">
-                            SKU
-                        </th>
-                        <th>
-                            Name
-                        </th>
-                        <th data-hide="phone,tablet">
-                            Stock
-                        </th>
-                        <th data-hide="phone,tablet">
-                            Color
-                        </th>
-                        <th data-hide="phone,tablet">
-                            Size
-                        </th>
-                        <th data-hide="phone">
-                            Price
-                        </th>
-                        <th data-hide="phone,tablet">
-                            QTY
-                        </th>
-                        <th data-sort-ignore="true">
-                            Choose
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var product in Model.Products)
-                    {
-                        <tr>
-                            <td>@product.Image</td>
-                            <td>@product.SKU</td>
-                            <td>@product.Name</td>
-                            <td>@product.StockQuantity</td>
-                            <td>
-                                @Html.DropDownListFor(model => product.ColorId, product.Colors, "", new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => product.ColorId, "", new { @class = "text-danger" })
-                            </td>
-                            <td>
-                                @Html.DropDownListFor(model => product.SizeId, product.Sizes, "", new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => product.SizeId, "", new { @class = "text-danger" })
-                            </td>
-                            <td>@product.Price</td>
-                            <td>
-                                @Html.EditorFor(model => product.OrderQuantity, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => product.OrderQuantity, "", new { @class = "text-danger" })
-                            </td>
-                            <td><input type="checkbox" class="form-control" /></td>
-                        </tr>
-                    }
+
+                        //Product List
+                        <div id="productList" style="display:none;">
+                            <div class="panel">
+                                <div class="col-md-12 form-inline row">
+                                    <input id="filter" type="text" placeholder="Search..." class="filter-status form-control" />
+                                </div>
+                                <table class=" table table-hover" data-filter="#filter" data-filter-text-only="true" data-page-size="10">
+                                    <thead>
+                                        <tr>
+                                            <th data-hide="phone" data-toggle="true">
+                                                Picture
+                                            </th>
+                                            <th data-hide="phone">
+                                                SKU
+                                            </th>
+                                            <th>
+                                                Name
+                                            </th>
+                                            <th data-hide="phone,tablet">
+                                                Stock
+                                            </th>
+                                            <th data-hide="phone,tablet">
+                                                Color
+                                            </th>
+                                            <th data-hide="phone,tablet">
+                                                Size
+                                            </th>
+                                            <th data-hide="phone">
+                                                Price
+                                            </th>
+                                            <th data-hide="phone,tablet">
+                                                QTY
+                                            </th>
+                                            <th data-sort-ignore="true">
+                                                Choose
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var product in Model.Products)
+                                        {
+                                        <tr>
+                                            <td>@product.Image</td>
+                                            <td>@product.SKU</td>
+                                            <td>@product.Name</td>
+                                            <td>@product.StockQuantity</td>
+                                            <td>
+                                                @Html.DropDownListFor(model => product.ColorId, product.Colors, "", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => product.ColorId, "", new { @class = "text-danger" })
+                                            </td>
+                                            <td>
+                                                @Html.DropDownListFor(model => product.SizeId, product.Sizes, "", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => product.SizeId, "", new { @class = "text-danger" })
+                                            </td>
+                                            <td>@product.Price</td>
+                                            <td>
+                                                @Html.EditorFor(model => product.OrderQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => product.OrderQuantity, "", new { @class = "text-danger" })
+                                            </td>
+                                            <td><input type="checkbox" class="form-control" /></td>
+                                        </tr>
+                                        }
 
 
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="8">
-                            <div class="pagination pagination-centered"></div>
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="8">
+                                                <div class="pagination pagination-centered"></div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
 
-        <div class="col-md-12 form-inline text-right">
-            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Save</a>
-            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Cancel</a>
-            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Apply</a>
-        </div>
-    </div>
-    
-    //Customer List
-    <div id="customerList" style="display:none">
+                            <div class="col-md-12 form-inline text-right">
+                                <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Save</a>
+                                <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Cancel</a>
+                                <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'productList');">Apply</a>
+                            </div>
+                        </div>
 
-        @Html.Action("ShowCustomerList", "SaleChannel")
-        <div class="col-md-6 form-inline">
-            <a class="btn btn-default" onclick="ShowHidePanel('customerCreate','customerList');">Add more</a>
-        </div>
-        <div class="col-md-12 form-inline text-right">
-            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'customerList');">Save</a>
-            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'customerList');">Cancel</a>
-            <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'customerList');">Apply</a>
-        </div>
-    </div>
-    <div id="customerCreate" style="display:none;" class="col-md-12">
-        @Html.Partial("_CustomerCreate", new OStore.Models.Customer.CustomerModel())
-    </div>
+                                        //Customer List
+                                        <div id="customerList" style="display:none">
+
+                                            @Html.Action("ShowCustomerList", "SaleChannel")
+                                            <div class="col-md-6 form-inline">
+                                                <a class="btn btn-default" onclick="ShowHidePanel('customerCreate','customerList');">Add more</a>
+                                            </div>
+                                            <div class="col-md-12 form-inline text-right">
+                                                <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'customerList');">Save</a>
+                                                <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'customerList');">Cancel</a>
+                                                <a class="btn btn-default" onclick="ShowHidePanel('manualOrder', 'customerList');">Apply</a>
+                                            </div>
+                                        </div>
+                                        <div id="customerCreate" style="display:none;" class="col-md-12">
+                                            @Html.Partial("_CustomerCreate", new OStore.Models.Customer.CustomerModel())
+                                        </div>
 
 }
 <script type="text/javascript">
@@ -367,5 +370,44 @@
             $('.footable').trigger('footable_initialized');
         });
     });
+
+
 </script>
 
+<script type="text/javascript">
+
+    CKEDITOR.replace('editor');
+
+    var counter = 0;
+    var limit = 10;
+    var viewModel = {
+        key: ko.observable(""),
+        value: ko.observable(""),
+        selectedItem: ko.observable()
+    };
+
+
+    ko.applyBindings(viewModel);
+
+    function copyToClipboard(elem) {
+        var target = elem;
+        var origSelectionStart = elem.selectionStart;
+        var origSelectionEnd = elem.selectionEnd;
+        var currentFocus = document.activeElement;
+        target.focus();
+        var previousValue = target.value;
+
+        target.value = "@GlobalResources.StringResource.Common_CopyMessage " + target.value;
+        target.setSelectionRange(0, target.value.length);
+
+
+        var succeed;
+        try {
+            succeed = document.execCommand("copy");
+            target.value = previousValue;
+        } catch (e) {
+            succeed = false;
+        }
+        return succeed;
+    }
+</script>
