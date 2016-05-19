@@ -1,4 +1,6 @@
-﻿@using OStore.Providers
+﻿@using System.Text
+@using OStore.Models
+@using OStore.Providers
 @model OStore.Models.ShopModel
 
 @{
@@ -16,6 +18,54 @@
     <li role="presentation"><a href="#about" data-toggle="tab">@GlobalResources.StringResource.Shop_Edit_TabAbout</a></li>
     <li role="presentation"><a href="#faqs" data-toggle="tab">@GlobalResources.StringResource.Shop_Edit_TabFAQs</a></li>
 </ul>
+@functions
+{
+    private string GenerateNavigationTabs(List<TreeViewExampleModel> TreeViewExamples)
+    {
+        try
+        {
+            StringBuilder builder = new StringBuilder();
+
+            for (int i = 0; i < TreeViewExamples.Count; i++)
+            {
+
+                if (TreeViewExamples[i].SubCategories != null)
+                {
+
+                    builder.Append(string.Format("<li>{0}{1}<ul>{2}</ul></li>", TreeViewExamples[i].Display, Html.CheckBoxFor(m => TreeViewExamples[i].Checked, new { @class = "checkbox-inline" }), GenerateNavigationTabs(TreeViewExamples[i].SubCategories)));
+                }
+                else
+                {
+
+                    builder.Append(string.Format("<li>{0}{1}</li>", TreeViewExamples[i].Display, Html.CheckBoxFor(m => TreeViewExamples[i].Checked, new { @class = "checkbox-inline" })));
+
+
+
+                }
+            }
+          
+            //model.ForEach(m =>
+            //{
+            //    if (m.SubCategories!=null)
+            //    {
+            //        builder.Append(string.Format("<li>{0}{1}<ul>{2}</ul></li>", m.Display, @Html.CheckBox(m.Display, m.Checked, new { @class = "checkbox-inline" }), GenerateNavigationTabs(m.SubCategories)));
+            //    }
+            //    else
+            //    {
+
+            //        builder.Append(string.Format("<li>{0}{1}</li>", m.Display, @Html.CheckBox(m.Display, m.Checked, new {@class = "checkbox-inline"})));
+            //    }
+            //});
+            return builder.ToString();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+
+}
+
 <div id="myTabContent" class="tab-content">
     <div class="tab-pane fade active in" id="detail">
         <div class="panel panel-default" style="margin-top: 12px;">
@@ -119,19 +169,31 @@
             <div class="panel-body">
                 @using (Html.BeginForm("Edit", "Shop", FormMethod.Post))
                 {
-                    <div class="form-horizontal" role="form">
-                        @* About Us *@
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_AboutUs</label>
-                            <div class="col-md-10">
-                                @Html.TextAreaFor(c => c.AboutUs, new { @class = "form-control",@id="editor", rows = "6" })
-                            </div>
-                        </div>
-                        <div class="form-group pull-right" style="margin-top:50px;">
-                            <button class="btn btn-success" type="submit" name="command" value="Save" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnSave</button>
-                            <button class="btn btn-bitbucket" type="submit" name="command" value="Cancel" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnCancel</button>
+                <ul data-bind="kendoTreeView: {}">
+                    @if (Model != null && Model.TreeViewExamples != null)
+                    {
+                        @Html.Raw(GenerateNavigationTabs(Model.TreeViewExamples))
+                      
+                    }
+
+
+                </ul>
+
+
+
+                <div class="form-horizontal" role="form">
+                    @* About Us *@
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">@GlobalResources.StringResource.Shop_Edit_AboutUs</label>
+                        <div class="col-sm-10">
+                            @Html.TextAreaFor(c => c.AboutUs, new {@class = "form-control", @id = "editor", rows = "6"})
                         </div>
                     </div>
+                    <div class="form-group pull-right" style="margin-top: 50px;">
+                        <button class="btn btn-success" type="submit" name="command" value="Save" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnSave</button>
+                        <button class="btn btn-bitbucket" type="submit" name="command" value="Cancel" style="margin-right: 5px;">@GlobalResources.StringResource.Shop_Edit_btnCancel</button>
+                    </div>
+                </div>
                 }
             </div>
         </div>
