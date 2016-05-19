@@ -94,6 +94,25 @@ namespace OStore.Controllers
             }
         }
 
+        [AllowAnonymous]
+        public ActionResult ChangeCulture(string lang, string returnUrl)
+        {
+            var cookie = Request.Cookies["Culture"];
+            if (cookie != null)
+            {
+                cookie.Value = lang;
+                cookie.Expires = DateTime.MaxValue;
+                Response.SetCookie(cookie);
+            }
+            else
+            {
+                cookie = new HttpCookie("Culture", lang) { Expires = DateTime.MaxValue };
+                Response.Cookies.Add(cookie);
+            }
+
+            return Redirect(returnUrl);
+        }
+
         //
         // GET: /Account/VerifyCode
         [AllowAnonymous]

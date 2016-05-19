@@ -194,6 +194,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="GlobalResources\StringResource.th.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResource.th.resx</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\FileUploadFormHelper.cs" />
     <Compile Include="Libs\Extensions\CheckBoxListExtension.cs" />
     <Compile Include="Libs\Extensions\SelectListExtension.cs" />
@@ -3208,6 +3213,11 @@
       <LastGenOutput>StringResource.Designer.cs</LastGenOutput>
       <CustomToolNamespace>GlobalResources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\StringResource.th.resx">
+      <CustomToolNamespace>GlobalResources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResource.th.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
