@@ -51,20 +51,6 @@ namespace OStore.Controllers
         }
 
         [HttpGet]
-        public ActionResult ShipOrder()
-        {
-            List<OrderInfoViewModel> model = new List<OrderInfoViewModel>();
-
-            model.Add(new OrderInfoViewModel() { OrderId = "OSH001", OrderDate = DateTime.Now, TimeLaps = "10 mins.", CustomerName = "Somkid Junyaran", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "1", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark", Deliver = "Alpha" });
-            model.Add(new OrderInfoViewModel() { OrderId = "OSH002", OrderDate = DateTime.Now, TimeLaps = "15 mins.", CustomerName = "Hoya Deejungbuiy", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "1", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark", Deliver = "Alhpa" });
-            model.Add(new OrderInfoViewModel() { OrderId = "OSH003", OrderDate = DateTime.Now, TimeLaps = "20 mins.", CustomerName = "Racha Rakthai", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "2", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark", Deliver = "Thaipost" });
-            model.Add(new OrderInfoViewModel() { OrderId = "OSH004", OrderDate = DateTime.Now, TimeLaps = "25 mins.", CustomerName = "Channel One", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "2", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark", Deliver = "Thaipost" });
-            model.Add(new OrderInfoViewModel() { OrderId = "OSH005", OrderDate = DateTime.Now, TimeLaps = "30 mins.", CustomerName = "Samart Jong Jor hor", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "2", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark", Deliver = "Alpha" });
-
-            return View(model);
-        }
-
-        [HttpGet]
         public ActionResult PayCODList()
         {
             List<OrderInfoViewModel> model = new List<OrderInfoViewModel>();
@@ -186,6 +172,42 @@ namespace OStore.Controllers
             model.Add(new PickPackOrderInfoViewModel() { OrderId = "OSH003", OrderDate = DateTime.Now, TimeLaps = "20 mins.", CustomerName = "Racha Rakthai", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "Approve", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark" });
             model.Add(new PickPackOrderInfoViewModel() { OrderId = "OSH004", OrderDate = DateTime.Now, TimeLaps = "25 mins.", CustomerName = "Channel One", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "Approve", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark" });
             model.Add(new PickPackOrderInfoViewModel() { OrderId = "OSH005", OrderDate = DateTime.Now, TimeLaps = "30 mins.", CustomerName = "Samart Jong Jor hor", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "Approve", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark" });
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult PackOrder(List<PickPackOrderInfoViewModel> models)
+        {
+
+            return View("ConfirmPack", new List<PickPackOrderInfoViewModel>());
+        }
+
+        [HttpGet]
+        public ActionResult ConfirmPack()
+        {
+            List<ConfirmPackOrderViewModel> models = new List<ConfirmPackOrderViewModel>();
+            models.Add(new ConfirmPackOrderViewModel() { OrderId = "OST0001", CustomerName = "Somkid Junyaran", TrackingNumber = "OST0001" });
+            models.Add(new ConfirmPackOrderViewModel() { OrderId = "OST0002", CustomerName = "Hoya Deejungbuiy", TrackingNumber = "OST0002" });
+            models.Add(new ConfirmPackOrderViewModel() { OrderId = "OST0003", CustomerName = "Racha Rakthai", TrackingNumber = "" });
+            models.Add(new ConfirmPackOrderViewModel() { OrderId = "OST0004", CustomerName = "Channel One", TrackingNumber = "" });
+            models.Add(new ConfirmPackOrderViewModel() { OrderId = "OST0005", CustomerName = "Samart Jong Jor hor", TrackingNumber = "OST0005" });
+
+            return View(models);
+        }
+        #endregion
+
+        #region Ship
+        [HttpGet]
+        public ActionResult ShipOrder()
+        {
+            List<OrderInfoViewModel> model = new List<OrderInfoViewModel>();
+
+            model.Add(new OrderInfoViewModel() { OrderId = "OSH001", OrderDate = DateTime.Now, TimeLaps = "10 mins.", CustomerName = "Somkid Junyaran", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "1", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark", Deliver = "Alpha" });
+            model.Add(new OrderInfoViewModel() { OrderId = "OSH002", OrderDate = DateTime.Now, TimeLaps = "15 mins.", CustomerName = "Hoya Deejungbuiy", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "1", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark", Deliver = "Alhpa" });
+            model.Add(new OrderInfoViewModel() { OrderId = "OSH003", OrderDate = DateTime.Now, TimeLaps = "20 mins.", CustomerName = "Racha Rakthai", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "2", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark", Deliver = "Thaipost" });
+            model.Add(new OrderInfoViewModel() { OrderId = "OSH004", OrderDate = DateTime.Now, TimeLaps = "25 mins.", CustomerName = "Channel One", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "2", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark", Deliver = "Thaipost" });
+            model.Add(new OrderInfoViewModel() { OrderId = "OSH005", OrderDate = DateTime.Now, TimeLaps = "30 mins.", CustomerName = "Samart Jong Jor hor", Mobile = "08566505532", Line = "LineId", Price = 1000, StatusId = "2", Reason = "Reason", StoreStaff = "Koi", ItemLine = "1234567890", ItemCode = "1234567890", ItemDescription = "Description", Remark = "Remark", Deliver = "Alpha" });
 
             return View(model);
         }

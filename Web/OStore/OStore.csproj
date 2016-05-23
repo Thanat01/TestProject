@@ -231,6 +231,7 @@
     <Compile Include="Models\Location\PostalCodeModel.cs" />
     <Compile Include="Models\Location\ProvinceModel.cs" />
     <Compile Include="Models\Location\SubDistrictModel.cs" />
+    <Compile Include="Models\Orders\ConfirmPackOrderViewModel.cs" />
     <Compile Include="Models\Orders\OrderInfoViewModel.cs" />
     <Compile Include="Models\Orders\PickPackOrderInfoViewModel.cs" />
     <Compile Include="Models\Orders\SearchConditionViewModel.cs" />
@@ -3195,6 +3196,7 @@
     <Content Include="Views\SaleChannel\OrderList.cshtml" />
     <Content Include="Views\Order\OrderContactDetail.cshtml" />
     <Content Include="Views\Order\UploadSlip.cshtml" />
+    <Content Include="Views\Order\ConfirmPack.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

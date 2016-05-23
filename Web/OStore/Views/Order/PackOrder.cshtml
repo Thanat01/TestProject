@@ -13,7 +13,7 @@
 <script src="../Scripts/Footable/footable.filter.js?v=2-0-1" type="text/javascript"></script>
 
 <div class="row">
-    <h2>@GlobalResources.StringResource.Ordermanagement_Pick_Title</h2>
+    <h2>@GlobalResources.StringResource.Ordermanagement_Pack_Title</h2>
 </div>
 
 <div class="tab-content">
@@ -130,11 +130,10 @@
     </div>
 
     <div class="col-md-12 text-right" style="padding:20px;">
-        <a href=""  value="@GlobalResources.StringResource.Common_Button_ConfirmToShip" class="btn btn-save" />
-        <input type="button" value="@GlobalResources.StringResource.Common_Button_Cancel" class="btn btn-cancel"/>
+        <a href="~/Order/ConfirmPack" class="btn btn-save">@GlobalResources.StringResource.Common_Button_ConfirmToShip</a>
+        <a href="~/Order/PickOrder"  class="btn btn-cancel">@GlobalResources.StringResource.Common_Button_Cancel</a>
     </div>
 </div>
-
 
 
 <script type="text/javascript">
