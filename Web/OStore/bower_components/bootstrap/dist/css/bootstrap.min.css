@@ -146,8 +146,8 @@ input {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         padding: 0;
-        width:20px;
-        height:20px;
+        width: 20px;
+        height: 20px;
         color: green;
     }
 
@@ -3435,25 +3435,37 @@ select[multiple].form-group-lg .form-control, textarea.form-group-lg .form-contr
     border-color: #ccc;
 }
 
-    .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open > .dropdown-toggle.btn-default {
-        color: #333;
-        background-color: #e6e6e6;
-        border-color: #adadad;
-    }
+.btn-save {
+    color: #fff;
+    background-color: #0f9609;
+    border-color: #0f9609;
+}
 
-    .btn-default.active, .btn-default:active, .open > .dropdown-toggle.btn-default {
-        background-image: none;
-    }
+.btn-cancel {
+    color: #fff;
+    background-color: #576067;
+    border-color: #576067;
+}
 
-    .btn-default.disabled, .btn-default.disabled.active, .btn-default.disabled.focus, .btn-default.disabled:active, .btn-default.disabled:focus, .btn-default.disabled:hover, .btn-default[disabled], .btn-default[disabled].active, .btn-default[disabled].focus, .btn-default[disabled]:active, .btn-default[disabled]:focus, .btn-default[disabled]:hover, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default.active, fieldset[disabled] .btn-default.focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:hover {
-        background-color: #fff;
-        border-color: #ccc;
-    }
+.btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open > .dropdown-toggle.btn-default {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
 
-    .btn-default .badge {
-        color: #fff;
-        background-color: #333;
-    }
+.btn-default.active, .btn-default:active, .open > .dropdown-toggle.btn-default {
+    background-image: none;
+}
+
+.btn-default.disabled, .btn-default.disabled.active, .btn-default.disabled.focus, .btn-default.disabled:active, .btn-default.disabled:focus, .btn-default.disabled:hover, .btn-default[disabled], .btn-default[disabled].active, .btn-default[disabled].focus, .btn-default[disabled]:active, .btn-default[disabled]:focus, .btn-default[disabled]:hover, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default.active, fieldset[disabled] .btn-default.focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:hover {
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn-default .badge {
+    color: #fff;
+    background-color: #333;
+}
 
 .btn-primary {
     color: #fff;
@@ -4388,7 +4400,6 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
     /*min-height: 100px;*/
     margin-bottom: 20px;
     border: 1px solid transparent;
-  
 }
 
 @media (min-width:768px) {
@@ -4437,7 +4448,6 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
         }
 
     .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse, .navbar-static-top .navbar-collapse {
-       
         padding-right: 0;
         padding-left: 0;
     }
@@ -4468,13 +4478,13 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 .navbar-static-top {
     z-index: 1000;
     border-width: 0 0 1px;
-     background-color: #fff !important;
+    background-color: #fff !important;
 }
 
 @media (min-width:768px) {
     .navbar-static-top {
         border-radius: 0;
-         background-color: #fff !important;
+        background-color: #fff !important;
     }
 }
 

@@ -360,7 +360,7 @@
   <data name="OrderManagement_Ship_Title" xml:space="preserve">
     <value>Ship</value>
   </data>
-  <data name="Ordermanagement_Pay_Tab_COD" xml:space="preserve">
+  <data name="Ordermanagement_Pay_COD_Title" xml:space="preserve">
     <value>COD</value>
   </data>
   <data name="Ordermanagement_Pay_Tab_Prepay" xml:space="preserve">
@@ -384,7 +384,7 @@
   <data name="Ordermanagement_Pay_Prepay_Tab_Unpost" xml:space="preserve">
     <value>Unpost</value>
   </data>
-  <data name="OrderManagement_Pay_CustomerName" xml:space="preserve">
+  <data name="OrderManagement_Pick_CustomerName" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="OrderManagement_Pay_ItemCode" xml:space="preserve">
@@ -399,16 +399,16 @@
   <data name="OrderManagement_Pay_Line" xml:space="preserve">
     <value>Line</value>
   </data>
-  <data name="OrderManagement_Pay_Mobile" xml:space="preserve">
+  <data name="OrderManagement_Pick_Mobile" xml:space="preserve">
     <value>Contact</value>
   </data>
-  <data name="OrderManagement_Pay_OrderDate" xml:space="preserve">
+  <data name="OrderManagement_Pick_OrderDate" xml:space="preserve">
     <value>Date/Time</value>
   </data>
-  <data name="OrderManagement_Pay_OrderId" xml:space="preserve">
+  <data name="OrderManagement_Pick_OrderId" xml:space="preserve">
     <value>Order Id</value>
   </data>
-  <data name="OrderManagement_Pay_Price" xml:space="preserve">
+  <data name="OrderManagement_Pick_Price" xml:space="preserve">
     <value>Price</value>
   </data>
   <data name="OrderManagement_Pay_Reason" xml:space="preserve">
@@ -417,19 +417,19 @@
   <data name="OrderManagement_Pay_Remark" xml:space="preserve">
     <value>Remark</value>
   </data>
-  <data name="OrderManagement_Pay_StatusId" xml:space="preserve">
+  <data name="OrderManagement_Pick_StatusId" xml:space="preserve">
     <value>Status</value>
   </data>
   <data name="OrderManagement_Pay_StoreStaff" xml:space="preserve">
     <value>Store Staff</value>
   </data>
-  <data name="OrderManagement_Pay_TimeLap" xml:space="preserve">
+  <data name="OrderManagement_Pick_TimeLap" xml:space="preserve">
     <value>Time Laps</value>
   </data>
-  <data name="Ordermanagement_PickPack_Tab_Pack" xml:space="preserve">
+  <data name="Ordermanagement_Pack_Title" xml:space="preserve">
     <value>Pack</value>
   </data>
-  <data name="Ordermanagement_PickPack_Tab_Pick" xml:space="preserve">
+  <data name="Ordermanagement_Pick_Title" xml:space="preserve">
     <value>Pick</value>
   </data>
   <data name="OrderManagement_Ship_SelectAll" xml:space="preserve">
@@ -729,5 +729,119 @@ you choose to &amp;quot;Replace all products&amp;quot; function.&lt;/p&gt;</valu
   </data>
   <data name="Account_LogIn_LocalAccount_Title" xml:space="preserve">
     <value>Use a local account to log in.</value>
+  </data>
+  <data name="SaleChannel_OrderEntry_Splash_1" xml:space="preserve">
+    <value>Your first order will show up here</value>
+  </data>
+  <data name="SaleChannel_OrderEntry_Splash_2" xml:space="preserve">
+    <value>Selecting order will enable your checkout</value>
+  </data>
+  <data name="SaleChannel_OrderEntry_Title" xml:space="preserve">
+    <value>Order entry</value>
+  </data>
+  <data name="SaleChannel_OrderList_Title" xml:space="preserve">
+    <value>Order list</value>
+  </data>
+  <data name="Order_Manual_Mobile" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Order_List_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Order_List_CustomerId" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Order_List_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Order_List_Mobile" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Order_List_OrderDate" xml:space="preserve">
+    <value>Date / Time</value>
+  </data>
+  <data name="Order_List_OrderId" xml:space="preserve">
+    <value>Order Id</value>
+  </data>
+  <data name="Order_List_PaymentType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Order_List_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Order_List_ProductName" xml:space="preserve">
+    <value>Product name</value>
+  </data>
+  <data name="Order_List_ProductQTY" xml:space="preserve">
+    <value>QTY</value>
+  </data>
+  <data name="Order_List_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Order_Manual_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="SaleChannel_ImportOrder_Title" xml:space="preserve">
+    <value>Import order</value>
+  </data>
+  <data name="Ordermanagement_Pay_COD_Contact_Title" xml:space="preserve">
+    <value>Contact detail</value>
+  </data>
+  <data name="Ordermanagement_Pay_Prepay_Title" xml:space="preserve">
+    <value>Prepay</value>
+  </data>
+  <data name="OrderManagement_Pay_Prepay_UploadSlip" xml:space="preserve">
+    <value>Upload slip</value>
+  </data>
+  <data name="Ordermanagement_Pay_Prepay_UploadSlip_Title" xml:space="preserve">
+    <value>Upload slip</value>
+  </data>
+  <data name="OrderManagement_Pay_SlipFile" xml:space="preserve">
+    <value>Slip</value>
+  </data>
+  <data name="OrderManagement_Pay_Prepay_AttachSlip" xml:space="preserve">
+    <value>Attach Slip</value>
+  </data>
+  <data name="OrderManagement_Pay_PrintLable" xml:space="preserve">
+    <value>Print Label</value>
+  </data>
+  <data name="Ordermanagement_Pick_Choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="OrderManagement_Pick_ProductList" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="OrderManagement_Pay_CustomerName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OrderManagement_Pay_Mobile" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="OrderManagement_Pay_OrderDate" xml:space="preserve">
+    <value>Date / Time</value>
+  </data>
+  <data name="OrderManagement_Pay_OrderId" xml:space="preserve">
+    <value>Order Id</value>
+  </data>
+  <data name="OrderManagement_Pay_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="OrderManagement_Pay_StatusId" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="OrderManagement_Pay_TimeLap" xml:space="preserve">
+    <value>Time lap</value>
+  </data>
+  <data name="Common_Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Common_Button_Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Common_Button_ConfirmToShip" xml:space="preserve">
+    <value>Confirm to shipped</value>
+  </data>
+  <data name="Common_Button_Save" xml:space="preserve">
+    <value>Save</value>
   </data>
 </root>
