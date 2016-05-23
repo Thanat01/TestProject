@@ -232,6 +232,7 @@
     <Compile Include="Models\Location\ProvinceModel.cs" />
     <Compile Include="Models\Location\SubDistrictModel.cs" />
     <Compile Include="Models\Orders\OrderInfoViewModel.cs" />
+    <Compile Include="Models\Orders\PickPackOrderInfoViewModel.cs" />
     <Compile Include="Models\Orders\SearchConditionViewModel.cs" />
     <Compile Include="Models\PaymentChannelModel.cs" />
     <Compile Include="Models\ProductCategoryViewModel.cs" />
@@ -249,6 +250,7 @@
     <Compile Include="Models\RoleModel.cs" />
     <Compile Include="Models\SaleChannelViewModel.cs" />
     <Compile Include="Models\SaleChannel\ImportOrderViewModel.cs" />
+    <Compile Include="Models\SaleChannel\OrderListViewModel.cs" />
     <Compile Include="Models\SaleChannel\OrderManualViewModel.cs" />
     <Compile Include="Models\ShopModel.cs" />
     <Compile Include="Models\UserInfoModel.cs" />
@@ -715,6 +717,7 @@
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\logo_Line.png" />
     <Content Include="Content\Images\logo_Phone.png" />
+    <Content Include="Content\Images\NewOrderEntry.svg" />
     <Content Include="Content\Images\slip.jpg" />
     <Content Include="Content\Images\thaipost_service_area-01.svg" />
     <Content Include="Content\KendoUi\Black\editor.png" />
@@ -1052,6 +1055,7 @@
     <Content Include="Content\KendoUi\Uniform\sprite_kpi.png" />
     <Content Include="Content\KendoUi\Uniform\sprite_kpi_2x.png" />
     <Content Include="Content\sb-admin-2.css" />
+    <Content Include="Content\Shop\1\orders\OSH001\1.jpg" />
     <Content Include="Content\timeline.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -2552,9 +2556,9 @@
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\List.cshtml" />
     <Content Include="Views\Customer\Create.cshtml" />
-    <Content Include="Views\SaleChannel\_ImportOrder.cshtml" />
+    <Content Include="Views\SaleChannel\ImportOrder.cshtml" />
     <Content Include="Views\SaleChannel\_ReturnExchange.cshtml" />
-    <Content Include="Views\SaleChannel\_OrderManual.cshtml" />
+    <Content Include="Views\SaleChannel\CreateOrderManual.cshtml" />
     <Content Include="Views\Marketing\Index.cshtml" />
     <Content Include="Views\Delivery\Setup.cshtml" />
     <Content Include="Views\Customer\_CustomerList.cshtml" />
@@ -2568,10 +2572,10 @@
     <Content Include="Views\SaleChannel\_CustomerCreate.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\_SearchCondition.cshtml" />
-    <Content Include="Views\Order\PayOrder.cshtml" />
+    <Content Include="Views\Order\PrepayList.cshtml" />
     <Content Include="Views\Order\PickPackOrder.cshtml" />
     <Content Include="Views\Order\ShipOrder.cshtml" />
-    <Content Include="Views\Order\PayCodUncall.cshtml" />
+    <Content Include="Views\Order\PayCODList.cshtml" />
     <Content Include="Views\Order\PayCodConfirm.cshtml" />
     <Content Include="Views\Order\PayCodCancel.cshtml" />
     <Content Include="Views\Order\PayPrepayPost.cshtml" />
@@ -3187,10 +3191,13 @@
     <Content Include="Views\Product\ExcelImport.cshtml" />
     <Content Include="Views\Product\ImageBulkUpload.cshtml" />
     <Content Include="Views\Product\ImageBulkUploadList.cshtml" />
+    <Content Include="Views\SaleChannel\FirstIndex.cshtml" />
+    <Content Include="Views\SaleChannel\OrderList.cshtml" />
+    <Content Include="Views\Order\OrderContactDetail.cshtml" />
+    <Content Include="Views\Order\UploadSlip.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Shop\1\" />
     <Folder Include="Content\social\" />
     <Folder Include="Scripts\ViewModel\Shop\" />
   </ItemGroup>

@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "FirstIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h2>@GlobalResources.StringResource.SaleChannel_OrderEntry_Title</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal container panel">
+
+        <div class="form-group">
+            <div class="col-md-12 text-center">
+                <h2>@GlobalResources.StringResource.SaleChannel_OrderEntry_Splash_1;</h2>
+            </div>
+            <div class="col-md-12 text-center">
+                @GlobalResources.StringResource.SaleChannel_OrderEntry_Splash_2;
+            </div>
+        </div>
+
+        <div class="col-md-12 text-center">
+            <img src="~/Content/Images/NewOrderEntry.svg" />
+        </div>
+
+        <div class="col-md-12 text-center">
+            <div class="btn btn-save">
+                @Html.ActionLink("Create Order", "CreateOrderManual", "SaleChannel")
+            </div>
+        </div>
+
+    </div>
+}

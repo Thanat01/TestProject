@@ -7,6 +7,8 @@ namespace OStore.Models
 {
     public class Navbar
     {
+        public Navbar() { ChildMenus = new List<Navbar>(); }
+
         public int Id { get; set; }
         public string nameOption { get; set; }
         public string controller { get; set; }
@@ -17,5 +19,7 @@ namespace OStore.Models
         public bool status { get; set; }
         public int parentId { get; set; }
         public bool isParent { get; set; }
+
+        public List<Navbar> ChildMenus { get; set; }
     }
 }

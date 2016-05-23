@@ -12,8 +12,9 @@ namespace OStore.Models.Orders
         public OrderInfoViewModel()
         {
             Statuses = new List<System.Web.Mvc.SelectListItem>();
-            Statuses.Add(new System.Web.Mvc.SelectListItem() { Value = "1", Text = "Shipping" });
-            Statuses.Add(new System.Web.Mvc.SelectListItem() { Value = "2", Text = "Shipped" });
+            Statuses.Add(new System.Web.Mvc.SelectListItem() { Value = "1", Text = "Unpost" });
+            Statuses.Add(new System.Web.Mvc.SelectListItem() { Value = "2", Text = "Post" });
+            Statuses.Add(new System.Web.Mvc.SelectListItem() { Value = "3", Text = "Confirm" });
         }
 
         [Display(Name = @"OrderManagement_Pay_OrderId", ResourceType = typeof(StringResource))]
@@ -61,5 +62,8 @@ namespace OStore.Models.Orders
 
         [Display(Name = @"OrderManagement_Ship_Deliver", ResourceType = typeof(StringResource))]
         public string Deliver { get; set; }
+
+        [Display(Name = @"OrderManagement_Pay_SlipFile", ResourceType = typeof(StringResource))]
+        public string SlipFile { get; set; }
     }
 }

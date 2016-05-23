@@ -70,6 +70,42 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Common_Button_Cancel {
+            get {
+                return ResourceManager.GetString("Common_Button_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string Common_Button_Confirm {
+            get {
+                return ResourceManager.GetString("Common_Button_Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm to shipped.
+        /// </summary>
+        public static string Common_Button_ConfirmToShip {
+            get {
+                return ResourceManager.GetString("Common_Button_ConfirmToShip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Common_Button_Save {
+            get {
+                return ResourceManager.GetString("Common_Button_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hello, you can view the product by going to this link - .
         /// </summary>
         public static string Common_CopyMessage {
@@ -745,6 +781,105 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Order_List_Address {
+            get {
+                return ResourceManager.GetString("Order_List_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Order_List_CustomerId {
+            get {
+                return ResourceManager.GetString("Order_List_CustomerId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Order_List_Email {
+            get {
+                return ResourceManager.GetString("Order_List_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string Order_List_Mobile {
+            get {
+                return ResourceManager.GetString("Order_List_Mobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date / Time.
+        /// </summary>
+        public static string Order_List_OrderDate {
+            get {
+                return ResourceManager.GetString("Order_List_OrderDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Id.
+        /// </summary>
+        public static string Order_List_OrderId {
+            get {
+                return ResourceManager.GetString("Order_List_OrderId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string Order_List_PaymentType {
+            get {
+                return ResourceManager.GetString("Order_List_PaymentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string Order_List_Price {
+            get {
+                return ResourceManager.GetString("Order_List_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product name.
+        /// </summary>
+        public static string Order_List_ProductName {
+            get {
+                return ResourceManager.GetString("Order_List_ProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QTY.
+        /// </summary>
+        public static string Order_List_ProductQTY {
+            get {
+                return ResourceManager.GetString("Order_List_ProductQTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Order_List_Status {
+            get {
+                return ResourceManager.GetString("Order_List_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customer.
         /// </summary>
         public static string Order_Manual_CustomerId {
@@ -772,6 +907,15 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Order_Manual_Email {
+            get {
+                return ResourceManager.GetString("Order_Manual_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total amount.
         /// </summary>
         public static string Order_Manual_GrandTotalAmount {
@@ -786,6 +930,15 @@ namespace GlobalResources {
         public static string Order_Manual_Link {
             get {
                 return ResourceManager.GetString("Order_Manual_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string Order_Manual_Mobile {
+            get {
+                return ResourceManager.GetString("Order_Manual_Mobile", resourceCulture);
             }
         }
         
@@ -961,11 +1114,29 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pack.
+        /// </summary>
+        public static string Ordermanagement_Pack_Title {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pack_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pick &amp; Pack.
         /// </summary>
         public static string OrderManagement_PackAndPack_Title {
             get {
                 return ResourceManager.GetString("OrderManagement_PackAndPack_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact detail.
+        /// </summary>
+        public static string Ordermanagement_Pay_COD_Contact_Title {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_COD_Contact_Title", resourceCulture);
             }
         }
         
@@ -993,6 +1164,15 @@ namespace GlobalResources {
         public static string Ordermanagement_Pay_COD_Tab_Uncall {
             get {
                 return ResourceManager.GetString("Ordermanagement_Pay_COD_Tab_Uncall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to COD.
+        /// </summary>
+        public static string Ordermanagement_Pay_COD_Title {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_COD_Title", resourceCulture);
             }
         }
         
@@ -1069,7 +1249,7 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date/Time.
+        ///   Looks up a localized string similar to Date / Time.
         /// </summary>
         public static string OrderManagement_Pay_OrderDate {
             get {
@@ -1114,6 +1294,15 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Attach Slip.
+        /// </summary>
+        public static string OrderManagement_Pay_Prepay_AttachSlip {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_Prepay_AttachSlip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paid confirm.
         /// </summary>
         public static string Ordermanagement_Pay_Prepay_Tab_PaidConfirm {
@@ -1141,11 +1330,47 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prepay.
+        /// </summary>
+        public static string Ordermanagement_Pay_Prepay_Title {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_Prepay_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload slip.
+        /// </summary>
+        public static string OrderManagement_Pay_Prepay_UploadSlip {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_Prepay_UploadSlip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload slip.
+        /// </summary>
+        public static string Ordermanagement_Pay_Prepay_UploadSlip_Title {
+            get {
+                return ResourceManager.GetString("Ordermanagement_Pay_Prepay_UploadSlip_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Price.
         /// </summary>
         public static string OrderManagement_Pay_Price {
             get {
                 return ResourceManager.GetString("OrderManagement_Pay_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print Label.
+        /// </summary>
+        public static string OrderManagement_Pay_PrintLable {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_PrintLable", resourceCulture);
             }
         }
         
@@ -1177,6 +1402,15 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Slip.
+        /// </summary>
+        public static string OrderManagement_Pay_SlipFile {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pay_SlipFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string OrderManagement_Pay_StatusId {
@@ -1195,15 +1429,6 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to COD.
-        /// </summary>
-        public static string Ordermanagement_Pay_Tab_COD {
-            get {
-                return ResourceManager.GetString("Ordermanagement_Pay_Tab_COD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Prepay.
         /// </summary>
         public static string Ordermanagement_Pay_Tab_Prepay {
@@ -1213,7 +1438,7 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Time Laps.
+        ///   Looks up a localized string similar to Time lap.
         /// </summary>
         public static string OrderManagement_Pay_TimeLap {
             get {
@@ -1231,20 +1456,92 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pack.
+        ///   Looks up a localized string similar to Choose.
         /// </summary>
-        public static string Ordermanagement_PickPack_Tab_Pack {
+        public static string Ordermanagement_Pick_Choose {
             get {
-                return ResourceManager.GetString("Ordermanagement_PickPack_Tab_Pack", resourceCulture);
+                return ResourceManager.GetString("Ordermanagement_Pick_Choose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string OrderManagement_Pick_CustomerName {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pick_CustomerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string OrderManagement_Pick_Mobile {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pick_Mobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date/Time.
+        /// </summary>
+        public static string OrderManagement_Pick_OrderDate {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pick_OrderDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Id.
+        /// </summary>
+        public static string OrderManagement_Pick_OrderId {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pick_OrderId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string OrderManagement_Pick_Price {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pick_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Products.
+        /// </summary>
+        public static string OrderManagement_Pick_ProductList {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pick_ProductList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string OrderManagement_Pick_StatusId {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pick_StatusId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Laps.
+        /// </summary>
+        public static string OrderManagement_Pick_TimeLap {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pick_TimeLap", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Pick.
         /// </summary>
-        public static string Ordermanagement_PickPack_Tab_Pick {
+        public static string Ordermanagement_Pick_Title {
             get {
-                return ResourceManager.GetString("Ordermanagement_PickPack_Tab_Pick", resourceCulture);
+                return ResourceManager.GetString("Ordermanagement_Pick_Title", resourceCulture);
             }
         }
         
@@ -1667,6 +1964,51 @@ namespace GlobalResources {
         public static string Product_Import_Excel_Warning {
             get {
                 return ResourceManager.GetString("Product_Import_Excel_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import order.
+        /// </summary>
+        public static string SaleChannel_ImportOrder_Title {
+            get {
+                return ResourceManager.GetString("SaleChannel_ImportOrder_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your first order will show up here.
+        /// </summary>
+        public static string SaleChannel_OrderEntry_Splash_1 {
+            get {
+                return ResourceManager.GetString("SaleChannel_OrderEntry_Splash_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selecting order will enable your checkout.
+        /// </summary>
+        public static string SaleChannel_OrderEntry_Splash_2 {
+            get {
+                return ResourceManager.GetString("SaleChannel_OrderEntry_Splash_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order entry.
+        /// </summary>
+        public static string SaleChannel_OrderEntry_Title {
+            get {
+                return ResourceManager.GetString("SaleChannel_OrderEntry_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order list.
+        /// </summary>
+        public static string SaleChannel_OrderList_Title {
+            get {
+                return ResourceManager.GetString("SaleChannel_OrderList_Title", resourceCulture);
             }
         }
         

@@ -1,5 +1,15 @@
 ﻿@model OStore.Models.SaleChannel.ImportOrderViewModel
 
+
+@{
+    ViewBag.Title = "CreateManualOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h2>@GlobalResources.StringResource.SaleChannel_ImportOrder_Title</h2>
+</div>
+
 <div class="col-md-12" id="uploadFile">
     <div class="row form-group">
         @Html.LabelFor(model => model.SourceId, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -72,9 +82,8 @@
             <!-- /.panel -->
         </div>
         <div class="col-md-12 form-inline text-right">
-            <a class="btn btn-default" onclick="ShowHidePanel('uploadFile', 'uploadItem');">Save</a>
-            <a class="btn btn-default" onclick="ShowHidePanel('uploadFile', 'uploadItem');">Cancel</a>
-            <a class="btn btn-default" onclick="ShowHidePanel('uploadFile', 'uploadItem');">Apply</a>
+            <a class="btn btn-save" onclick="ShowHidePanel('uploadFile', 'uploadItem');">Save</a>
+            <a class="btn btn-cancel" onclick="ShowHidePanel('uploadFile', 'uploadItem');">Cancel</a>
         </div>
     </div>
         <!-- /.row -->

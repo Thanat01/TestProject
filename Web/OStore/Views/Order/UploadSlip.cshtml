@@ -1,0 +1,68 @@
+﻿@model OStore.Models.Orders.OrderInfoViewModel
+
+@{
+    ViewBag.Title = "UploadSlip";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h2>@GlobalResources.StringResource.Ordermanagement_Pay_Prepay_UploadSlip_Title</h2>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div id="contactDetail">
+            <div id="manualOrder" class="form-horizontal panel panel-body">
+
+                <div class=" form-group">
+                    @Html.LabelFor(model => model.OrderId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 form-inline">
+                        @Html.DisplayFor(model => model.OrderId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.OrderId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class=" form-group">
+                    @Html.LabelFor(model => model.CustomerName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 form-inline">
+                        @Html.DisplayFor(model => model.CustomerName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class=" form-group">
+                    @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 form-inline">
+                        @Html.DisplayFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class=" form-group">
+                    @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 form-inline">
+                        @Html.DisplayFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*Images*@
+                <div class="form-group">
+                    <label class="control-label col-md-2">@GlobalResources.StringResource.OrderManagement_Pay_Prepay_UploadSlip</label>
+                    <div class="col-md-10 form-inline">
+                        @Html.FileUploadForm("../Order/SaveStransferSlip")
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12 text-right" style="padding:20px;">
+                <input type="submit" value="Confirm" class="btn btn-save" />
+                <input type="button" value="Cancel" class="btn btn-cancel" />
+            </div>
+        </div>
+    </div>
+}
+
