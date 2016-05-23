@@ -1114,11 +1114,38 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string OrderManagement_Pack_CustomerName {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pack_CustomerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Id.
+        /// </summary>
+        public static string OrderManagement_Pack_OrderId {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pack_OrderId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pack.
         /// </summary>
         public static string Ordermanagement_Pack_Title {
             get {
                 return ResourceManager.GetString("Ordermanagement_Pack_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tracking number.
+        /// </summary>
+        public static string OrderManagement_Pack_TrackingNumber {
+            get {
+                return ResourceManager.GetString("OrderManagement_Pack_TrackingNumber", resourceCulture);
             }
         }
         
@@ -1555,7 +1582,7 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select all.
+        ///   Looks up a localized string similar to Choose.
         /// </summary>
         public static string OrderManagement_Ship_SelectAll {
             get {
